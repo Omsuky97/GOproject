@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7812818111381936465}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: text_target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7177604708505168104}
   - component: {fileID: 3278240831459311367}
   - component: {fileID: 8866747833182116281}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Attack_Mesh
   m_TagString: Enemy_Attack
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 1705352935703072497}
-  monster_Attack_damage: 0
+  monster_Attack_damage: 15
 --- !u!1 &7432805483160588448
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 148512222014806693}
   - component: {fileID: 172687852584765008}
   - component: {fileID: -4529411703340902721}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: mon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ MonoBehaviour:
   scanRange: 2
   targetLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2048
   nearestTarget: {fileID: 0}
   isLive: 0
   monster_run: 0
@@ -278,7 +278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489090}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cape Bones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489092}
   - component: {fileID: 7432805483163704752}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Fustanella 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489094}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Female
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489096}
   - component: {fileID: 7432805483163704766}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cape 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489098}
   - component: {fileID: 7432805483163704760}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cape 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489100}
   - component: {fileID: 7432805483163704754}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cape 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489102}
   - component: {fileID: 7432805483163704764}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Cape 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489104}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bone 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,7 +843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489106}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bone 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489108}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bone 2_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489110}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bone 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 7432805483160489112}
   - component: {fileID: 7432805483161783482}
   - component: {fileID: 7432805483162783354}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bandolier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489114}
   - component: {fileID: 7432805483163704762}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Bandana
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1137,7 +1137,7 @@ GameObject:
   - component: {fileID: 7432805483160489116}
   - component: {fileID: 7432805483161783486}
   - component: {fileID: 7432805483162783358}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Belt 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 7432805483160489118}
   - component: {fileID: 7432805483161783480}
   - component: {fileID: 7432805483162783352}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Baseball Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1305,7 +1305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489120}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489122}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489124}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,7 +1401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489126}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1434,7 +1434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489128}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManHead_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489130}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1501,7 +1501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489132}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1533,7 +1533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489134}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManHips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1569,7 +1569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489136}
   - component: {fileID: 7432805483163704748}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Head 1 Female Hair 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1684,7 +1684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489138}
   - component: {fileID: 7432805483163704750}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Head 1 Female
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1798,7 +1798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489140}
   - component: {fileID: 7432805483163704736}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Legs Female
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1913,7 +1913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489142}
   - component: {fileID: 7432805483163704738}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Hood 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2026,7 +2026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489144}
   - component: {fileID: 7432805483163704756}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Ghillie Suit Head
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2140,7 +2140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489146}
   - component: {fileID: 7432805483163704758}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Fustanella 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2253,7 +2253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489148}
   - component: {fileID: 7432805483163704744}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Ghillie Suit Torso
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2367,7 +2367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489150}
   - component: {fileID: 7432805483163704746}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Ghillie Suit Legs
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2480,7 +2480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489152}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,7 +2513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489154}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2545,7 +2545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489156}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2577,7 +2577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489158}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2609,7 +2609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489160}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2641,7 +2641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489162}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2673,7 +2673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489164}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2705,7 +2705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489166}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2737,7 +2737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489168}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2769,7 +2769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489170}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2801,7 +2801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489172}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftToeBase_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2832,7 +2832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489174}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2864,7 +2864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489176}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftHandMiddle2_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2895,7 +2895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489178}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2927,7 +2927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489180}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftHandThumb1_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2958,7 +2958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489182}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManLeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2992,7 +2992,7 @@ GameObject:
   - component: {fileID: 7432805483160489184}
   - component: {fileID: 7432805483161783472}
   - component: {fileID: 7432805483162783344}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Mask 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3076,7 +3076,7 @@ GameObject:
   - component: {fileID: 7432805483160489186}
   - component: {fileID: 7432805483161783474}
   - component: {fileID: 7432805483162783346}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Mask 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3159,7 +3159,7 @@ GameObject:
   - component: {fileID: 7432805483160489188}
   - component: {fileID: 7432805483161783476}
   - component: {fileID: 7432805483162783348}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Shoulder Pads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3242,7 +3242,7 @@ GameObject:
   - component: {fileID: 7432805483160489190}
   - component: {fileID: 7432805483161783478}
   - component: {fileID: 7432805483162783350}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Scarf 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3323,7 +3323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489192}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3355,7 +3355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489194}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManSpine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3389,7 +3389,7 @@ GameObject:
   - component: {fileID: 7432805483160489196}
   - component: {fileID: 7432805483161783484}
   - component: {fileID: 7432805483162783356}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Mask 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3470,7 +3470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489198}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3513,7 +3513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489200}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3545,7 +3545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489202}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3577,7 +3577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489204}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3609,7 +3609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489206}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightToeBase_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3640,7 +3640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489208}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3673,7 +3673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489210}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightHandMiddle2_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3704,7 +3704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489212}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3736,7 +3736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7432805483160489214}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: LowManRightHandThumb1_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3768,7 +3768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489240}
   - component: {fileID: 7432805483163704742}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Torso Female
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3883,7 +3883,7 @@ GameObject:
   - component: {fileID: 7432805483160489242}
   - component: {fileID: 7432805483161783466}
   - component: {fileID: 7432805483162783338}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Strap 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3965,7 +3965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489244}
   - component: {fileID: 7432805483163704794}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Head 1 Female Hair 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4080,7 +4080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7432805483160489246}
   - component: {fileID: 7432805483163704740}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Torso Female Armor
   m_TagString: Enemy
   m_Icon: {fileID: 0}
