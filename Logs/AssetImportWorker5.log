@@ -1,0 +1,2550 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.50f1 (c3db7f8bf9b1) revision 12835711'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'ko' Physical Memory: 31863 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.50f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+C:/Users/User/GOproject
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+50751
+Successfully changed project path to: C:/Users/User/GOproject
+C:/Users/User/GOproject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [32316]  Target information:
+
+Player connection [32316]  * "[IP] 172.30.1.57 [Port] 0 [Flags] 2 [Guid] 4131157815 [EditorId] 4131157815 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-CO4U8ES) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [32316] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [32316] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 4.04 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.50f1 (c3db7f8bf9b1)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/User/GOproject/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4070 SUPER (ID=0x2783)
+    Vendor:   NVIDIA
+    VRAM:     11999 MB
+    Driver:   32.0.15.6094
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56176
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004391 seconds.
+- Loaded All Assemblies, in  0.193 seconds
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 165 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.331 seconds
+Domain Reload Profiling: 523ms
+	BeginReloadAssembly (58ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (19ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (79ms)
+		LoadAssemblies (58ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (77ms)
+			TypeCache.Refresh (76ms)
+				TypeCache.ScanAssembly (69ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (331ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (307ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (214ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (64ms)
+			ProcessInitializeOnLoadMethodAttributes (24ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.344 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.333 seconds
+Domain Reload Profiling: 676ms
+	BeginReloadAssembly (83ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (16ms)
+	RebuildCommonClasses (19ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (22ms)
+	LoadAllAssembliesAndSetupDomain (213ms)
+		LoadAssemblies (157ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (101ms)
+			TypeCache.Refresh (86ms)
+				TypeCache.ScanAssembly (77ms)
+			ScanForSourceGeneratedMonoScriptInfo (9ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (333ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (255ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (32ms)
+			ProcessInitializeOnLoadAttributes (192ms)
+			ProcessInitializeOnLoadMethodAttributes (11ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3448 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (54.7 KB). Loaded Objects now: 3935.
+Memory consumption went from 139.5 MB to 139.4 MB.
+Total: 2.508000 ms (FindLiveObjects: 0.198800 ms CreateObjectMapping: 0.058400 ms MarkObjects: 1.970000 ms  DeleteObjects: 0.280100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1699357.840186 seconds.
+  path: Assets/HUD/Plugins/CW/LeanTransition/Extras/Prefabs/Fade Out.prefab
+  artifactKey: Guid(31850616c769f194bb1e0cca518f21ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HUD/Plugins/CW/LeanTransition/Extras/Prefabs/Fade Out.prefab using Guid(31850616c769f194bb1e0cca518f21ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '090ad7e7517926024a4fce92132717ef') in 0.018413 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.256 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.559 seconds
+Domain Reload Profiling: 814ms
+	BeginReloadAssembly (98ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (116ms)
+		LoadAssemblies (151ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (560ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (280ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (37ms)
+			ProcessInitializeOnLoadAttributes (205ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3426 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.5 KB). Loaded Objects now: 3939.
+Memory consumption went from 135.1 MB to 135.1 MB.
+Total: 2.625200 ms (FindLiveObjects: 0.303300 ms CreateObjectMapping: 0.062900 ms MarkObjects: 2.199200 ms  DeleteObjects: 0.058700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 17.107102 seconds.
+  path: Assets/HUD/Plugins/CW/LeanTransition/Extras/Prefabs/Scale.xy Out.prefab
+  artifactKey: Guid(c361efa5d59a37848aa47f921d42721c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HUD/Plugins/CW/LeanTransition/Extras/Prefabs/Scale.xy Out.prefab using Guid(c361efa5d59a37848aa47f921d42721c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'af614d75ff2e937d81dbbc33990f66ca') in 0.001890 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/HUD/Plugins/CW/LeanTransition/Extras/Prefabs/Fade In.prefab
+  artifactKey: Guid(8c614b2a58c4e2540b396e03fbec3861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HUD/Plugins/CW/LeanTransition/Extras/Prefabs/Fade In.prefab using Guid(8c614b2a58c4e2540b396e03fbec3861) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5011a1cfb1961fba75578b8d14125ad6') in 0.000306 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/HUD/Plugins/CW/LeanTransition/Extras/Prefabs/Scale.xy In.prefab
+  artifactKey: Guid(50d5767c319bc3546995e8b4067e4083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HUD/Plugins/CW/LeanTransition/Extras/Prefabs/Scale.xy In.prefab using Guid(50d5767c319bc3546995e8b4067e4083) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bb75372821428c96d42394a21cb47c9b') in 0.000254 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 24.994315 seconds.
+  path: Assets/HUD/Plugins/CW/Shared/Common/Examples/Fonts/Pretendard-Light SDF.asset
+  artifactKey: Guid(f9bf371f535f30544ab1a4432729af51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HUD/Plugins/CW/Shared/Common/Examples/Fonts/Pretendard-Light SDF.asset using Guid(f9bf371f535f30544ab1a4432729af51) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7ed444c88252d7679812b73b84ce055b') in 0.123407 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.244 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.557 seconds
+Domain Reload Profiling: 800ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (115ms)
+		LoadAssemblies (144ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (4ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (557ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (271ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (37ms)
+			ProcessInitializeOnLoadAttributes (197ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3281 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 156 unused Assets / (101.8 KB). Loaded Objects now: 3843.
+Memory consumption went from 137.4 MB to 137.3 MB.
+Total: 2.026800 ms (FindLiveObjects: 0.218500 ms CreateObjectMapping: 0.047000 ms MarkObjects: 1.625300 ms  DeleteObjects: 0.135200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor: 4fbf718dff374b1a085b0dd29daf568b -> 2285d221dac401165f99c54fb3ba5957
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 2ec38ce128af56ae6423129d3800712e -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.253 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.556 seconds
+Domain Reload Profiling: 808ms
+	BeginReloadAssembly (92ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (120ms)
+		LoadAssemblies (150ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (4ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (557ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (269ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (36ms)
+			ProcessInitializeOnLoadAttributes (195ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.95 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 139 unused Assets / (93.0 KB). Loaded Objects now: 3721.
+Memory consumption went from 135.3 MB to 135.2 MB.
+Total: 2.031400 ms (FindLiveObjects: 0.206700 ms CreateObjectMapping: 0.043200 ms MarkObjects: 1.657900 ms  DeleteObjects: 0.122800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.238 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.511 seconds
+Domain Reload Profiling: 749ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (109ms)
+		LoadAssemblies (145ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (512ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (250ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (181ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.88 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.5 KB). Loaded Objects now: 3724.
+Memory consumption went from 135.1 MB to 135.1 MB.
+Total: 2.156700 ms (FindLiveObjects: 0.226700 ms CreateObjectMapping: 0.052200 ms MarkObjects: 1.844900 ms  DeleteObjects: 0.032200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.239 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.503 seconds
+Domain Reload Profiling: 741ms
+	BeginReloadAssembly (90ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (109ms)
+		LoadAssemblies (146ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (503ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (254ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (184ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 2.03 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3727.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 2.009800 ms (FindLiveObjects: 0.206200 ms CreateObjectMapping: 0.042400 ms MarkObjects: 1.712000 ms  DeleteObjects: 0.048700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.238 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.511 seconds
+Domain Reload Profiling: 748ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (109ms)
+		LoadAssemblies (144ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (511ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (260ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (34ms)
+			ProcessInitializeOnLoadAttributes (187ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 2.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.6 KB). Loaded Objects now: 3730.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 3.022400 ms (FindLiveObjects: 0.211200 ms CreateObjectMapping: 0.042800 ms MarkObjects: 2.713700 ms  DeleteObjects: 0.053900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.241 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.519 seconds
+Domain Reload Profiling: 759ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (110ms)
+		LoadAssemblies (146ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (519ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (261ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (192ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 2.05 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3733.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 2.057500 ms (FindLiveObjects: 0.244400 ms CreateObjectMapping: 0.054200 ms MarkObjects: 1.726800 ms  DeleteObjects: 0.031500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.246 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.493 seconds
+Domain Reload Profiling: 739ms
+	BeginReloadAssembly (98ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (108ms)
+		LoadAssemblies (153ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (7ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (493ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (253ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (184ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.99 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3736.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 2.176600 ms (FindLiveObjects: 0.281000 ms CreateObjectMapping: 0.056300 ms MarkObjects: 1.804200 ms  DeleteObjects: 0.034400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Import Request.
+  Time since last request: 270.028105 seconds.
+  path: Assets/03_Prefabs/Ui/MainUi/MainUi.prefab
+  artifactKey: Guid(417b47915c1099a42815418a2a1758e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/03_Prefabs/Ui/MainUi/MainUi.prefab using Guid(417b47915c1099a42815418a2a1758e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a374db2d30d0ac24c60abff2255eb65c') in 0.008944 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.248 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.525 seconds
+Domain Reload Profiling: 772ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (21ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (113ms)
+		LoadAssemblies (149ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (526ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (267ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (37ms)
+			ProcessInitializeOnLoadAttributes (196ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 2.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3146 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3739.
+Memory consumption went from 134.9 MB to 134.9 MB.
+Total: 2.465600 ms (FindLiveObjects: 0.221900 ms CreateObjectMapping: 0.051600 ms MarkObjects: 2.160100 ms  DeleteObjects: 0.031500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Import Request.
+  Time since last request: 22.616805 seconds.
+  path: Assets/03_Prefabs/Ui/MainUi/MainUi.prefab
+  artifactKey: Guid(417b47915c1099a42815418a2a1758e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/03_Prefabs/Ui/MainUi/MainUi.prefab using Guid(417b47915c1099a42815418a2a1758e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a374db2d30d0ac24c60abff2255eb65c') in 0.002331 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.238 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.530 seconds
+Domain Reload Profiling: 768ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (108ms)
+		LoadAssemblies (144ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (531ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (268ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (20ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (35ms)
+			ProcessInitializeOnLoadAttributes (192ms)
+			ProcessInitializeOnLoadMethodAttributes (16ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.84 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3146 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3742.
+Memory consumption went from 134.9 MB to 134.9 MB.
+Total: 2.329300 ms (FindLiveObjects: 0.255400 ms CreateObjectMapping: 0.046400 ms MarkObjects: 1.991700 ms  DeleteObjects: 0.035100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Import Request.
+  Time since last request: 16.308674 seconds.
+  path: Assets/03_Prefabs/Ui/MainUi/MainUi.prefab
+  artifactKey: Guid(417b47915c1099a42815418a2a1758e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/03_Prefabs/Ui/MainUi/MainUi.prefab using Guid(417b47915c1099a42815418a2a1758e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a374db2d30d0ac24c60abff2255eb65c') in 0.002241 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.245 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.492 seconds
+Domain Reload Profiling: 736ms
+	BeginReloadAssembly (92ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (112ms)
+		LoadAssemblies (148ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (7ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (493ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (247ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (179ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 2.02 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3146 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.8 KB). Loaded Objects now: 3745.
+Memory consumption went from 134.9 MB to 134.9 MB.
+Total: 2.398200 ms (FindLiveObjects: 0.203300 ms CreateObjectMapping: 0.045800 ms MarkObjects: 2.112900 ms  DeleteObjects: 0.035700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.239 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.495 seconds
+Domain Reload Profiling: 733ms
+	BeginReloadAssembly (88ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (110ms)
+		LoadAssemblies (146ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (495ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (249ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (182ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.80 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.8 KB). Loaded Objects now: 3748.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 2.324500 ms (FindLiveObjects: 0.272200 ms CreateObjectMapping: 0.050200 ms MarkObjects: 1.966100 ms  DeleteObjects: 0.035300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.241 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.502 seconds
+Domain Reload Profiling: 742ms
+	BeginReloadAssembly (94ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (23ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (108ms)
+		LoadAssemblies (146ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (502ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (250ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (182ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3751.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 2.195800 ms (FindLiveObjects: 0.220100 ms CreateObjectMapping: 0.042900 ms MarkObjects: 1.898700 ms  DeleteObjects: 0.033300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.238 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.518 seconds
+Domain Reload Profiling: 755ms
+	BeginReloadAssembly (88ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (109ms)
+		LoadAssemblies (144ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (7ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (518ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (263ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (192ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3754.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 2.327100 ms (FindLiveObjects: 0.269800 ms CreateObjectMapping: 0.045400 ms MarkObjects: 1.978500 ms  DeleteObjects: 0.032600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.245 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.510 seconds
+Domain Reload Profiling: 754ms
+	BeginReloadAssembly (93ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (109ms)
+		LoadAssemblies (146ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (510ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (260ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (192ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3757.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 2.022500 ms (FindLiveObjects: 0.217000 ms CreateObjectMapping: 0.042600 ms MarkObjects: 1.727300 ms  DeleteObjects: 0.034800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.241 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.502 seconds
+Domain Reload Profiling: 742ms
+	BeginReloadAssembly (95ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (23ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (106ms)
+		LoadAssemblies (147ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (502ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (248ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (180ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 2.07 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3760.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 3.175400 ms (FindLiveObjects: 0.430600 ms CreateObjectMapping: 0.088900 ms MarkObjects: 2.604000 ms  DeleteObjects: 0.050400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.234 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.512 seconds
+Domain Reload Profiling: 745ms
+	BeginReloadAssembly (87ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (106ms)
+		LoadAssemblies (142ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (7ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (512ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (258ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (33ms)
+			ProcessInitializeOnLoadAttributes (190ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 2.42 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3763.
+Memory consumption went from 135.1 MB to 135.1 MB.
+Total: 2.296600 ms (FindLiveObjects: 0.384300 ms CreateObjectMapping: 0.089600 ms MarkObjects: 1.784200 ms  DeleteObjects: 0.037800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 91d551740f01075dc4c29c897d832b1d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.248 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.555 seconds
+Domain Reload Profiling: 803ms
+	BeginReloadAssembly (91ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (117ms)
+		LoadAssemblies (148ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (4ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (555ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (270ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (37ms)
+			ProcessInitializeOnLoadAttributes (196ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.59 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3146 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 15 unused Assets / (29.2 KB). Loaded Objects now: 3765.
+Memory consumption went from 135.1 MB to 135.1 MB.
+Total: 2.864300 ms (FindLiveObjects: 0.369500 ms CreateObjectMapping: 0.078400 ms MarkObjects: 2.378800 ms  DeleteObjects: 0.036300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: c0208622db6eaceb08020ef308a3e502 -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.243 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.563 seconds
+Domain Reload Profiling: 806ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (114ms)
+		LoadAssemblies (144ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (4ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (564ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (273ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (36ms)
+			ProcessInitializeOnLoadAttributes (198ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 2.13 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3146 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.8 KB). Loaded Objects now: 3768.
+Memory consumption went from 135.1 MB to 135.1 MB.
+Total: 2.039600 ms (FindLiveObjects: 0.190000 ms CreateObjectMapping: 0.042900 ms MarkObjects: 1.772000 ms  DeleteObjects: 0.034100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/Spawner.cs: 9efe634af024a91c48e4938ac319cf23 -> 7de732fab2c49f3068a483eb669d8d17
+  custom:scripting/monoscript/fileName/Button_Effect.cs: 84e3e8157941c5020b70fff01c8767e3 -> 0a199b6c77979aee2d9343deff5a0a8b
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:scripting/monoscript/fileName/Audio_Manager.cs: 11d5381a5c05a8c592f4f7070c492ad3 -> fc54a5438917fef1a3b2377105a7181c
+  custom:scripting/monoscript/fileName/GameManager.cs: d221351957f9a7f1d27c1f2e692a7402 -> c7747d8256410b05499ff8cb111468bb
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/Player_Camera.cs: 6f5454fbf1fc6d929980352922c41aea -> 688c0edb43c0fa56927fde9f73bbb423
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:scripting/monoscript/fileName/PoolManager.cs: 8b346609f3f77741d22e3a3ec193f421 -> 08c0f6566ed2f379139fb7dd44562010
+  custom:scripting/monoscript/fileName/Monster_Spawn_Data.cs: 87036510e7eb4c8782997af166592500 -> 251bf9cf028fef632d60188f33de4e8a
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:scripting/monoscript/fileName/Base_Chartacter_Essential_Funtion.cs: 11c396baf669628d80328ab4d35d0e34 -> a33fad8d28634a6d42d91b56449ee9c4
+  custom:scripting/monoscript/fileName/Monster_Attack.cs: ce9ca46614dd24a3b80fb75e6db3b6e7 -> fc45dcf514b51ae9f3d9d12b7a3c6a90
+  custom:scripting/monoscript/fileName/Enumy_Monster.cs: f916c89eb1fd5979c49f797b3e2a931e -> 67021779a294efeda66914c785786452
+  custom:scripting/monoscript/fileName/Player_Scaner.cs: 965362471842c139ee96ae1e6aaa0b5a -> d3a841facc18b8416138c0f78a3a4ccf
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:scripting/monoscript/fileName/Player_Statas_HUD.cs: eeac20ea34c8155946ab10b216370143 -> d20717a70be89a8a26305266413527ae
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/Game_UI_System.cs: 84e3395024d08c3076999ae5cda8d634 -> f7b2fe171062bc2f72a45d18cf13c008
+  custom:scripting/monoscript/fileName/GUI_Damage_Text.cs: c0bf174432ddf2dd0585353973121d37 -> 659f309047211c2a2d0ed9e45016b72b
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: 48ff13ede6c310cc0acf4a30e818a1de -> a4f5918e799041ba1f6608f13912eb8b
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/GUD_Funtion.cs: 7f300267b386322e04069b230ab7f432 -> b5a51c38cf4358b0bd0b85e1c71ea866
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/Player.cs: 5bb3fdd25abedb90511c7231fb5a2164 -> 007e2e63cbf915a2b71612a7f593548a
+  custom:scripting/monoscript/fileName/Button_Effect_3X.cs: 953b870218e14dab7aeeb7b3f9b642ca -> b25af2da0f67b7531cd8aab916fecd12
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 879a47d4109ec35a37a3eaba1c7d128d -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.248 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.571 seconds
+Domain Reload Profiling: 818ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (18ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (119ms)
+		LoadAssemblies (148ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (4ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (571ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (271ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (195ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3146 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.7 KB). Loaded Objects now: 3771.
+Memory consumption went from 135.1 MB to 135.1 MB.
+Total: 1.902100 ms (FindLiveObjects: 0.221900 ms CreateObjectMapping: 0.048800 ms MarkObjects: 1.599500 ms  DeleteObjects: 0.031000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/Spawner.cs: 9efe634af024a91c48e4938ac319cf23 -> 7de732fab2c49f3068a483eb669d8d17
+  custom:scripting/monoscript/fileName/Button_Effect.cs: 84e3e8157941c5020b70fff01c8767e3 -> 0a199b6c77979aee2d9343deff5a0a8b
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:scripting/monoscript/fileName/Audio_Manager.cs: 11d5381a5c05a8c592f4f7070c492ad3 -> fc54a5438917fef1a3b2377105a7181c
+  custom:scripting/monoscript/fileName/GameManager.cs: d221351957f9a7f1d27c1f2e692a7402 -> c7747d8256410b05499ff8cb111468bb
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/Player_Camera.cs: 6f5454fbf1fc6d929980352922c41aea -> 688c0edb43c0fa56927fde9f73bbb423
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:scripting/monoscript/fileName/PoolManager.cs: 8b346609f3f77741d22e3a3ec193f421 -> 08c0f6566ed2f379139fb7dd44562010
+  custom:scripting/monoscript/fileName/Monster_Spawn_Data.cs: 87036510e7eb4c8782997af166592500 -> 251bf9cf028fef632d60188f33de4e8a
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:scripting/monoscript/fileName/Base_Chartacter_Essential_Funtion.cs: 11c396baf669628d80328ab4d35d0e34 -> a33fad8d28634a6d42d91b56449ee9c4
+  custom:scripting/monoscript/fileName/Monster_Attack.cs: ce9ca46614dd24a3b80fb75e6db3b6e7 -> fc45dcf514b51ae9f3d9d12b7a3c6a90
+  custom:scripting/monoscript/fileName/Enumy_Monster.cs: f916c89eb1fd5979c49f797b3e2a931e -> 67021779a294efeda66914c785786452
+  custom:scripting/monoscript/fileName/Player_Scaner.cs: 965362471842c139ee96ae1e6aaa0b5a -> d3a841facc18b8416138c0f78a3a4ccf
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:scripting/monoscript/fileName/Player_Statas_HUD.cs: eeac20ea34c8155946ab10b216370143 -> d20717a70be89a8a26305266413527ae
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/Game_UI_System.cs: 84e3395024d08c3076999ae5cda8d634 -> f7b2fe171062bc2f72a45d18cf13c008
+  custom:scripting/monoscript/fileName/GUI_Damage_Text.cs: c0bf174432ddf2dd0585353973121d37 -> 659f309047211c2a2d0ed9e45016b72b
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: 48ff13ede6c310cc0acf4a30e818a1de -> a4f5918e799041ba1f6608f13912eb8b
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/GUD_Funtion.cs: 7f300267b386322e04069b230ab7f432 -> b5a51c38cf4358b0bd0b85e1c71ea866
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/Player.cs: 5bb3fdd25abedb90511c7231fb5a2164 -> 007e2e63cbf915a2b71612a7f593548a
+  custom:scripting/monoscript/fileName/Button_Effect_3X.cs: 953b870218e14dab7aeeb7b3f9b642ca -> b25af2da0f67b7531cd8aab916fecd12
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: c0208622db6eaceb08020ef308a3e502 -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.247 seconds
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.580 seconds
+Domain Reload Profiling: 826ms
+	BeginReloadAssembly (90ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (114ms)
+		LoadAssemblies (146ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (4ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (580ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (271ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (35ms)
+			ProcessInitializeOnLoadAttributes (201ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
+			AfterProcessingInitializeOnLoad (3ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.62 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3146 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.6 KB). Loaded Objects now: 3774.
+Memory consumption went from 135.1 MB to 135.1 MB.
+Total: 2.403600 ms (FindLiveObjects: 0.314400 ms CreateObjectMapping: 0.070900 ms MarkObjects: 1.971700 ms  DeleteObjects: 0.045800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/Spawner.cs: d4ecfa4bcf47f6dc773f0e956dfcf598 -> 7de732fab2c49f3068a483eb669d8d17
+  custom:scripting/monoscript/fileName/Button_Effect.cs: 52e6ed3089275be5a56e2092432bafb8 -> 0a199b6c77979aee2d9343deff5a0a8b
+  custom:scripting/monoscript/fileName/ParticleSystemController.cs: 11736399c9bbd8b427c50134f214156a -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/DynamicTextManager.cs: f257aa35cbf3cc60f07f9c46a8a949ae -> 
+  custom:scripting/monoscript/fileName/Teleport.cs: d76c8cd51541450898caab871d03584c -> 
+  custom:scripting/monoscript/fileName/Audio_Manager.cs: ef6e1ff522bfd819fda6cc8d52e0f769 -> fc54a5438917fef1a3b2377105a7181c
+  custom:scripting/monoscript/fileName/GameManager.cs: c0e51af95e36e81848fa1b1b5edede6d -> c7747d8256410b05499ff8cb111468bb
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponent.cs: 5b2b4fded2fc55ae7f6d6ea73a9f4a86 -> 
+  custom:scripting/monoscript/fileName/ProjectileMoveScript.cs: 24d7c5d269caf39147fdfcab39851628 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/Slashes_MobileBloom.cs: d4abdc6a78e6330646d0b4d673e7aaa3 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/Player_Camera.cs: 6b80e62284b208c9219ff91c2612b17f -> 688c0edb43c0fa56927fde9f73bbb423
+  custom:scripting/monoscript/fileName/DynamicTextDataEditor.cs: 00f7740d7c3469986faae3c6d8196ca1 -> 
+  custom:scripting/monoscript/fileName/PoolManager.cs: 4c1cf1031aee3f3460dc0f42137edcd4 -> 08c0f6566ed2f379139fb7dd44562010
+  custom:scripting/monoscript/fileName/Monster_Spawn_Data.cs: 0c2579fcdda1929059ea084facb81eda -> 251bf9cf028fef632d60188f33de4e8a
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/AnimToolkitLib.cs: 1bdf2caa097687d6adfd54f90eee42e1 -> 
+  custom:scripting/monoscript/fileName/Base_Chartacter_Essential_Funtion.cs: 6ae570160aca1c8018478bf1631db4a0 -> a33fad8d28634a6d42d91b56449ee9c4
+  custom:scripting/monoscript/fileName/Monster_Attack.cs: dfb7c4db78f1d1a037f6652792175018 -> fc45dcf514b51ae9f3d9d12b7a3c6a90
+  custom:scripting/monoscript/fileName/Enumy_Monster.cs: 9d644f88b83b53010cfc0254447f5f4e -> 67021779a294efeda66914c785786452
+  custom:scripting/monoscript/fileName/Player_Scaner.cs: cf962ec21f09a959ff10c9a786cde5c0 -> d3a841facc18b8416138c0f78a3a4ccf
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Billboard.cs: 63718781f6e53fffc8020eb125684fb4 -> 
+  custom:scripting/monoscript/fileName/OKAnimations.cs: ca12fd5682bd05a28da83ad5ebd0efb6 -> 
+  custom:scripting/monoscript/fileName/DynamicText.cs: 859177bf62761a3189db4718b3323b01 -> 
+  custom:scripting/monoscript/fileName/OKStatic.cs: 95ab2cdcd83b0aaeb9ceb3942b931bb8 -> 
+  custom:scripting/monoscript/fileName/AnimationEventEffects.cs: 72802a78e57370543f4199f2050e5d19 -> 
+  custom:scripting/monoscript/fileName/Slash_WroomWroom.cs: 80b145f12ed9ec1a5061bb719ad4ec22 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemControllerEditor.cs: 879cf83ee5f371dd46af28e6e8d5d035 -> 
+  custom:scripting/monoscript/fileName/CoreAnimComponentEditor.cs: 6f8f8975990f22aa64dd4f3a4d44acf2 -> 
+  custom:scripting/monoscript/fileName/Player_Statas_HUD.cs: d0719e0d554bb0dbd262cfcdd35493ea -> d20717a70be89a8a26305266413527ae
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/Game_UI_System.cs: f289d9ed23a12895bd6b83dcd9512752 -> f7b2fe171062bc2f72a45d18cf13c008
+  custom:scripting/monoscript/fileName/GUI_Damage_Text.cs: 839cc0d90c590c0cfc71f4beb7b2ef2c -> 659f309047211c2a2d0ed9e45016b72b
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Slash_MouseOrbit.cs: cc349e00b39701108dbe351861bef1fe -> 
+  custom:scripting/monoscript/fileName/DynamicTextData.cs: a1b66b03a2e42ee6cd30018a06c52bfd -> 
+  custom:scripting/monoscript/fileName/ToggleSample.cs: 5fb483f5d1c8990c50224c5f638da0c3 -> 
+  custom:scripting/monoscript/fileName/Slash_GrvityPoint.cs: f23fc1cbee2a92bea9716192c7263b69 -> 
+  custom:scripting/monoscript/fileName/Enemy.cs: 13cc614454c9ae28caa24456faa3d7cf -> 
+  custom:scripting/monoscript/fileName/Serializables.cs: 88199d811dee86bd3d5199094c68fff4 -> 
+  custom:scripting/monoscript/fileName/SaveParticleSystemScript.cs: 2063b1b3998909fedaafc33082f13d41 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/CameraShakeSimpleScript.cs: 9e6cf9d2f5868197e963012155f99f5b -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/RotateToMouseScript.cs: 4f41f2796a41958d10418df337ef13c9 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: 8a4c6cde67dc77cce90b30d03ab59176 -> a4f5918e799041ba1f6608f13912eb8b
+  custom:scripting/monoscript/fileName/Slash_AxisRotateByTime.cs: 789a629534d815217a83567e4cb48582 -> 
+  custom:scripting/monoscript/fileName/OKEditor.cs: 3e2be377b04f3a24fb69c8816bfab316 -> 
+  custom:scripting/monoscript/fileName/GUD_Funtion.cs: 56f0a686232455cf35b3efb1d23b9b50 -> b5a51c38cf4358b0bd0b85e1c71ea866
+  custom:scripting/monoscript/fileName/Slash_UIEffectList.cs: ad56293b70d0dc140e7a074412d8df38 -> 
+  custom:scripting/monoscript/fileName/SpawnProjectilesScript.cs: 1a76547e2609106d837c5a5ce55f4255 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/Player.cs: bc93839d4287b661df4f3f838d90e183 -> 007e2e63cbf915a2b71612a7f593548a
+  custom:scripting/monoscript/fileName/Button_Effect_3X.cs: d055ff90f0918063487874286198636f -> b25af2da0f67b7531cd8aab916fecd12
+  custom:scripting/monoscript/fileName/OKUnit.cs: e94ffbe087b0e2afdcee66d9eb5569bb -> 
+  custom:scripting/monoscript/fileName/TargetAimData.cs: 7c9a1e10261c721b424a722593a2e3a9 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/DynamicText2D.cs: 7d2384539c43f94ac49785e5aa4b88a2 -> 
+  custom:scripting/monoscript/fileName/Slash_DemoGUI.cs: 6cbfeae091b7cc7dfee82c6f7b087a38 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: f340101a702ed0b6c169ff16de7012ff -> 663c9315efe453c7e88c9517f187a971
+  custom:scripting/monoscript/fileName/Slash_Light.cs: d178308e7c1be5495e57343dc2f32c74 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> 2285d221dac401165f99c54fb3ba5957
+========================================================================
+Received Import Request.
+  Time since last request: 460.793448 seconds.
+  path: Assets/Map/Palmov Island/Low Poly Atmospheric Locations Pack/Models/Plants/Cacti/cactus 2.fbx
+  artifactKey: Guid(991e2fdffaf020346badb0ec58488825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map/Palmov Island/Low Poly Atmospheric Locations Pack/Models/Plants/Cacti/cactus 2.fbx using Guid(991e2fdffaf020346badb0ec58488825) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b2559643752e4e9f3190166fb3210845') in 0.082245 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 1.260015 seconds.
+  path: Assets/Map/Palmov Island/Low Poly Atmospheric Locations Pack/Models/Plants/Grass brown/grass brown 2.fbx
+  artifactKey: Guid(5494c0e6f333f244eaeae25385e9404e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map/Palmov Island/Low Poly Atmospheric Locations Pack/Models/Plants/Grass brown/grass brown 2.fbx using Guid(5494c0e6f333f244eaeae25385e9404e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f1524c13935bc1fcedc2f1a156d40099') in 0.012606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Map/Palmov Island/Low Poly Atmospheric Locations Pack/Models/Plants/Grass brown/grass brown 3.fbx
+  artifactKey: Guid(4f0ce275b1f5723478fac88c52ec3206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map/Palmov Island/Low Poly Atmospheric Locations Pack/Models/Plants/Grass brown/grass brown 3.fbx using Guid(4f0ce275b1f5723478fac88c52ec3206) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b6d49d08caf1197b44f9f37b56be0532') in 0.012014 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 9.804558 seconds.
+  path: Assets/Map/Palmov Island/Low Poly Atmospheric Locations Pack/Models/Stones/Stones flat brown/stone flat brown 3.fbx
+  artifactKey: Guid(7744c51ede6799f43b3278f692742331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Map/Palmov Island/Low Poly Atmospheric Locations Pack/Models/Stones/Stones flat brown/stone flat brown 3.fbx using Guid(7744c51ede6799f43b3278f692742331) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '816fabc9380c7de611902a5588d28e1a') in 0.021846 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 52.469206 seconds.
+  path: Assets/Particle/GabrielAguiarProductions/Unique_Projectiles_Volume_2/Materials/UniqueProjectilesVol2_Add_10x10_8K.mat
+  artifactKey: Guid(cdaf8230cf63e564588ddac3ef58c964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Particle/GabrielAguiarProductions/Unique_Projectiles_Volume_2/Materials/UniqueProjectilesVol2_Add_10x10_8K.mat using Guid(cdaf8230cf63e564588ddac3ef58c964) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '63b813a512304a62130842f3ecbaa7e9') in 0.074060 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
