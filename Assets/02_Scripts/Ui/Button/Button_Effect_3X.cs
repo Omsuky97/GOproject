@@ -46,7 +46,7 @@ public class Button_Effect_3X : MonoBehaviour, IPointerDownHandler
     {
         Vector3 parentWorldPos = parentButton.transform.position;
 
-        for (int i = 0; i < buttons.Length; i++)
+        for (int i = buttons.Length - 1; i >= 0; i--) // 3 → 2 → 1 순서
         {
             buttons[i].gameObject.SetActive(true);
             RectTransform rt = buttons[i].GetComponent<RectTransform>();
@@ -68,34 +68,39 @@ public class Button_Effect_3X : MonoBehaviour, IPointerDownHandler
         for (int i = 0; i < buttons.Length; i++)
         {
             RectTransform rt = buttons[i].GetComponent<RectTransform>();
-            StartCoroutine(MoveButton(rt, parentWorldPos, i));
+            StartCoroutine(MoveButton(rt, parentWorldPos, i, true)); // hideAfterMove = true
         }
 
-        yield return new WaitForSeconds(0.3f); // 모든 버튼이 이동할 시간을 확보한 후 비활성화
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].gameObject.SetActive(false);
-        }
+        yield return null; // 기다릴 필요 없음 (각 버튼이 알아서 비활성화됨)
     }
 
-    private IEnumerator MoveButton(RectTransform rt, Vector3 targetPos, int index)
+    private IEnumerator MoveButton(RectTransform rt, Vector3 targetPos, int index, bool hideAfterMove = false)
     {
         if (isMoving[index]) yield break; // 이동 중이면 중복 실행 방지
         isMoving[index] = true;
 
-        float elapsedTime = 0f;
-        float duration = 0.3f; // 이동 시간
+        float duration = 0.3f; // 전체 이동 시간
+        float elapsedTime = 0f; // 경과 시간
 
         Vector3 startPos = rt.position;
 
         while (elapsedTime < duration)
         {
-            rt.position = Vector3.Lerp(startPos, targetPos, elapsedTime / duration);
+            float t = elapsedTime / duration;
+            t = t * (2 - t); // EaseOutQuad 적용 (빠르게 시작하고 천천히 멈춤)
+
+            rt.position = Vector3.Lerp(startPos, targetPos, t);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        rt.position = targetPos;
+        rt.position = targetPos; // 최종 위치 보정
         isMoving[index] = false;
+
+        // 숨겨야 하는 경우 자동으로 비활성화
+        if (hideAfterMove)
+        {
+            rt.gameObject.SetActive(false);
+        }
     }
 }
