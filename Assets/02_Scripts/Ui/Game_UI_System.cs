@@ -16,16 +16,26 @@ public class Game_UI_System : MonoBehaviour
     public GameObject draw_menu;
     private bool draw_paused = false; // UI 상태 추적
 
+    [Header("## -- Game_Relic -- ##")]
+    public GameObject Relic_Gacha_UI;
+    public GameObject Relic_View;
+    public GameObject Relic_Gacha;
+
+
+    private void Awake()
+    {
+        Relic_Gacha_UI.SetActive(false);
+    }
     //[Header("## -- GUI_Anim -- ##")]
 
 
-//    void Update()
-//    {
-//        if (Input.GetButtonDown("Game_Menu_Stop"))
-//        {
-//            Game_Menu();
-//        }
-//    }
+    //    void Update()
+    //    {
+    //        if (Input.GetButtonDown("Game_Menu_Stop"))
+    //        {
+    //            Game_Menu();
+    //        }
+    //    }
     public void Game_Menu()
     {
         if (menu_ui_paused) menu_ui_paused = false;
@@ -51,5 +61,24 @@ public class Game_UI_System : MonoBehaviour
     {
         draw_paused = false;
         draw_menu.SetActive(draw_paused); // UI 활성화/비활성화
+    }
+    public void Open_Gacha()
+    {
+        Relic_Gacha_UI.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+    public void Open_Relic_Gacha()
+    {
+        Relic_Gacha.SetActive(true);
+        Relic_View.SetActive(false);
+    }
+    public void Open_Relic_View()
+    {
+        Relic_Gacha.SetActive(false);
+        Relic_View.SetActive(true);
+    }
+    public void Select_Relic()
+    {
+
     }
 }

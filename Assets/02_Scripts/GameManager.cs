@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [Header("## -- Player_Statas_List -- ##")]
     public float player_hp;
     public float player_max_hp;
-    public int bullet_damage;
+    public float bullet_damage;
     public int bullet_count;
     public float attack_delay;
     public int gold_count;
