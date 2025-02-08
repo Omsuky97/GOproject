@@ -20,7 +20,8 @@ public class Game_UI_System : MonoBehaviour
     public GameObject Relic_Gacha_UI;
     public GameObject Relic_View;
     public GameObject Relic_Gacha;
-
+    public Rellic_Slot Rellic_Slot;
+    public Relic_Item Relic_Item;
 
     private void Awake()
     {
@@ -77,8 +78,12 @@ public class Game_UI_System : MonoBehaviour
         Relic_Gacha.SetActive(false);
         Relic_View.SetActive(true);
     }
-    public void Select_Relic()
+    public void Select_Relic(Button clickedButton)
     {
-
+        Image buttonImage = clickedButton.GetComponentsInChildren<Image>()[2];
+        Button_Count button_number = clickedButton.GetComponentsInChildren<Button_Count>()[0];
+        Rellic_Slot.Button_Setting(buttonImage, Relic_Item.data_id[button_number.button_num]);
+        Relic_Gacha_UI.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }

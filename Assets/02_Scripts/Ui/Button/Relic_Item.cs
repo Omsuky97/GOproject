@@ -10,9 +10,9 @@ public class Relic_Item : MonoBehaviour
 {
     public List<Relic_Data> Relic = new List<Relic_Data>();
     public Relic_Data data;
-    public Relic_Data relic_id_num;
     public int level;
     public Image relic_icon;
+    public int[] data_id;
 
     public Button[] Select_Button;
 
@@ -40,6 +40,7 @@ public class Relic_Item : MonoBehaviour
             LoadImage(filePath);
             text_name.text = data.Relics_Name;
             text_desc.text = string.Format(data.item_desc);
+            data_id[i] = data.Relics_id;
 
             removedRelics.Add(data);
             randomRelics.Remove(data);
