@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player_Scaner : MonoBehaviour
@@ -68,7 +69,7 @@ public class Player_Scaner : MonoBehaviour
         Audio_Manager.instance.PlaySfx(Audio_Manager.SFX.atk);
         targetPos = nearestTarget.position;
         Vector3 bullet_dir = targetPos - Fire_Point.transform.position;
-        Transform bullet = GameManager.Instance.pool.Get(1).transform;
+        Transform bullet = GameManager.Instance.pool.Bullet_Get(0).transform;
         bullet.position = Fire_Point.transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, bullet_dir);
         // 총알의 현재 위치에서 이펙트 생성

@@ -10,6 +10,8 @@ using Lean.Gui;
 
 public class Game_UI_System : MonoBehaviour
 {
+    public float selectionTimeout = 30f; // 자동 선택 시간 (초)
+
     [Header("## -- Menu_UI -- ##")]
     public GameObject menu_back_gournd;
     public GameObject pause_menu;
@@ -30,6 +32,8 @@ public class Game_UI_System : MonoBehaviour
     public Equip rellic_equip;
 
     public GameObject Active_Equip_Relic_Explain;
+
+    private bool Relic_Gacha_UI_paused = false; // UI 상태 추적
 
     private void Awake()
     {
@@ -64,24 +68,34 @@ public class Game_UI_System : MonoBehaviour
     }
     public void Open_Gacha()
     {
-        Relic_Gacha_UI.SetActive(true);
-        Time.timeScale = 0.0f;
+        if (!Relic_Gacha_UI_paused)
+        {
+            Relic_Gacha_UI_paused = true;
+            Relic_Gacha_UI.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
     }
     public void Open_Relic_Gacha()
     {
-        Relic_Gacha.SetActive(true);
-        Relic_View.SetActive(false);
+        if (!Relic_Gacha_UI_paused)
+        {
+            Relic_Gacha.SetActive(true);
+            Relic_View.SetActive(false);
+        }
     }
     public void Open_Relic_View()
     {
-        Relic_Gacha.SetActive(false);
-        Relic_View.SetActive(true);
+        if (!Relic_Gacha_UI_paused)
+        {
+            Relic_Gacha.SetActive(false);
+            Relic_View.SetActive(true);
+        }
     }
     public void Select_Relic(Button clickedButton)
     {
         Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
         Button_Count button_number = clickedButton.GetComponentsInChildren<Button_Count>()[0];  //3개중 하나를 눌렀을 경우 값 전달 (0, 1, 2)
-        for(int button_count = 0; button_count < Rellic_Slot.slot_button.Length; button_count++)
+        for (int button_count = 0; button_count < Rellic_Slot.slot_button.Length; button_count++)
         {
             if (Rellic_Slot.non_relic_id[button_count] != 0 && (Relic_Item.data_id[button_number.button_num] == Rellic_Slot.non_relic_id[button_count]))
             {
@@ -99,16 +113,19 @@ public class Game_UI_System : MonoBehaviour
             }
         }
         Relic_Gacha_UI.SetActive(false);
+        Relic_Gacha_UI_paused = false;
         Time.timeScale = 1.0f;
     }
     public void Equip_Relic(LeanButton clickedButton)
     {
+        Relic_Gacha_UI_paused = true;
         Rellic_Slot_Count button_slot_num = clickedButton.GetComponentsInChildren<Rellic_Slot_Count>()[0];
         if (Rellic_Slot.non_relic_id[button_slot_num.slot_num] == 0) return;
         Active_Equip_Relic_Explain.SetActive(true);
         Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
         Equip_Relic_Explain.Equip_Relic_Explain_Panel(button_Image, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).Relics_Name, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).item_desc, Rellic_Slot.non_relic_id[button_slot_num.slot_num]);
         Relic_Gacha_UI.SetActive(false);
+        Relic_Gacha_UI_paused = false;
     }
     public void Btn_Equip(Button clickedButton)
     {
@@ -120,6 +137,7 @@ public class Game_UI_System : MonoBehaviour
         Equip_Relic_Explain equip_id_num = equip_id_nums[0]; // 가장 가까운 부모
         rellic_equip.Relic_Equip(equip_image, equip_id_num.relic_id_num);
         Active_Equip_Relic_Explain.SetActive(false);
+        Relic_Gacha_UI_paused = false;
     }
     public void Btn_Reset(Button clickedButton)
     {
@@ -131,5 +149,6 @@ public class Game_UI_System : MonoBehaviour
         Equip_Relic_Explain equip_id_num = equip_id_nums[0]; // 가장 가까운 부모
         rellic_equip.Relic_Equip(equip_image, equip_id_num.relic_id_num);
         Active_Equip_Relic_Explain.SetActive(false);
+        Relic_Gacha_UI_paused = false;
     }
 }

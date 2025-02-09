@@ -164,7 +164,8 @@ public class CSVDataReader : MonoBehaviour
     }
     void MonsterDataLoad()
     {
-        List<Dictionary<string, object>> data = CSVReader.Read(MonsterTbl); for (int i = 0; i < data.Count; i++)
+        List<Dictionary<string, object>> data = CSVReader.Read(MonsterTbl);
+        for (int i = 0; i < data.Count; i++)
         {
             MonsterData stData = new MonsterData();
             stData.id = int.Parse(data[i]["id"].ToString());

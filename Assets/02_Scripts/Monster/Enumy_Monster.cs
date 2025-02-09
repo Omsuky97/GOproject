@@ -115,7 +115,7 @@ public class Enumy_Monster : MonoBehaviour
         Moster_Id = data.id;
         Monster_MoveSpeed = data.MonsterMoveSpeed;
         Monster_MaxHp = data.MonsterMaxHp;
-        Monster_Atk = data.MonsterAtk;     
+        Monster_Atk = data.MonsterAtk;
         Monster_Def = data.MonsterDef;
         Monster_Goid = data.MonsterGoid;
         Monster_AtkType = data.MonsterAtkType;
@@ -129,7 +129,6 @@ public class Enumy_Monster : MonoBehaviour
         monster_run = true;
         monster_attack = false;
 
-        // 플레이어의 Rigidbody 참조 (필요에 따라 수정)
         targe_rigid = GameManager.Instance.player.GetComponent<Rigidbody>();
 
         // 애니메이터 초기화 (필요하다면)
@@ -173,7 +172,6 @@ public class Enumy_Monster : MonoBehaviour
         {
             string type_name = "Monster";
             if(Monster_Hp > 0) StartCoroutine(BlinkEffect());
-            other.gameObject.SetActive(false);
             float hit_damage = other.gameObject.GetComponent<Bullet>().damage;
             Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
             Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name);

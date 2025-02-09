@@ -23,7 +23,7 @@ public class PoolManager : MonoBehaviour
     // 기존의 Get(int index) 메서드 유지 (총알 등에서 사용)
    
 
-    public GameObject Get(int index)
+    public GameObject Bullet_Get(int index)
     {
         GameObject select = null;
 

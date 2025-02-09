@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e553b3a24b7b14ba67b84bb243b8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectionTimeout: 30
   menu_back_gournd: {fileID: 0}
   pause_menu: {fileID: 0}
   draw_menu: {fileID: 0}
@@ -394,6 +395,10 @@ MonoBehaviour:
   Relic_Gacha: {fileID: 1197046973}
   Rellic_Slot: {fileID: 891989092}
   Relic_Item: {fileID: 1826643034}
+  Equip_Relic_Explain: {fileID: 1747279667}
+  Relic_Manager: {fileID: 891989091}
+  rellic_equip: {fileID: 1959914654}
+  Active_Equip_Relic_Explain: {fileID: 851429279}
 --- !u!4 &478087785
 Transform:
   m_ObjectHideFlags: 0
@@ -686,163 +691,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa5d73025dced142b695829bd63aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: []
+  spawnPoint:
+  - {fileID: 863838711}
+  - {fileID: 496045582}
+  - {fileID: 611217675}
+  - {fileID: 1353361734}
+  - {fileID: 1551241791}
+  - {fileID: 1690795652}
+  - {fileID: 1075455454}
+  - {fileID: 1407752439}
+  - {fileID: 566442318}
+  - {fileID: 1969889895}
+  - {fileID: 2028466393}
+  - {fileID: 1701545400}
+  - {fileID: 2040635961}
+  - {fileID: 1836622771}
   spawnData:
-  - monster_type: 0
-    monster_speed: 3
-    monster_hp: 30
-    monster_max_hp: 30
-    monster_damage: 5
-  - monster_type: 0
-    monster_speed: 5
-    monster_hp: 600
-    monster_max_hp: 600
-    monster_damage: 5
-  - monster_type: 0
-    monster_speed: 6
-    monster_hp: 70
-    monster_max_hp: 70
-    monster_damage: 5
-  - monster_type: 0
-    monster_speed: 7
-    monster_hp: 100
-    monster_max_hp: 100
-    monster_damage: 2
-  - monster_type: 0
-    monster_speed: 8
-    monster_hp: 150
-    monster_max_hp: 150
-    monster_damage: 2
-  - monster_type: 0
-    monster_speed: 9
-    monster_hp: 200
-    monster_max_hp: 200
-    monster_damage: 3
-  - monster_type: 0
-    monster_speed: 10
-    monster_hp: 300
-    monster_max_hp: 300
-    monster_damage: 3
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 20
-    monster_max_hp: 20
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 2000
-    monster_max_hp: 2000
-    monster_damage: 200
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 2000
-    monster_max_hp: 2000
-    monster_damage: 200
+  - monsterId: 1001
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 1002
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 1001
+    spawnTime: 0
+    spawnCount: 0
+  - monsterId: 1002
+    spawnTime: 0
+    spawnCount: 0
+  dataReader: {fileID: 1948224929}
 --- !u!114 &702239724 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2339543515870702046, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
@@ -889,8 +847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 7432805483160588448, guid: 96d887848c12b0d4784b12a51bd8dcc4, type: 3}
   - {fileID: 1046377441548030, guid: d1776cbac3b88f945aa9092bc81a66da, type: 3}
+  - {fileID: 0}
 --- !u!4 &727185152
 Transform:
   m_ObjectHideFlags: 0
@@ -2619,6 +2577,10 @@ PrefabInstance:
     - target: {fileID: 1246572584101917943, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308261426764439082, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1310886093662233175, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5663,7 +5625,7 @@ MonoBehaviour:
   player_max_hp: 500
   bullet_damage: 20
   bullet_count: 1
-  attack_delay: 0.2
+  attack_delay: 0.5
   gold_count: 5
   hit_color_Image: {fileID: 0}
   hit_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -5692,8 +5654,58 @@ Transform:
   - {fileID: 891989090}
   - {fileID: 144218320}
   - {fileID: 1959914653}
+  - {fileID: 1948224928}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1948224927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948224928}
+  - component: {fileID: 1948224929}
+  m_Layer: 0
+  m_Name: Render_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1948224928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948224927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1945947571}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1948224929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948224927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a96921326283f54a96497eb21233863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RelicsTbl: {fileID: 4900000, guid: 3be800a551c259c4188fdd7f8b08e5cb, type: 3}
+  StageTbl: {fileID: 4900000, guid: 2a7f777b28c48584aab26e34014aa284, type: 3}
+  MonsterTbl: {fileID: 4900000, guid: 62df69e36f79d674982b550fb0673405, type: 3}
+  WaveTbl: {fileID: 4900000, guid: 40693a8af6b5ac5468669ec57da60dab, type: 3}
+  SummonTbl: {fileID: 4900000, guid: 563772d83d16c9d4581c2d2ecb558588, type: 3}
 --- !u!1 &1959914652
 GameObject:
   m_ObjectHideFlags: 0

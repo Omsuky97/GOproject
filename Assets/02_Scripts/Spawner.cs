@@ -45,34 +45,12 @@ public class Spawner : MonoBehaviour
         {
             // 프리팹 경로를 사용하여 오브젝트 생성
             GameObject enemy = GameManager.Instance.pool.Get(data.MonsterPrefabs);
-            if (enemy == null)
-            {
-                Debug.LogError($"몬스터를 생성할 수 없습니다. 프리팹 경로: {data.MonsterPrefabs}");
-                return;
-            }
-
-            // 위치 설정
-            if (spawnPoint != null && spawnPoint.Length > 1)
-            {
-                int index = Random.Range(1, spawnPoint.Length);
-                enemy.transform.position = spawnPoint[index].position;
-            }
-            else
-            {
-                Debug.LogError("스폰 포인트가 설정되어 있지 않습니다.");
-                return;
-            }
-
+            int index = Random.Range(1, spawnPoint.Length);
+            enemy.transform.position = spawnPoint[index].position;
             GameManager.Instance.spawn_count += 1;
-
-            // 몬스터 초기화
             enemy.GetComponent<Enumy_Monster>().Init(data);
 
             spawn_type = false;
-        }
-        else
-        {
-            Debug.LogError($"MonsterData를 찾을 수 없습니다. ID: {monsterId}");
         }
     }
 }
