@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[CreateAssetMenu(fileName = "RelicDatabase", menuName = "Scriptable Object/Relic Database")]
+public class RelicDatabase : ScriptableObject
+{
+    public List<Relic_Data> relicsList;  // 모든 Relic_Data 저장
+}
+
 [CreateAssetMenu(fileName = "Relic", menuName = "Scriptble Object/Relics_Data")]
 public class Relic_Data : ScriptableObject
 {
@@ -44,45 +50,4 @@ public class Relic_Data : ScriptableObject
     public string Bullet_Projec_tile;   //총알 투사체 파티클리소스 경로
     public string Bullet_Hit;           //총알 명중 파티클 리소스 경로
     public string Bullet_Muzzle;        //총알 발사 파티클 리소스 경로
-
-    public Relic_Data(Relic_Data relic)
-    {
-        this.Relics_id = relic.Relics_id;
-        this.Relics_Name = relic.Relics_Name;
-        this.Relics_Max_Lv = relic.Relics_Max_Lv;
-
-        this.Bullet_Pow_UP = relic.Bullet_Pow_UP;
-        this.Bullet_Pow_Down = relic.Bullet_Pow_Down;
-        this.Bullet_Fispeed_UP = relic.Bullet_Fispeed_UP;
-        this.Bullet_Fispeed_Down = relic.Bullet_Fispeed_Down;
-        this.Bullet_Size_Up = relic.Bullet_Size_Up;
-        this.Bullet_Size_Down = relic.Bullet_Size_Down;
-        this.Bullet_Pec_Up = relic.Bullet_Pec_Up;
-        this.Bullet_Pec_Down = relic.Bullet_Pec_Down;
-        this.Bullet_Buc_Up = relic.Bullet_Buc_Up;
-        this.Bullet_Buc_Down = relic.Bullet_Buc_Down;
-        this.Bullet_Noc_Up = relic.Bullet_Noc_Up;
-        this.Bullet_Split_Up = relic.Bullet_Split_Up;
-        this.Bullet_Multi_Shot_Up = relic.Bullet_Multi_Shot_Up;
-        this.Aiming_Range_Up = relic.Aiming_Range_Up;
-        this.Aiming_Range_Down = relic.Aiming_Range_Down;
-        this.Bullet_Speaker_Up = relic.Bullet_Speaker_Up;
-        this.Bullet_Return = relic.Bullet_Return;
-        this.Bullet_Sniping = relic.Bullet_Sniping;
-        this.Bullet_Gra_Speed = relic.Bullet_Gra_Speed;
-        this.Bullet_Bomb = relic.Bullet_Bomb;
-        this.Bullet_Idt = relic.Bullet_Idt;
-        this.Bullet_Effec_Tg = relic.Bullet_Effec_Tg;
-        this.Summons_ld = relic.Summons_ld;
-
-        this.Bullet_Projec_tile = relic.Bullet_Projec_tile;
-        this.Bullet_Hit = relic.Bullet_Hit;
-        this.Bullet_Muzzle = relic.Bullet_Muzzle;
-        this.Relic_lcon = relic.Relic_lcon;
-    }
-
-    public void Bullet_Power_Up()
-    {
-        GameManager.Instance.bullet_damage = Bullet_Pow_UP[Relics_Lv];
-    }
 }

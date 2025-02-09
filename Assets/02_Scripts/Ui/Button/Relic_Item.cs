@@ -24,9 +24,14 @@ public class Relic_Item : MonoBehaviour
 
     private void OnEnable()
     {
+        Relic_Gacha();
+    }
+
+    public void Relic_Gacha()
+    {
         List<Relic_Data> randomRelics = GetRandomRelics(3); // 3개 선택
         List<Relic_Data> removedRelics = new List<Relic_Data>(); // 삭제된 데이터를 저장할 리스트
-        for (int i = 0;  i < Relic.Count; i++)
+        for (int i = 0; i < Relic.Count; i++)
         {
             data = GetRandomFromList(randomRelics);
             relic_icon = Select_Button[i].GetComponentsInChildren<Image>()[2];
@@ -48,6 +53,7 @@ public class Relic_Item : MonoBehaviour
         // **삭제된 3개 복구**
         randomRelics.AddRange(removedRelics);
     }
+
     private void LoadImage(string filePath)
     {
         byte[] fileData = File.ReadAllBytes(filePath); // 파일 데이터를 바이트 배열로 읽음
