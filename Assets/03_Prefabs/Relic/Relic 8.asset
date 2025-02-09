@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Relic 8
   m_EditorClassIdentifier: 
   Relics_id: 1
-  Relics_Name: "\uAD00\uD1B5"
+  Relics_Name: "\uCD95\uC18C"
   Relics_Lv: 1
   Relics_Max_Lv: 5
-  item_desc: "\uD0C4\uD658\uC774  1\uD68C \uAD00\uD1B5\uD569\uB2C8\uB2E4"
+  item_desc: "\uD0C4\uD658 \uD06C\uAE30 "
   Relic_lcon: RelicsIcon9
   Bullet_Pow_UP:
   - 0
@@ -31,11 +31,11 @@ MonoBehaviour:
   - 0
   - 0
   Bullet_Fispeed_UP:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.25
+  - 0.5
+  - 0.75
+  - 1
+  - 1.25
   Bullet_Fispeed_Down:
   - 0
   - 0
@@ -43,11 +43,11 @@ MonoBehaviour:
   - 0
   - 0
   Bullet_Move_Speed_Up:
-  - 0.1
-  - 0.2
-  - 0.3
-  - 0.4
-  - 0.5
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   Bullet_Move_Speed_Down:
   - 0
   - 0
@@ -61,12 +61,12 @@ MonoBehaviour:
   - 0
   - 0
   Bullet_Size_Down:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  Bullet_Pec_Up: 0100000002000000030000000400000005000000
+  - 0.3
+  - 0.35
+  - 0.4
+  - 0.45
+  - 0.5
+  Bullet_Pec_Up: 0000000000000000000000000000000000000000
   Bullet_Pec_Down: 0000000000000000000000000000000000000000
   Bullet_Buc_Up: 0000000000000000000000000000000000000000
   Bullet_Buc_Down: 0000000000000000000000000000000000000000
@@ -96,6 +96,7 @@ MonoBehaviour:
   Bullet_Gra_Speed: 0
   Bullet_Bomb: 0
   Bullet_Idt: 0
+  Bullet_Noc: 0
   Bullet_Effec_Tg: 
   Summons_ld: 
   Bullet_Projec_tile: 
