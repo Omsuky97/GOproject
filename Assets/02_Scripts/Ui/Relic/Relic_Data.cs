@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[CreateAssetMenu(fileName = "RelicDatabase", menuName = "Scriptable Object/Relic Database")]
+public class RelicDatabase : ScriptableObject
+{
+    public List<Relic_Data> relicsList;  // 모든 Relic_Data 저장
+}
+
 [CreateAssetMenu(fileName = "Relic", menuName = "Scriptble Object/Relics_Data")]
 public class Relic_Data : ScriptableObject
 {

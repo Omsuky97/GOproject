@@ -4,6 +4,9 @@ using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using JetBrains.Annotations;
+using static UnityEngine.GraphicsBuffer;
+using Lean.Gui;
 
 public class Game_UI_System : MonoBehaviour
 {
@@ -22,21 +25,13 @@ public class Game_UI_System : MonoBehaviour
     public GameObject Relic_Gacha;
     public Rellic_Slot Rellic_Slot;
     public Relic_Item Relic_Item;
+    public Equip_Relic_Explain Equip_Relic_Explain;
+    public Relic_Manager Relic_Manager;
 
     private void Awake()
     {
         Relic_Gacha_UI.SetActive(false);
     }
-    //[Header("## -- GUI_Anim -- ##")]
-
-
-    //    void Update()
-    //    {
-    //        if (Input.GetButtonDown("Game_Menu_Stop"))
-    //        {
-    //            Game_Menu();
-    //        }
-    //    }
     public void Game_Menu()
     {
         if (menu_ui_paused) menu_ui_paused = false;
@@ -80,9 +75,17 @@ public class Game_UI_System : MonoBehaviour
     }
     public void Select_Relic(Button clickedButton)
     {
-        Image buttonImage = clickedButton.GetComponentsInChildren<Image>()[2];
+        Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
         Button_Count button_number = clickedButton.GetComponentsInChildren<Button_Count>()[0];
-        Rellic_Slot.Button_Setting(buttonImage, Relic_Item.data_id[button_number.button_num]);
+        Rellic_Slot.Button_Setting(button_Image, Relic_Item.data_id[button_number.button_num]);
+        Relic_Gacha_UI.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+    public void Equip_Relic(LeanButton clickedButton)
+    {
+        Rellic_Slot_Count button_slot_num = clickedButton.GetComponentsInChildren<Rellic_Slot_Count>()[0];
+        Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
+        Equip_Relic_Explain.Equip_Relic_Explain_Panel(button_Image, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).Relics_Name, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).item_desc);
         Relic_Gacha_UI.SetActive(false);
         Time.timeScale = 1.0f;
     }
