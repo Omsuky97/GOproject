@@ -80,8 +80,24 @@ public class Game_UI_System : MonoBehaviour
     public void Select_Relic(Button clickedButton)
     {
         Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
-        Button_Count button_number = clickedButton.GetComponentsInChildren<Button_Count>()[0];
-        Rellic_Slot.Button_Setting(button_Image, Relic_Item.data_id[button_number.button_num]);
+        Button_Count button_number = clickedButton.GetComponentsInChildren<Button_Count>()[0];  //3개중 하나를 눌렀을 경우 값 전달 (0, 1, 2)
+        for(int button_count = 0; button_count < Rellic_Slot.slot_button.Length; button_count++)
+        {
+            if (Rellic_Slot.non_relic_id[button_count] != 0 && (Relic_Item.data_id[button_number.button_num] == Rellic_Slot.non_relic_id[button_count]))
+            {
+                int level = Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_count]).Relics_Lv;
+                if (level >= 1 && level < 5)
+                {
+                    Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_count]).Relics_Lv += 1;
+                    break;
+                }
+            }
+            else if (Rellic_Slot.non_relic_id[button_count] == 0)
+            {
+                Rellic_Slot.Button_Setting(button_Image, Relic_Item.data_id[button_number.button_num]);
+                break;
+            }
+        }
         Relic_Gacha_UI.SetActive(false);
         Time.timeScale = 1.0f;
     }
@@ -95,6 +111,17 @@ public class Game_UI_System : MonoBehaviour
         Relic_Gacha_UI.SetActive(false);
     }
     public void Btn_Equip(Button clickedButton)
+    {
+        Transform parentTransform = clickedButton.transform.parent;
+        // 부모의 자식들 중 "main_Image"를 이름으로 검색
+        Transform mainImageTransform = parentTransform.Find("main_Image_Tile");
+        Image equip_image = mainImageTransform.GetComponentsInChildren<Image>()[1];
+        Equip_Relic_Explain[] equip_id_nums = clickedButton.GetComponentsInParent<Equip_Relic_Explain>();
+        Equip_Relic_Explain equip_id_num = equip_id_nums[0]; // 가장 가까운 부모
+        rellic_equip.Relic_Equip(equip_image, equip_id_num.relic_id_num);
+        Active_Equip_Relic_Explain.SetActive(false);
+    }
+    public void Btn_Reset(Button clickedButton)
     {
         Transform parentTransform = clickedButton.transform.parent;
         // 부모의 자식들 중 "main_Image"를 이름으로 검색
