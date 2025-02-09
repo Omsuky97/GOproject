@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Relic_Data : ScriptableObject
 {
     [Header("## -- Relics -- ##")]
-    public int Relics_id;               //유물아이디
+    public short Relics_id;               //유물아이디
     public string Relics_Name;          //유물이름
     public int Relics_Lv;               //유물 레벨
     public int Relics_Max_Lv;           //유물 최대 레벨
@@ -45,7 +45,6 @@ public class Relic_Data : ScriptableObject
     public string Bullet_Hit;           //총알 명중 파티클 리소스 경로
     public string Bullet_Muzzle;        //총알 발사 파티클 리소스 경로
 
-    public int weight;
     public Relic_Data(Relic_Data relic)
     {
         this.Relics_id = relic.Relics_id;
