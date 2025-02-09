@@ -11,7 +11,7 @@ public class Monster_Attack : MonoBehaviour
 
     private void Start()
     {
-        monster_Attack_damage = monster.monster_damage;
+        monster_Attack_damage = monster.Monster_Atk;
     }
 
     private void OnTriggerEnter(Collider other)

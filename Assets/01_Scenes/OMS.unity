@@ -923,161 +923,100 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: []
   spawnData:
-  - monster_type: 0
-    monster_speed: 3
-    monster_hp: 30
-    monster_max_hp: 30
-    monster_damage: 5
-  - monster_type: 0
-    monster_speed: 5
-    monster_hp: 20
-    monster_max_hp: 20
-    monster_damage: 5
-  - monster_type: 0
-    monster_speed: 6
-    monster_hp: 70
-    monster_max_hp: 70
-    monster_damage: 5
-  - monster_type: 0
-    monster_speed: 7
-    monster_hp: 100
-    monster_max_hp: 100
-    monster_damage: 2
-  - monster_type: 0
-    monster_speed: 8
-    monster_hp: 150
-    monster_max_hp: 150
-    monster_damage: 2
-  - monster_type: 0
-    monster_speed: 9
-    monster_hp: 200
-    monster_max_hp: 200
-    monster_damage: 3
-  - monster_type: 0
-    monster_speed: 10
-    monster_hp: 300
-    monster_max_hp: 300
-    monster_damage: 3
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 400
-    monster_max_hp: 400
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 20
-    monster_max_hp: 20
-    monster_damage: 4
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 2000
-    monster_max_hp: 2000
-    monster_damage: 200
-  - monster_type: 0
-    monster_speed: 11
-    monster_hp: 2000
-    monster_max_hp: 2000
-    monster_damage: 200
+  - monsterId: 1002
+    spawnTime: 10
+    spawnCount: 20
+  - monsterId: 1002
+    spawnTime: 10
+    spawnCount: 50
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 100
+  - monsterId: 1002
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  - monsterId: 1001
+    spawnTime: 10
+    spawnCount: 10
+  dataReader: {fileID: 1547819365}
 --- !u!1 &691825504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,6 +2748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UItest
       objectReference: {fileID: 0}
+    - target: {fileID: 6646817546507442305, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6677829731068615077, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: moveSpeed
       value: 1
@@ -3722,6 +3665,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546139391}
   m_CullTransparentMesh: 1
+--- !u!1 &1547819364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547819366}
+  - component: {fileID: 1547819365}
+  m_Layer: 0
+  m_Name: CSVDataReader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1547819365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547819364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a96921326283f54a96497eb21233863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RelicsTbl: {fileID: 4900000, guid: 3be800a551c259c4188fdd7f8b08e5cb, type: 3}
+  StageTbl: {fileID: 4900000, guid: 2a7f777b28c48584aab26e34014aa284, type: 3}
+  MonsterTbl: {fileID: 4900000, guid: 62df69e36f79d674982b550fb0673405, type: 3}
+  WaveTbl: {fileID: 4900000, guid: 40693a8af6b5ac5468669ec57da60dab, type: 3}
+  SummonTbl: {fileID: 4900000, guid: 563772d83d16c9d4581c2d2ecb558588, type: 3}
+--- !u!4 &1547819366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547819364}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 500, y: 0, z: 500}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551241787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,3 +4960,4 @@ SceneRoots:
   - {fileID: 1013332013}
   - {fileID: 1183133989}
   - {fileID: 3143673245982454295}
+  - {fileID: 1547819366}

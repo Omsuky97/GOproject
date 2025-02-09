@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
-
 public class Spawner : MonoBehaviour
 {
     public Transform[] spawnPoint;
     public Monster_Spawn_Data[] spawnData;
 
+    // CSVDataReader 참조
+    public CSVDataReader dataReader;
+
     float timer;
 
-    //열거형으로 정리
     bool spawn_type;
+
     void Awake()
     {
         spawnPoint = GetComponentsInChildren<Transform>();
@@ -21,24 +23,56 @@ public class Spawner : MonoBehaviour
     {
         if (GameManager.Instance.spawn_count >= GameManager.Instance.max_spawn_count) return;
 
-        // 스폰 타입이 꺼져 있을 때만 타이머 증가
         if (!spawn_type)
             timer += Time.deltaTime;
 
-        // 스폰 조건 체크
         if (timer > GameManager.Instance.spawn_timer)
         {
-            spawn_type = true; // 스폰 중 상태로 전환
-            timer = 0f; // 타이머 초기화
-            Spawn(); // 스폰 실행
+            spawn_type = true;
+            timer = 0f;
+            Spawn();
         }
     }
+
     void Spawn()
     {
-        GameObject enemy = GameManager.Instance.pool.Get(0);
-        enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
-        GameManager.Instance.spawn_count += 1;
-        enemy.GetComponent<Enumy_Monster>().Init(spawnData[GameManager.Instance.count_day]);
-        spawn_type = false;
+        // 몬스터 ID를 결정
+        int monsterId = spawnData[GameManager.Instance.count_day].monsterId;
+
+        // MonsterData를 가져옴
+        MonsterData data;
+        if (dataReader.MonsteraData.TryGetValue(monsterId, out data))
+        {
+            // 프리팹 경로를 사용하여 오브젝트 생성
+            GameObject enemy = GameManager.Instance.pool.Get(data.MonsterPrefabs);
+            if (enemy == null)
+            {
+                Debug.LogError($"몬스터를 생성할 수 없습니다. 프리팹 경로: {data.MonsterPrefabs}");
+                return;
+            }
+
+            // 위치 설정
+            if (spawnPoint != null && spawnPoint.Length > 1)
+            {
+                int index = Random.Range(1, spawnPoint.Length);
+                enemy.transform.position = spawnPoint[index].position;
+            }
+            else
+            {
+                Debug.LogError("스폰 포인트가 설정되어 있지 않습니다.");
+                return;
+            }
+
+            GameManager.Instance.spawn_count += 1;
+
+            // 몬스터 초기화
+            enemy.GetComponent<Enumy_Monster>().Init(data);
+
+            spawn_type = false;
+        }
+        else
+        {
+            Debug.LogError($"MonsterData를 찾을 수 없습니다. ID: {monsterId}");
+        }
     }
 }

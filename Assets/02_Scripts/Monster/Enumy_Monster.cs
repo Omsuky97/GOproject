@@ -14,10 +14,17 @@ public class Enumy_Monster : MonoBehaviour
     public Rigidbody targe_rigid;
 
     [Header("## -- Monster_Statas_List -- ##")]
-    public float monster_speed;
-    public float monster_hp;
-    public float monster_max_hp;
-    public float monster_damage;
+    public int Moster_Id;
+    public float Monster_MaxHp;
+    public float Monster_Hp;
+    public float Monster_Atk;
+    public float Monster_Def;
+    public float Monster_Goid;
+    public int Monster_AtkType;
+    public int Monster_DrItem;
+    public string Monster_Prefabs;
+    public float Monster_MoveSpeed;
+
 
     [Header("## -- Monster_Attack -- ##")]
     //공격 범위
@@ -53,6 +60,9 @@ public class Enumy_Monster : MonoBehaviour
     {
         Start_Blick();
     }
+
+
+
     private void FixedUpdate()
     {
         if (!isLive) return;
@@ -70,7 +80,7 @@ public class Enumy_Monster : MonoBehaviour
         Vector3 dirvec = targe_rigid.position - monster_rigid.position;
         dirvec.y = -3f; // 수직 방향 제거
         // 이동 벡터 계산
-        Vector3 nextVec = dirvec.normalized * monster_speed * Time.fixedDeltaTime;
+        Vector3 nextVec = dirvec.normalized * Monster_MoveSpeed * Time.fixedDeltaTime;
         // 몬스터를 대상 방향으로 회전
         if (dirvec != Vector3.zero)
         {
@@ -96,16 +106,36 @@ public class Enumy_Monster : MonoBehaviour
         monster_run = true;
         monster_attack = false;
         monster_isBlinking = true;
-        monster_hp = monster_max_hp;
+        Monster_Hp = Monster_MaxHp;
         targe_rigid = GameManager.Instance.player.GetComponent<Rigidbody>();
     }
-    public void Init(Monster_Spawn_Data data)
+    public void Init(MonsterData data)
     {
-        monster_speed = data.monster_speed;
-        monster_hp = data.monster_hp;
-        monster_max_hp = data.monster_max_hp;
-        monster_damage = data.monster_damage;
+        // CSV 데이터로부터 몬스터의 스탯 초기화
+        Moster_Id = data.id;
+        Monster_MoveSpeed = data.MonsterMoveSpeed;
+        Monster_MaxHp = data.MonsterMaxHp;
+        Monster_Atk = data.MonsterAtk;     
+        Monster_Def = data.MonsterDef;
+        Monster_Goid = data.MonsterGoid;
+        Monster_AtkType = data.MonsterAtkType;
+        Monster_DrItem = data.MonsterDrItem;
+        Monster_Prefabs = data.MonsterPrefabs;
+
+        // 기타 초기화 작업
+        Start_Blick(); // 피격 시 반짝임 효과 초기화
+        monster_isBlinking = false;
+        isLive = true;
+        monster_run = true;
+        monster_attack = false;
+
+        // 플레이어의 Rigidbody 참조 (필요에 따라 수정)
+        targe_rigid = GameManager.Instance.player.GetComponent<Rigidbody>();
+
+        // 애니메이터 초기화 (필요하다면)
+        anim = GetComponentInChildren<Animator>();
     }
+
     //타겟지정
     Transform GetNearest()
     {
@@ -142,13 +172,13 @@ public class Enumy_Monster : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             string type_name = "Monster";
-            if(monster_hp > 0) StartCoroutine(BlinkEffect());
+            if(Monster_Hp > 0) StartCoroutine(BlinkEffect());
             other.gameObject.SetActive(false);
             float hit_damage = other.gameObject.GetComponent<Bullet>().damage;
             Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
-            Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref monster_hp, hit_damage, isLive, type_name);
+            Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name);
         }
-        if(monster_hp <= 0)
+        if(Monster_Hp <= 0)
         {
             RestoreOriginalColors();
             Base_Chartacter_Essential_Funtion.instance.Hit_Palticle(die_effect_prefab, gameObject);
