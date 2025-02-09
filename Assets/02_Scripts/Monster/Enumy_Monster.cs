@@ -112,7 +112,6 @@ public class Enumy_Monster : MonoBehaviour
     public void Init(MonsterData data)
     {
         // CSV 데이터로부터 몬스터의 스탯 초기화
-        Moster_Id = data.id;
         Monster_MoveSpeed = data.MonsterMoveSpeed;
         Monster_MaxHp = data.MonsterMaxHp;
         Monster_Atk = data.MonsterAtk;     
@@ -121,6 +120,8 @@ public class Enumy_Monster : MonoBehaviour
         Monster_AtkType = data.MonsterAtkType;
         Monster_DrItem = data.MonsterDrItem;
         Monster_Prefabs = data.MonsterPrefabs;
+
+        Monster_Hp = Monster_MaxHp;
 
         // 기타 초기화 작업
         Start_Blick(); // 피격 시 반짝임 효과 초기화
