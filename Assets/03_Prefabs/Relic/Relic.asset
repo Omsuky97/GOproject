@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333d88468330eca4f845e5fd7dc6e06e, type: 3}
   m_Name: Relic
   m_EditorClassIdentifier: 
-  Relics_id: 0
+  Relics_id: 1
   Relics_Name: "\uC815\uBC00\uC0AC\uACA9"
   Relics_Lv: 0
   Relics_Max_Lv: 5
   item_desc: "\uACF5\uACA9\uB825 50% \uC0C1\uC2B9\uD569\uB2C8\uB2E4."
   Relic_lcon: White Compress
-  Bullet_Pow_UP: []
+  Bullet_Pow_UP:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
   Bullet_Pow_Down: []
   Bullet_Fispeed_UP: []
   Bullet_Fispeed_Down: []

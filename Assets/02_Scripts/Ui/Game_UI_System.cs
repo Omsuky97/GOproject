@@ -27,10 +27,14 @@ public class Game_UI_System : MonoBehaviour
     public Relic_Item Relic_Item;
     public Equip_Relic_Explain Equip_Relic_Explain;
     public Relic_Manager Relic_Manager;
+    public Equip rellic_equip;
+
+    public GameObject Active_Equip_Relic_Explain;
 
     private void Awake()
     {
         Relic_Gacha_UI.SetActive(false);
+        Active_Equip_Relic_Explain.SetActive(false);
     }
     public void Game_Menu()
     {
@@ -84,9 +88,21 @@ public class Game_UI_System : MonoBehaviour
     public void Equip_Relic(LeanButton clickedButton)
     {
         Rellic_Slot_Count button_slot_num = clickedButton.GetComponentsInChildren<Rellic_Slot_Count>()[0];
+        if (Rellic_Slot.non_relic_id[button_slot_num.slot_num] == 0) return;
+        Active_Equip_Relic_Explain.SetActive(true);
         Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
-        Equip_Relic_Explain.Equip_Relic_Explain_Panel(button_Image, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).Relics_Name, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).item_desc);
+        Equip_Relic_Explain.Equip_Relic_Explain_Panel(button_Image, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).Relics_Name, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).item_desc, Rellic_Slot.non_relic_id[button_slot_num.slot_num]);
         Relic_Gacha_UI.SetActive(false);
-        Time.timeScale = 1.0f;
+    }
+    public void Btn_Equip(Button clickedButton)
+    {
+        Transform parentTransform = clickedButton.transform.parent;
+        // 부모의 자식들 중 "main_Image"를 이름으로 검색
+        Transform mainImageTransform = parentTransform.Find("main_Image_Tile");
+        Image equip_image = mainImageTransform.GetComponentsInChildren<Image>()[1];
+        Equip_Relic_Explain[] equip_id_nums = clickedButton.GetComponentsInParent<Equip_Relic_Explain>();
+        Equip_Relic_Explain equip_id_num = equip_id_nums[0]; // 가장 가까운 부모
+        rellic_equip.Relic_Equip(equip_image, equip_id_num.relic_id_num);
+        Active_Equip_Relic_Explain.SetActive(false);
     }
 }
