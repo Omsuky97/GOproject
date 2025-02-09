@@ -186,10 +186,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targe_rigid: {fileID: 7038580185197815659, guid: 94f9efded3e36f244b136ec267682b1d, type: 3}
-  monster_speed: 0
-  monster_hp: 0
-  monster_max_hp: 0
-  monster_damage: 0
+  Moster_Id: 0
+  Monster_MaxHp: 0
+  Monster_Hp: 0
+  Monster_Atk: 0
+  Monster_Def: 0
+  Monster_Goid: 0
+  Monster_AtkType: 0
+  Monster_DrItem: 0
+  Monster_Prefabs: 
+  Monster_MoveSpeed: 0
   scanRange: 2
   targetLayer:
     serializedVersion: 2
@@ -4009,7 +4015,7 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 0a62b2b0bc5961d42b65acebf0f905ca, type: 2}
   - {fileID: 2100000, guid: 0a62b2b0bc5961d42b65acebf0f905ca, type: 2}
-  - {fileID: 2100000, guid: 5e905a917da1bad4e81331994f27789f, type: 2}
+  - {fileID: 2100000, guid: 26b6ac3795ab84e4fbb5b082df1529e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
