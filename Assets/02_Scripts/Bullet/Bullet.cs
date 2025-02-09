@@ -43,7 +43,8 @@ public class Bullet : MonoBehaviour
                 return;
             }
 
-            Vector3 nextDirection = FindGeneralEnemyDirection(other.transform.position);
+            Vector3 contactPoint = GetContactPoint(other); // 충돌 지점 찾기
+            Vector3 nextDirection = FindGeneralEnemyDirection(contactPoint);
 
             if (nextDirection == Vector3.zero)
             {
@@ -56,7 +57,8 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
             Transform newBullet = GameManager.Instance.pool.Bullet_Get(0).transform;
 
-            newBullet.position = other.transform.position;  // 기존 위치에서 생성
+            newBullet.position = contactPoint;  // 적과 충돌한 위치에서 생성
+            newBullet.position = new Vector3(newBullet.position.x, contactPoint.y, newBullet.position.z); // Y값 강제 조정
             newBullet.rotation = Quaternion.LookRotation(nextDirection); // 방향 설정
 
             Rigidbody newRb = newBullet.GetComponent<Rigidbody>();
@@ -69,6 +71,20 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    /// 적과 충돌한 위치를 찾는 함수 (적의 중심 높이에서 생성)
+    Vector3 GetContactPoint(Collider enemy)
+    {
+        Bounds bounds = enemy.bounds;
+        Vector3 hitPosition = bounds.center;  // 기본적으로 적의 중앙 사용
+
+        // Y값을 적의 중심보다 낮아지지 않게 설정
+        hitPosition.y = Mathf.Max(bounds.center.y, bounds.min.y + 0.5f);
+
+        Debug.Log($"충돌 위치 (보정됨): {hitPosition}");
+        return hitPosition;
+    }
+
+    /// 적이 있는 대략적인 방향을 찾는 함수 (타겟팅 X, 적이 많은 방향으로 이동)
     Vector3 FindGeneralEnemyDirection(Vector3 currentPosition)
     {
         float searchRadius = 10f; // 탐색 반경
@@ -99,6 +115,7 @@ public class Bullet : MonoBehaviour
         if (count > 0)
         {
             generalDirection /= count;  // 여러 적 방향의 평균을 계산
+            generalDirection.y = 0; // Y축 이동 방지 (지면에 박히지 않도록)   
             generalDirection.Normalize();
             Debug.Log("다음 이동 방향 설정: " + generalDirection);
         }
