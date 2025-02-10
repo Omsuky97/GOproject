@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
+
 public class Bullet : MonoBehaviour
 {
+    public Player_Scaner player; // 플레이어 위치 참조
+
     public float speed = 60f;           // 탄환 속도
 
     public int maxBounces = 5;          // 최대 튕길 횟수
@@ -11,6 +16,12 @@ public class Bullet : MonoBehaviour
 
     public int max_penetration = 5;
     public int penetration = 0;
+
+    public float disableTime = 0.5f; // 애니메이션 멈춤 시간
+
+    public bool Bullet_bounce_Type;
+    public bool BUllet_penetrate_Type;
+    public bool Bullet_NucBack_Type;
 
     public float damage;
     public int per;
@@ -25,10 +36,16 @@ public class Bullet : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
     }
     // 데미지, 갯수, 속도
-    public void Init(float dmg, int per ,Vector3 dir)
+    public void Init(float dmg, int per, Vector3 dir)
     {
         this.damage = dmg;
         this.per = per;
+
+        // 탄환이 새롭게 활성화될 때 파티클 재생
+        if (bulletParticles != null)
+        {
+            bulletParticles.Play();
+        }
 
         bounceCount = 0;
         penetration = 0;
@@ -42,45 +59,51 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))  // 적을 맞췄다면
         {
-            // 같은 적을 연속해서 맞는지 확인
-            if (hitEnemies.Contains(other)) return;
-
-            // 적을 맞은 목록에 추가
-            hitEnemies.Add(other);
-            StartCoroutine(RemoveFromHitListAfterDelay(other)); // 일정 시간 후 제거
-
-            Vector3 contactPoint = GetContactPoint(other); // 충돌 지점 찾기
-            Vector3 nextDirection = FindGeneralEnemyDirection(contactPoint);
-
-            if (nextDirection == Vector3.zero)
-            {
-                gameObject.SetActive(false);
-                return;
-            }
-
-            // 기존 탄환 삭제 후 새 탄환 생성
-            gameObject.SetActive(false);
-            Transform newBullet = GameManager.Instance.pool.Bullet_Get(0).transform;
-
-            newBullet.position = contactPoint;  // 적과 충돌한 위치에서 생성
-            newBullet.position = new Vector3(newBullet.position.x, contactPoint.y, newBullet.position.z); // Y값 강제 조정
-            newBullet.rotation = Quaternion.LookRotation(nextDirection); // 방향 설정
-
-            Rigidbody newRb = newBullet.GetComponent<Rigidbody>();
-            if (newRb != null)
-            {
-                newRb.velocity = nextDirection * speed;
-            }
-
-            bounceCount += 1;
-            if (penetration >= max_penetration)
-            {
-                gameObject.SetActive(false);
-            }
-            penetration += 1;
-            StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
+            if (Bullet_bounce_Type) Bullet_bounce(other);
+            if (BUllet_penetrate_Type) BUllet_penetrate();
+            //if (Bullet_NucBack_Type) Bullet_NucBack(hitPoint, bulletDirection, NucBack_distance); // 넉백 적용
+            if (!Bullet_bounce_Type &&  !BUllet_penetrate_Type || Bullet_NucBack_Type) gameObject.SetActive(false);
+            
         }
     }
+    private void BUllet_penetrate()
+    {
+        if (penetration >= max_penetration) gameObject.SetActive(false);
+        else penetration += 1;
+        StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
+    }
+    private void Bullet_bounce(Collider other)
+    {
+        // 같은 적을 연속해서 맞는지 확인
+        if (hitEnemies.Contains(other)) return;
+
+        // 적을 맞은 목록에 추가
+        hitEnemies.Add(other);
+        StartCoroutine(RemoveFromHitListAfterDelay(other)); // 일정 시간 후 제거
+
+        Vector3 contactPoint = GetContactPoint(other); // 충돌 지점 찾기
+        Vector3 nextDirection = FindGeneralEnemyDirection(contactPoint);
+
+        if (nextDirection == Vector3.zero)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
+        // 기존 탄환 삭제 후 새 탄환 생성
+        gameObject.SetActive(false);
+        Transform newBullet = GameManager.Instance.pool.Bullet_Get(0).transform;
+
+        newBullet.position = contactPoint;  // 적과 충돌한 위치에서 생성
+        newBullet.position = new Vector3(newBullet.position.x, contactPoint.y, newBullet.position.z); // Y값 강제 조정
+        newBullet.rotation = Quaternion.LookRotation(nextDirection); // 방향 설정
+
+        Rigidbody newRb = newBullet.GetComponent<Rigidbody>();
+        if (newRb != null) newRb.velocity = nextDirection * speed;
+        bounceCount += 1;
+        StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
+    }
+
 
     /// 일정 시간이 지난 후 hitEnemies에서 제거하는 함수
     private IEnumerator RemoveFromHitListAfterDelay(Collider enemy)
@@ -105,10 +128,16 @@ public class Bullet : MonoBehaviour
         DisableBullet();
     }
 
-    /// 탄환 비활성화 함수 (파티클은 유지)
+    /// 탄환 비활성화 함수 (파티클은 유지하되, 잔상 제거)
     private void DisableBullet()
     {
-        // 탄환이 비활성화될 때 화면 밖으로 이동 (잔상 방지)
+        // 파티클을 멈추되, 기존 파티클을 제거하지 않음 (잔상 방지)
+        if (bulletParticles != null)
+        {
+            bulletParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
+
+        // 탄환을 화면 밖으로 이동하여 잔상이 보이지 않도록 처리
         transform.position = Vector3.one * 1000f;
 
         // SetActive(false)로 풀링 시스템과 연동
