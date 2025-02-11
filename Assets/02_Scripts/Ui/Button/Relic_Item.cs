@@ -26,15 +26,15 @@ public class Relic_Item : MonoBehaviour
     {
         Relic_Gacha();
     }
-
+    //Relic_Select / Btm_Reset
     public void Relic_Gacha()
     {
         List<Relic_Data> randomRelics = GetRandomRelics(3); // 3개 선택
         List<Relic_Data> removedRelics = new List<Relic_Data>(); // 삭제된 데이터를 저장할 리스트
-        for (int i = 0; i < Relic.Count; i++)
+        for (int i = 0; i < 3; i++)
         {
             data = GetRandomFromList(randomRelics);
-            relic_icon = Select_Button[i].GetComponentsInChildren<Image>()[2];
+            relic_icon = Select_Button[i].GetComponentsInChildren<Image>()[1];
             Text[] texts = Select_Button[i].GetComponentsInChildren<Text>();
             text_name = texts[0];
             text_desc = texts[1];

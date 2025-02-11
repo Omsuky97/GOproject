@@ -39,6 +39,7 @@ public class Game_UI_System : MonoBehaviour
     {
         Relic_Gacha_UI.SetActive(false);
         Active_Equip_Relic_Explain.SetActive(false);
+        Relic_Gacha.SetActive(false);
     }
     public void Game_Menu()
     {
@@ -66,6 +67,7 @@ public class Game_UI_System : MonoBehaviour
         draw_paused = false;
         draw_menu.SetActive(draw_paused); // UI 활성화/비활성화
     }
+    //Btn_Relic_Gacha
     public void Open_Gacha()
     {
         if (!Relic_Gacha_UI_paused)
@@ -75,6 +77,7 @@ public class Game_UI_System : MonoBehaviour
             Time.timeScale = 0.0f;
         }
     }
+    //Btn_Open_Relic_Gacha
     public void Open_Relic_Gacha()
     {
         if (!Relic_Gacha_UI_paused)
@@ -83,6 +86,7 @@ public class Game_UI_System : MonoBehaviour
             Relic_View.SetActive(false);
         }
     }
+    //Btn_Open_Relic_View
     public void Open_Relic_View()
     {
         if (!Relic_Gacha_UI_paused)
@@ -91,9 +95,10 @@ public class Game_UI_System : MonoBehaviour
             Relic_View.SetActive(true);
         }
     }
+    //가챠 후 선택
     public void Select_Relic(Button clickedButton)
     {
-        Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
+        Image button_Image = clickedButton.GetComponentsInChildren<Image>()[1];
         Button_Count button_number = clickedButton.GetComponentsInChildren<Button_Count>()[0];  //3개중 하나를 눌렀을 경우 값 전달 (0, 1, 2)
         for (int button_count = 0; button_count < Rellic_Slot.slot_button.Length; button_count++)
         {
@@ -116,6 +121,7 @@ public class Game_UI_System : MonoBehaviour
         Relic_Gacha_UI_paused = false;
         Time.timeScale = 1.0f;
     }
+    // 유물에서 장착할 렐릭 창 표시
     public void Equip_Relic(LeanButton clickedButton)
     {
         Relic_Gacha_UI_paused = true;
@@ -127,19 +133,8 @@ public class Game_UI_System : MonoBehaviour
         Relic_Gacha_UI.SetActive(false);
         Relic_Gacha_UI_paused = false;
     }
+    // 유물 장착
     public void Btn_Equip(Button clickedButton)
-    {
-        Transform parentTransform = clickedButton.transform.parent;
-        // 부모의 자식들 중 "main_Image"를 이름으로 검색
-        Transform mainImageTransform = parentTransform.Find("main_Image_Tile");
-        Image equip_image = mainImageTransform.GetComponentsInChildren<Image>()[1];
-        Equip_Relic_Explain[] equip_id_nums = clickedButton.GetComponentsInParent<Equip_Relic_Explain>();
-        Equip_Relic_Explain equip_id_num = equip_id_nums[0]; // 가장 가까운 부모
-        rellic_equip.Relic_Equip(equip_image, equip_id_num.relic_id_num);
-        Active_Equip_Relic_Explain.SetActive(false);
-        Relic_Gacha_UI_paused = false;
-    }
-    public void Btn_Reset(Button clickedButton)
     {
         Transform parentTransform = clickedButton.transform.parent;
         // 부모의 자식들 중 "main_Image"를 이름으로 검색

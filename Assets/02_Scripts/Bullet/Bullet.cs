@@ -59,11 +59,13 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))  // 적을 맞췄다면
         {
+            //넉백 여부는 몬스터에서 설정
+            //원거리 여부는 플레이어 스캔에서 설정
+            //탄환의 공격력에 따라 크기 및 넉백 설정
+            //정령은 베지에 곡선이라는 것을 활용할 것
             if (Bullet_bounce_Type) Bullet_bounce(other);
             if (BUllet_penetrate_Type) BUllet_penetrate();
-            //if (Bullet_NucBack_Type) Bullet_NucBack(hitPoint, bulletDirection, NucBack_distance); // 넉백 적용
             if (!Bullet_bounce_Type &&  !BUllet_penetrate_Type || Bullet_NucBack_Type) gameObject.SetActive(false);
-            
         }
     }
     private void BUllet_penetrate()

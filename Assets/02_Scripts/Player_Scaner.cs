@@ -14,6 +14,8 @@ public class Player_Scaner : MonoBehaviour
     public GameObject Fire_Point;
     public GameManager player_Statas;
 
+    public bool target_type = false;
+
     public float rotationSpeed = 5f; // 회전 속도
 
     public float timer;
@@ -26,8 +28,9 @@ public class Player_Scaner : MonoBehaviour
     private void FixedUpdate()
     {
         targets_monster = Physics.SphereCastAll(transform.position, scanRange, Vector3.forward, scanRange, targetLayer);
-        nearestTarget = GetNearest();
-        if(nearestTarget != null)
+        if (!target_type) nearestTarget = GetNearest();
+        else if (target_type) nearestTarget = GetFarthest();
+        if (nearestTarget != null)
         {
             Player_Rotator();
             if (!player_attack)
@@ -41,6 +44,26 @@ public class Player_Scaner : MonoBehaviour
             }
         }
     }
+    Transform GetFarthest()
+    {
+        Transform result = null;
+        float maxDiff = 0; // 최소 거리 대신 최대 거리 추적
+
+        foreach (RaycastHit target in targets_monster)
+        {
+            Vector3 mypos = transform.position;
+            Vector3 targetpos = target.transform.position;
+            float curDiff = Vector3.Distance(mypos, targetpos);
+
+            if (curDiff > maxDiff) // 더 먼 적을 찾으면 업데이트
+            {
+                maxDiff = curDiff;
+                result = target.transform;
+            }
+        }
+        return result;
+    }
+
     Transform GetNearest()
     {
         Transform result = null;
