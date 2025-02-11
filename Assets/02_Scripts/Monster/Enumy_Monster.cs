@@ -12,6 +12,7 @@ public class Enumy_Monster : MonoBehaviour
     Rigidbody monster_rigid;
     Animator anim;
     public Rigidbody targe_rigid;
+    WaitForFixedUpdate wait;
 
     [Header("## -- Monster_Statas_List -- ##")]
     public int Moster_Id;
@@ -43,6 +44,7 @@ public class Enumy_Monster : MonoBehaviour
     public bool monster_isBlinking = false;    // 반짝임 여부
     public GameObject hit_damage_text_pro;
     public string hit_damage_text_pos_name;
+    public float NucBack_distance = 10.0f;
 
     [Header("## -- Blink_Hit -- ##")]
     public float blink_distance = 0.2f;
@@ -55,13 +57,12 @@ public class Enumy_Monster : MonoBehaviour
     {
         monster_rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        wait = new WaitForFixedUpdate();
     }
     private void Start()
     {
         Start_Blick();
     }
-
-
 
     private void FixedUpdate()
     {
@@ -72,10 +73,9 @@ public class Enumy_Monster : MonoBehaviour
         if (monster_attack == true && monster_run == false) return;
         Target_Move_Rotator();
     }
-    //대상으로 이동 및 타겟대상바라보기
-    //이거 정리해볼 것(불가능하면 하지말것)
     void Target_Move_Rotator()
     {
+        if (monster_isBlinking) return;
         // 대상까지의 방향 계산 (Y축 제외)
         Vector3 dirvec = targe_rigid.position - monster_rigid.position;
         dirvec.y = -3f; // 수직 방향 제거
@@ -183,6 +183,19 @@ public class Enumy_Monster : MonoBehaviour
             Base_Chartacter_Essential_Funtion.instance.Hit_Palticle(die_effect_prefab, gameObject);
         }
     }
+
+    IEnumerator KnocBack()
+    {
+        yield return wait;
+        Vector3 playerPos = GameManager.Instance.player.transform.position;
+        Vector3 dirVector = transform.position - playerPos;
+        monster_rigid.AddForce(dirVector.normalized * NucBack_distance, ForceMode.Impulse);
+
+        // 원래 색상으로 복원
+        RestoreOriginalColors();
+        yield return new WaitForSeconds(blink_distance);
+    }
+
     private void Start_Blick()
     {
         renderers = GetComponentsInChildren<Renderer>();
@@ -207,9 +220,7 @@ public class Enumy_Monster : MonoBehaviour
             SetColor();
             yield return new WaitForSeconds(blink_distance);
 
-            // 원래 색상으로 복원
-            RestoreOriginalColors();
-            yield return new WaitForSeconds(blink_distance);
+            StartCoroutine(KnocBack());
         }
 
         monster_isBlinking = false;

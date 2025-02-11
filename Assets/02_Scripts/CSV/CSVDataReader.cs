@@ -40,8 +40,6 @@ public class CSVDataReader : MonoBehaviour
         WaveDataLoad();
         SummonDataLoad();
         MonsterDataLoad();
-
-        Debug.Log("¼½½º");
     }
 
 
