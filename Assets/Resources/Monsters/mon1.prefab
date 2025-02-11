@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7177604708505168104}
   - component: {fileID: 3278240831459311367}
   - component: {fileID: 8866747833182116281}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Attack_Mesh
   m_TagString: Enemy_Attack
   m_Icon: {fileID: 0}
@@ -186,10 +186,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targe_rigid: {fileID: 7038580185197815659, guid: 94f9efded3e36f244b136ec267682b1d, type: 3}
-  monster_speed: 0
-  monster_hp: 0
-  monster_max_hp: 0
-  monster_damage: 0
+  Moster_Id: 0
+  Monster_MaxHp: 0
+  Monster_Hp: 0
+  Monster_Atk: 0
+  Monster_Def: 0
+  Monster_Goid: 0
+  Monster_AtkType: 0
+  Monster_DrItem: 0
+  Monster_Prefabs: 
+  Monster_MoveSpeed: 0
   scanRange: 2
   targetLayer:
     serializedVersion: 2
@@ -425,7 +431,7 @@ GameObject:
   - component: {fileID: 7432805483160489094}
   m_Layer: 12
   m_Name: Female
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1800,7 +1806,7 @@ GameObject:
   - component: {fileID: 7432805483163704736}
   m_Layer: 12
   m_Name: Legs Female
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

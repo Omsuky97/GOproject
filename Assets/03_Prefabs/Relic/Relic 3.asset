@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Relic 3
   m_EditorClassIdentifier: 
   Relics_id: 1
-  Relics_Name: "\uAD00\uD1B5"
+  Relics_Name: "\uB85C\uCF13"
   Relics_Lv: 1
   Relics_Max_Lv: 5
-  item_desc: "\uD0C4\uD658\uC774  1\uD68C \uAD00\uD1B5\uD569\uB2C8\uB2E4"
+  item_desc: "\uD0C4\uD658 \uD3ED\uBC1C \uCD94\uAC00\n\uB109\uBC31 \uCD94\uAC00\n\uACF5\uACA9\uB825
+    \u25BC\u25BC\u25BC\n"
   Relic_lcon: RelicsIcon4
   Bullet_Pow_UP:
   - 0
@@ -25,11 +26,11 @@ MonoBehaviour:
   - 0
   - 0
   Bullet_Pow_Down:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.5
+  - 0.4
+  - 0.3
+  - 0.2
+  - 0.1
   Bullet_Fispeed_UP:
   - 0
   - 0
@@ -43,11 +44,11 @@ MonoBehaviour:
   - 0
   - 0
   Bullet_Move_Speed_Up:
-  - 0.1
-  - 0.2
-  - 0.3
-  - 0.4
-  - 0.5
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   Bullet_Move_Speed_Down:
   - 0
   - 0
@@ -66,16 +67,16 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  Bullet_Pec_Up: 0100000002000000030000000400000005000000
+  Bullet_Pec_Up: 0000000000000000000000000000000000000000
   Bullet_Pec_Down: 0000000000000000000000000000000000000000
   Bullet_Buc_Up: 0000000000000000000000000000000000000000
   Bullet_Buc_Down: 0000000000000000000000000000000000000000
   Bullet_Noc_Up:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
   Bullet_Split_Up: 0000000000000000000000000000000000000000
   Bullet_Multi_Shot_Up: 0000000000000000000000000000000000000000
   Aiming_Range_Up:
@@ -94,8 +95,9 @@ MonoBehaviour:
   Bullet_Return: 0
   Bullet_Sniping: 0
   Bullet_Gra_Speed: 0
-  Bullet_Bomb: 0
+  Bullet_Bomb: 1
   Bullet_Idt: 0
+  Bullet_Noc: 1
   Bullet_Effec_Tg: 
   Summons_ld: 
   Bullet_Projec_tile: 

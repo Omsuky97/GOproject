@@ -18,7 +18,7 @@ public class Relic_Data : ScriptableObject
     public int Relics_Lv;               //유물 레벨
     public int Relics_Max_Lv;           //유물 최대 레벨
     [TextArea]
-    public string item_desc;
+    public string item_desc;           //--레벨별 설명 추가해야함--
     public string Relic_lcon;          //유물아이콘 리소스 경로
 
     [Header("## -- Player -- ##")]
@@ -32,9 +32,9 @@ public class Relic_Data : ScriptableObject
     [Tooltip("발사 속도 감소")]
     public float[] Bullet_Fispeed_Down;   //발사 속도 감소
     [Tooltip("총알 이동 속도 증가")]
-    public float[] Bullet_Move_Speed_Up;  //총알 이동 속도 증가
+    public float[] Bullet_Move_Speed_Up;  //총알 이동 속도 증가 --추가
     [Tooltip("총알 이동 속도 감소")]
-    public float[] Bullet_Move_Speed_Down;//총알 이동 속도 감소
+    public float[] Bullet_Move_Speed_Down;//총알 이동 속도 감소 --추가
     [Tooltip("탄환 크기 증가 ")]
     public float[] Bullet_Size_Up;        //탄환 크기 증가 
     [Tooltip("탄환 크기 감소")]
@@ -69,6 +69,8 @@ public class Relic_Data : ScriptableObject
     public bool Bullet_Bomb;              //총알 타겟 명중 시 범위 피해 여부
     [Tooltip("총알 유도 여부")]
     public bool Bullet_Idt;               //총알 유도 여부
+    [Tooltip("총알 넉백 여부")]
+    public bool Bullet_Noc;               //총알 넉백 여부 --추가
     [Tooltip("총알 효과 트리거 횟수")]
     public int[] Bullet_Effec_Tg;         //총알 효과 트리거 횟수
     [Tooltip("소환체 참조 id")]
