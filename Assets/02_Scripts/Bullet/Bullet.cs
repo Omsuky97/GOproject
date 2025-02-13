@@ -7,29 +7,30 @@ using UnityEngine.AI;
 
 public class Bullet : MonoBehaviour
 {
+    private List<Collider> hitEnemies = new List<Collider>(); // 이미 맞은 적 목록
+    private float hitCooldown = 0.5f; // 같은 적을 다시 맞지 않도록 하는 시간(초)
+    private Rigidbody rigid;
     public Player_Scaner player; // 플레이어 위치 참조
+    private ParticleSystem bulletParticles; // 파티클 시스템 참조
 
+    [Header("## -- Bullet -- ##")]
     public float speed = 60f;           // 탄환 속도
+    public float damage;
+    public int per;
 
+
+    [Header("## -- Bullet_Bounce -- ##")]
     public int maxBounces = 5;          // 최대 튕길 횟수
     public int bounceCount = 0;        // 현재 튕긴 횟수
 
+    [Header("## -- Bullet_Penetrate -- ##")]
     public int max_penetration = 5;
     public int penetration = 0;
 
-    public float disableTime = 0.5f; // 애니메이션 멈춤 시간
-
+    [Header("## -- Bullet_Bool_Type -- ##")]
     public bool Bullet_bounce_Type;
     public bool BUllet_penetrate_Type;
     public bool Bullet_NucBack_Type;
-
-    public float damage;
-    public int per;
-    Rigidbody rigid;
-    private ParticleSystem bulletParticles; // 파티클 시스템 참조
-
-    private List<Collider> hitEnemies = new List<Collider>(); // 이미 맞은 적 목록
-    private float hitCooldown = 0.5f; // 같은 적을 다시 맞지 않도록 하는 시간(초)
 
     private void Awake()
     {
@@ -49,11 +50,7 @@ public class Bullet : MonoBehaviour
 
         bounceCount = 0;
         penetration = 0;
-
-        if (per > -1)
-        {
-            rigid.velocity = dir.normalized * speed;
-        }
+        rigid.velocity = dir.normalized * speed;
     }
     private void OnTriggerEnter(Collider other)
     {

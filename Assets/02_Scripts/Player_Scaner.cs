@@ -15,16 +15,29 @@ public class Player_Scaner : MonoBehaviour
     public GameManager player_Statas;
 
     public bool target_type = false;
+    private float originalAttackDelay; // 원래 공격 딜레이 값 저장
 
     public float rotationSpeed = 5f; // 회전 속도
+    public float boostMultiplier = 0.3f; //= 가속
+    public float boostDuration_start = 3f;         // 가속 유지 시간
+    public float boostDuration_End = 3f;         // 가속 유지 시간
+    public bool Bullet_Speaker_Type;
+    public bool Bullet_Speaker_isBoosted;
+    public short Bullet_Speaker_Shot_count;
+    public short Bullet_Speaker_Shot_Max_count;
 
     public float timer;
+    public float boostDuration_End_Timer;
     bool player_attack = false;
     Vector3 targetPos;
 
     //파티클
     public GameObject FireEffectPrefab; // 맞았을 때 실행할 파티클 프리팹
 
+    private void Start()
+    {
+        originalAttackDelay = player_Statas.attack_delay; // 시작 시 원래 값 저장
+    }
     private void FixedUpdate()
     {
         targets_monster = Physics.SphereCastAll(transform.position, scanRange, Vector3.forward, scanRange, targetLayer);
@@ -33,17 +46,66 @@ public class Player_Scaner : MonoBehaviour
         if (nearestTarget != null)
         {
             Player_Rotator();
+
             if (!player_attack)
             {
                 timer += Time.deltaTime;
             }
-            if (timer > player_Statas.attack_delay)
+
+            if (Bullet_Speaker_Type)
             {
-                timer = 0f;
-                Fire();
+                if (!Bullet_Speaker_isBoosted) // 중복 실행 방지
+                {
+                    StartCoroutine(ApplyAcceleration());
+                    Bullet_Speaker_Shot_count = 0;
+                }
+                else if (timer > player_Statas.attack_delay && Bullet_Speaker_isBoosted)
+                {
+                    timer = 0f;
+                    Fire();
+                }
+                boostDuration_End_Timer += Time.deltaTime;
+                if (boostDuration_End_Timer > boostDuration_End)
+                {
+                    Bullet_Speaker_isBoosted = false;
+                    boostDuration_End_Timer = 0;
+                }
+            }
+            else
+            {
+                if (timer > player_Statas.attack_delay)
+                {
+                    timer = 0f;
+                    Fire();
+                }
             }
         }
     }
+    #region Bullet_Speaker
+    IEnumerator ApplyAcceleration()
+    {
+        Bullet_Speaker_isBoosted = true; // 가속 상태 활성화
+        player_Statas.attack_delay *= boostMultiplier; // 파파파팡 (속도 증가)
+
+        float fireRate = boostMultiplier; // 0.2초마다 연속 발사
+        float boostDuration = boostDuration_start; // 연속 발사 지속 시간 (3초)
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < boostDuration)
+        {
+            Fire(); // 총알 발사
+            yield return new WaitForSeconds(fireRate); // 0.2초 간격으로 발사
+            elapsedTime += fireRate;
+            if (Bullet_Speaker_Shot_count > Bullet_Speaker_Shot_Max_count)
+            {
+                player_Statas.attack_delay = originalAttackDelay; // 공격 속도 원상복구
+                Bullet_Speaker_Shot_count = 0;
+                yield break;
+            }
+        }
+    }
+    #endregion
     Transform GetFarthest()
     {
         Transform result = null;
@@ -85,6 +147,7 @@ public class Player_Scaner : MonoBehaviour
     }
     public void Fire()
     {
+        Bullet_Speaker_Shot_count += 1;
         if (player_attack) return;
         if (!nearestTarget) return;
 
@@ -100,7 +163,6 @@ public class Player_Scaner : MonoBehaviour
         //// 일정 시간 후 파티클 삭제
         //Destroy(effect, 1f);
         bullet.GetComponent<Bullet>().Init(player_Statas.bullet_damage, player_Statas.bullet_count, bullet_dir);
-
         StartCoroutine(ResetFire());
     }
 

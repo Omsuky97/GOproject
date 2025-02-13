@@ -1259,16 +1259,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
+      propertyPath: boostDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
       propertyPath: player_Statas
       value: 
       objectReference: {fileID: 1945947570}
+    - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
+      propertyPath: boostMultiplier
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
       propertyPath: FireEffectPrefab
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
+      propertyPath: boostDuration_End
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
       propertyPath: targetLayer.m_Bits
       value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
+      propertyPath: Bullet_Speaker_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
+      propertyPath: boostDuration_start
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
+      propertyPath: Bullet_Speaker_Shot_Max_count
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2962468972718675193, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
       propertyPath: m_LocalScale.x
