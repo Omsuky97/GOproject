@@ -82,19 +82,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
   speed: 70
-  boostMultiplier: 0.3
   damage: 10
   per: 0
   maxBounces: 10
   bounceCount: 0
   max_penetration: 10
   penetration: 0
-  disableTime: 0.5
-  Bullet_bounce_Type: 1
-  BUllet_penetrate_Type: 1
-  Bullet_NucBack_Type: 1
-  damage: 10
-  per: 0
+  Bullet_bounce_Type: 0
+  BUllet_penetrate_Type: 0
+  Bullet_NucBack_Type: 0
 --- !u!136 &-1531685907744284953
 CapsuleCollider:
   m_ObjectHideFlags: 0
