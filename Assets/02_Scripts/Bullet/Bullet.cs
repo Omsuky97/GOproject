@@ -65,12 +65,15 @@ public class Bullet : MonoBehaviour
             if (!Bullet_bounce_Type &&  !BUllet_penetrate_Type || Bullet_NucBack_Type) gameObject.SetActive(false);
         }
     }
+    #region BUllet_penetrate
     private void BUllet_penetrate()
     {
         if (penetration >= max_penetration) gameObject.SetActive(false);
         else penetration += 1;
         StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
     }
+    #endregion
+    #region Bullet_bounce
     private void Bullet_bounce(Collider other)
     {
         // 같은 적을 연속해서 맞는지 확인
@@ -102,15 +105,12 @@ public class Bullet : MonoBehaviour
         bounceCount += 1;
         StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
     }
-
-
     /// 일정 시간이 지난 후 hitEnemies에서 제거하는 함수
     private IEnumerator RemoveFromHitListAfterDelay(Collider enemy)
     {
         yield return new WaitForSeconds(hitCooldown);
         hitEnemies.Remove(enemy);
     }
-
     /// 적과 충돌한 위치를 찾는 함수
     Vector3 GetContactPoint(Collider enemy)
     {
@@ -119,30 +119,6 @@ public class Bullet : MonoBehaviour
         hitPosition.y = Mathf.Max(bounds.center.y, bounds.min.y + 0.5f); // 너무 낮은 곳에서 나오지 않도록 보정
         return hitPosition;
     }
-
-    /// 3초 후 탄환을 비활성화하는 함수
-    private IEnumerator DestroyAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        DisableBullet();
-    }
-
-    /// 탄환 비활성화 함수 (파티클은 유지하되, 잔상 제거)
-    private void DisableBullet()
-    {
-        // 파티클을 멈추되, 기존 파티클을 제거하지 않음 (잔상 방지)
-        if (bulletParticles != null)
-        {
-            bulletParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-        }
-
-        // 탄환을 화면 밖으로 이동하여 잔상이 보이지 않도록 처리
-        transform.position = Vector3.one * 1000f;
-
-        // SetActive(false)로 풀링 시스템과 연동
-        gameObject.SetActive(false);
-    }
-
     /// 적이 있는 방향을 찾는 함수
     Vector3 FindGeneralEnemyDirection(Vector3 currentPosition)
     {
@@ -171,5 +147,28 @@ public class Bullet : MonoBehaviour
         }
 
         return generalDirection;
+    }
+    /// 3초 후 탄환을 비활성화하는 함수
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        DisableBullet();
+    }
+    #endregion
+
+    /// 탄환 비활성화 함수 (파티클은 유지하되, 잔상 제거)
+    private void DisableBullet()
+    {
+        // 파티클을 멈추되, 기존 파티클을 제거하지 않음 (잔상 방지)
+        if (bulletParticles != null)
+        {
+            bulletParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
+
+        // 탄환을 화면 밖으로 이동하여 잔상이 보이지 않도록 처리
+        transform.position = Vector3.one * 1000f;
+
+        // SetActive(false)로 풀링 시스템과 연동
+        gameObject.SetActive(false);
     }
 }

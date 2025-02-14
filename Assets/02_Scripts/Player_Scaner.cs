@@ -18,7 +18,7 @@ public class Player_Scaner : MonoBehaviour
     private float originalAttackDelay; // 원래 공격 딜레이 값 저장
 
     public float rotationSpeed = 5f; // 회전 속도
-    public float boostMultiplier = 0.3f; //= 가속
+    public float Bullet_Speaker_Speed = 0.3f; //= 가속
     public float boostDuration_start = 3f;         // 가속 유지 시간
     public float boostDuration_End = 3f;         // 가속 유지 시간
     public bool Bullet_Speaker_Type;
@@ -54,21 +54,16 @@ public class Player_Scaner : MonoBehaviour
 
             if (Bullet_Speaker_Type)
             {
-                if (!Bullet_Speaker_isBoosted) // 중복 실행 방지
+                //이거 레벨업 할때마다 6을 줄여서 확률 높여줄 것
+                int randomValue = Random.Range(0, 6); // 0~5 사이의 랜덤 값
+                if (timer > player_Statas.attack_delay && randomValue == 0)
                 {
-                    StartCoroutine(ApplyAcceleration());
-                    Bullet_Speaker_Shot_count = 0;
+                    Bullet_Speaker();
                 }
-                else if (timer > player_Statas.attack_delay && Bullet_Speaker_isBoosted)
+                else if (timer > player_Statas.attack_delay)
                 {
                     timer = 0f;
                     Fire();
-                }
-                boostDuration_End_Timer += Time.deltaTime;
-                if (boostDuration_End_Timer > boostDuration_End)
-                {
-                    Bullet_Speaker_isBoosted = false;
-                    boostDuration_End_Timer = 0;
                 }
             }
             else
@@ -82,27 +77,22 @@ public class Player_Scaner : MonoBehaviour
         }
     }
     #region Bullet_Speaker
-    IEnumerator ApplyAcceleration()
+    private void Bullet_Speaker()
     {
-        Bullet_Speaker_isBoosted = true; // 가속 상태 활성화
-        player_Statas.attack_delay *= boostMultiplier; // 파파파팡 (속도 증가)
+        Debug.Log("히히 분사");
+        player_Statas.attack_delay *= Bullet_Speaker_Speed;
+        Debug.Log(player_Statas.attack_delay);
 
-        float fireRate = boostMultiplier; // 0.2초마다 연속 발사
-        float boostDuration = boostDuration_start; // 연속 발사 지속 시간 (3초)
-
-        float elapsedTime = 0f;
-
-        while (elapsedTime < boostDuration)
+        StartCoroutine(FireBurst());
+        Bullet_Speaker_Shot_count = 0;
+        player_Statas.attack_delay = originalAttackDelay; // 공격 속도 원상복구
+    }
+    IEnumerator FireBurst()
+    {
+        for (int short_count = 0; short_count < Bullet_Speaker_Shot_Max_count; short_count++)
         {
             Fire(); // 총알 발사
-            yield return new WaitForSeconds(fireRate); // 0.2초 간격으로 발사
-            elapsedTime += fireRate;
-            if (Bullet_Speaker_Shot_count > Bullet_Speaker_Shot_Max_count)
-            {
-                player_Statas.attack_delay = originalAttackDelay; // 공격 속도 원상복구
-                Bullet_Speaker_Shot_count = 0;
-                yield break;
-            }
+            yield return new WaitForSeconds(player_Statas.attack_delay); // 0.3초 딜레이 후 반복
         }
     }
     #endregion
