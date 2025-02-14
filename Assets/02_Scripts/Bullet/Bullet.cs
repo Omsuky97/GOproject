@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody rigid;
     public Player_Scaner player; // 플레이어 위치 참조
     private ParticleSystem bulletParticles; // 파티클 시스템 참조
+    public GameObject Bullet_Boomerang_Prefab;
 
     [Header("## -- Bullet -- ##")]
     public float speed = 60f;           // 탄환 속도
@@ -31,6 +32,7 @@ public class Bullet : MonoBehaviour
     public bool Bullet_bounce_Type;
     public bool BUllet_penetrate_Type;
     public bool Bullet_NucBack_Type;
+    public bool Bullet_Boomerang_Type;
 
     private void Awake()
     {
@@ -58,10 +60,12 @@ public class Bullet : MonoBehaviour
         {
             //넉백 여부는 몬스터에서 설정
             //원거리 여부는 플레이어 스캔에서 설정
+
             //탄환의 공격력에 따라 크기 및 넉백 설정
             //정령은 베지에 곡선이라는 것을 활용할 것
             if (Bullet_bounce_Type) Bullet_bounce(other);
             if (BUllet_penetrate_Type) BUllet_penetrate();
+            if (Bullet_Boomerang_Type) Bullet_Boomerang(other);
             if (!Bullet_bounce_Type &&  !BUllet_penetrate_Type || Bullet_NucBack_Type) gameObject.SetActive(false);
         }
     }
@@ -153,6 +157,17 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         DisableBullet();
+    }
+    #endregion
+    #region Bullet_bounce
+    private void Bullet_Boomerang(Collider other)
+    {
+        Vector3 contactPoint = GetContactPoint(other);
+        // 총알을 생성할 위치 계산
+        Vector3 spawnPosition = contactPoint - other.transform.forward * 1.5f;
+
+        // 총알 생성
+        Instantiate(Bullet_Boomerang_Prefab, spawnPosition, Quaternion.identity);
     }
     #endregion
 

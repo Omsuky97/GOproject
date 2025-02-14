@@ -96,6 +96,7 @@ public class Player_Scaner : MonoBehaviour
         }
     }
     #endregion
+
     Transform GetFarthest()
     {
         Transform result = null;
@@ -115,7 +116,6 @@ public class Player_Scaner : MonoBehaviour
         }
         return result;
     }
-
     Transform GetNearest()
     {
         Transform result = null;
