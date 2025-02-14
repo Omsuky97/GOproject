@@ -2402,9 +2402,18 @@ MonoBehaviour:
   nearestTarget: {fileID: 0}
   Fire_Point: {fileID: 5833302098177771254}
   player_Statas: {fileID: 0}
+  target_type: 0
   rotationSpeed: 5
+  boostMultiplier: 0.3
+  boostDuration_start: 3
+  boostDuration_End: 3
+  Bullet_Speaker_Type: 0
+  Bullet_Speaker_isBoosted: 0
+  Bullet_Speaker_Shot_count: 0
+  Bullet_Speaker_Shot_Max_count: 0
   timer: 0
-  FireEffectPrefab: {fileID: 1416843826977054, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+  boostDuration_End_Timer: 0
+  FireEffectPrefab: {fileID: 1733671065153278, guid: 3e5350795dda5e3479adbe59bb731ba2, type: 3}
 --- !u!1 &2962468972718770395
 GameObject:
   m_ObjectHideFlags: 0
