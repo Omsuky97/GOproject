@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,10 +10,13 @@ using UnityEngine.UI;
 public class Enumy_Monster : MonoBehaviour
 {
     //기능
+    private List<Collider> Hit_Boomerang_Bullet = new List<Collider>(); // 이미 맞은 적 목록
     Rigidbody monster_rigid;
     Animator anim;
     public Rigidbody targe_rigid;
     WaitForFixedUpdate wait;
+    private float hit_damage;
+    Transform result;
 
     [Header("## -- Monster_Statas_List -- ##")]
     public int Moster_Id;
@@ -25,7 +29,6 @@ public class Enumy_Monster : MonoBehaviour
     public int Monster_DrItem;
     public string Monster_Prefabs;
     public float Monster_MoveSpeed;
-
 
     [Header("## -- Monster_Attack -- ##")]
     //공격 범위
@@ -52,6 +55,10 @@ public class Enumy_Monster : MonoBehaviour
     public Color enemy_hit_Color = new Color(1f, 1f, 1f, 0.5f);
     private Renderer[] renderers;
     private Color[] originalColors;
+
+    //조건
+    public bool Bullet_Boom_Type;               //총알폭발
+    public bool Bullet_Spirt_Type;              //총알분열
 
     private void Awake()
     {
@@ -155,13 +162,22 @@ public class Enumy_Monster : MonoBehaviour
                 Monster_Attack_Anim();
             }
         }
+
         return result;
     }
     //공격
     void Monster_Attack_Anim()
     {
-        monster_run = false;
-        monster_attack = true;
+        if (result == null)
+        {
+            monster_run = true;
+            monster_attack = false;
+        }
+        else
+        {
+            monster_run = false;
+            monster_attack = true;
+        }
 
         anim.SetBool("Monster_Run", monster_run);
         anim.SetBool("monster_attack", monster_attack);
@@ -173,9 +189,30 @@ public class Enumy_Monster : MonoBehaviour
         {
             string type_name = "Monster";
             if(Monster_Hp > 0) StartCoroutine(BlinkEffect());
-            float hit_damage = other.gameObject.GetComponent<Bullet>().damage;
-            Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
-            Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name);
+
+            // 중복 공격 방지: 기존에 맞았던 적이면 무시
+            if (Hit_Boomerang_Bullet.Contains(other)) return;
+            if(other.gameObject.name == "Bullet_Boomerang(Clone)") Hit_Boomerang_Bullet.Add(other);
+            switch (other.gameObject.name)
+            {
+                case "Bullet_Boom":
+                    hit_damage = other.gameObject.GetComponent<Bullet_Boom>().boom_damage;
+                    break;
+                case "Bullet_Split(Clone)":
+                    hit_damage = other.gameObject.GetComponent<Bullet_Split>().Split_damage;
+                    break;
+                case "Bullet(Clone)":
+                    hit_damage = other.gameObject.GetComponent<Bullet>().damage;
+                    break;
+                case "Bullet_Boomerang(Clone)":
+                    hit_damage = other.gameObject.GetComponent<Bullet_Boomerang>().Boomerang_damage;
+                    break;
+            }
+            if(hit_damage != 0 && hit_damage != null)
+            {
+                Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
+                Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name);
+            }
         }
         if(Monster_Hp <= 0)
         {
@@ -183,7 +220,6 @@ public class Enumy_Monster : MonoBehaviour
             Base_Chartacter_Essential_Funtion.instance.Hit_Palticle(die_effect_prefab, gameObject);
         }
     }
-
     IEnumerator KnocBack()
     {
         yield return wait;
@@ -195,7 +231,6 @@ public class Enumy_Monster : MonoBehaviour
         RestoreOriginalColors();
         yield return new WaitForSeconds(blink_distance);
     }
-
     private void Start_Blick()
     {
         renderers = GetComponentsInChildren<Renderer>();

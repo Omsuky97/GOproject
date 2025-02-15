@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
 public class Bullet_Boomerang : MonoBehaviour
 {
     public float speed = 10f;
+    public float Boomerang_damage;
+    public Bullet Bullet;
     public Transform target;
     private Rigidbody rigid;
     public Rigidbody target_rigid;
-    Vector3 newPosition;
+
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         target_rigid = GameManager.Instance.player.GetComponent<Rigidbody>();
+    }
+    private void Start()
+    {
+        Boomerang_damage = Bullet.damage;
     }
     private void FixedUpdate()
     {
@@ -46,7 +53,7 @@ public class Bullet_Boomerang : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.name == "pl")
         {
             Destroy(gameObject);
         }

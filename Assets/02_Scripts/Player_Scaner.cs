@@ -144,7 +144,7 @@ public class Player_Scaner : MonoBehaviour
         player_attack = true;
         Audio_Manager.instance.PlaySfx(Audio_Manager.SFX.atk);
         targetPos = nearestTarget.position;
-        Vector3 bullet_dir = targetPos - Fire_Point.transform.position;
+        Vector3 bullet_dir = new Vector3(targetPos.x - Fire_Point.transform.position.x, 0f, targetPos.z - Fire_Point.transform.position.z);
         Transform bullet = GameManager.Instance.pool.Bullet_Get(0).transform;
         bullet.position = Fire_Point.transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, bullet_dir);
