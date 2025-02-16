@@ -36,6 +36,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
                 GameManager.Instance.Stage_Level_UP();
                 live = false;
                 take_object.SetActive(false);
+                take_object.transform.position = new Vector3(545f, 5f, 500f);
             }
         }
     }

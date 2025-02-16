@@ -109,6 +109,7 @@ public class Enumy_Monster : MonoBehaviour
     }
     private void OnEnable()
     {
+        gameObject.tag = "Enemy";
         isLive = true;
         monster_run = true;
         monster_attack = false;
@@ -208,7 +209,7 @@ public class Enumy_Monster : MonoBehaviour
                     hit_damage = other.gameObject.GetComponent<Bullet_Boomerang>().Boomerang_damage;
                     break;
             }
-            if(hit_damage != 0 && hit_damage != null)
+            if(hit_damage != 0)
             {
                 Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
                 Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name);

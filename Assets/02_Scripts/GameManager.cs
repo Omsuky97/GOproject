@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
     public float boss_hp;
     public float boss_max_hp;
 
+    [Header("## -- Bullet -- ##")]
+    public float Bullet_Speed = 5;           // ÅºÈ¯ ¼Óµµ
+
     [Header("## -- Player_Game_Over_HUD -- ##")]
     //public GameObject player_statas;
     //public Canvas game_option;

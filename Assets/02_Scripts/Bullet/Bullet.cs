@@ -11,16 +11,12 @@ public class Bullet : MonoBehaviour
 {
     private List<Collider> Hit_Bounce_Enemys = new List<Collider>(); // 이미 맞은 적 목록
     private HashSet<Collider> Hit_Split_Enemys = new HashSet<Collider>(); // 이미 맞은 몬스터 저장
-    private float hitCooldown = 0.5f; // 같은 적을 다시 맞지 않도록 하는 시간(초)
     private Rigidbody rigid;
     public Player_Scaner player; // 플레이어 위치 참조
     private ParticleSystem bulletParticles; // 파티클 시스템 참조
     public GameObject Bullet_Boomerang_Prefab;
 
-    [Header("## -- Bullet -- ##")]
-    public float speed = 5;           // 탄환 속도
     public float damage;
-    public int Bullet_per;
     public Vector3 Bullet_dir;
 
 
@@ -58,7 +54,7 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        Origin_Spped = speed;
+        Origin_Spped = GameManager.Instance.Bullet_Speed;
     }
     private void LateUpdate()
     {
@@ -69,11 +65,10 @@ public class Bullet : MonoBehaviour
         }
     }
     // 데미지, 갯수, 속도
-    public void Init(float dmg, int per, Vector3 dir)
+    public void Init(float dmg, Vector3 dir)
     {
         Bullet_Boom.gameObject.SetActive(false);
         damage = dmg;
-        Bullet_per = per;
         Bullet_dir = dir;
         // 탄환이 새롭게 활성화될 때 파티클 재생
         if (bulletParticles != null) bulletParticles.Play();
@@ -148,14 +143,9 @@ public class Bullet : MonoBehaviour
 
 
             Rigidbody newRb = newBullet.GetComponent<Rigidbody>();
-            if (newRb != null) newRb.velocity = nextDirection * speed;
+            if (newRb != null) newRb.velocity = nextDirection * GameManager.Instance.Bullet_Speed;
             Destroy(newBullet, 3f);
         }
-    }
-    private IEnumerator Hit_List_Split_Remove(Collider enemy)
-    {
-        yield return new WaitForSeconds(hitCooldown);
-        Hit_Split_Enemys.Remove(enemy);
     }
     #endregion
     #region BUllet_penetrate
@@ -205,7 +195,7 @@ public class Bullet : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.velocity = nextDirection * speed;
+            rb.velocity = nextDirection * GameManager.Instance.Bullet_Speed;
         }
 
         bounceCount += 1;

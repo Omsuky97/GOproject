@@ -13,7 +13,6 @@ public class Bullet_Boomerang : MonoBehaviour
     private Rigidbody rigid;
     public Rigidbody target_rigid;
 
-
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
