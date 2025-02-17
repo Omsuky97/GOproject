@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad24db0bee830b74fab4a18d2f87ab2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targe_rigid: {fileID: 7038580185197815659, guid: 94f9efded3e36f244b136ec267682b1d, type: 3}
+  targe_rigid: {fileID: 0}
   Moster_Id: 0
   Monster_MaxHp: 0
   Monster_Hp: 0
@@ -208,9 +208,12 @@ MonoBehaviour:
   monster_isBlinking: 0
   hit_damage_text_pro: {fileID: 6158445389720161608, guid: 4035234ebf24b3d4a8959ea74858bff2, type: 3}
   hit_damage_text_pos_name: text_target
+  NucBack_distance: 10
   blink_distance: 0.2
   blink_count: 1
   enemy_hit_Color: {r: 1, g: 1, b: 1, a: 0.5}
+  Bullet_Boom_Type: 1
+  Bullet_Spirt_Type: 0
 --- !u!136 &148512222014806693
 CapsuleCollider:
   m_ObjectHideFlags: 0
