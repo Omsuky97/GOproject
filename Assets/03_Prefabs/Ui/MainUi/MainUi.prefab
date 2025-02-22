@@ -9359,8 +9359,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "30\uC77C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4d6d56c36b1281d489cfa15012a4c8b2, type: 2}
-  m_sharedMaterial: {fileID: 7349033832636931817, guid: 4d6d56c36b1281d489cfa15012a4c8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 36d6333ec311e7545bba1fdebeeb4f32, type: 2}
+  m_sharedMaterial: {fileID: -1271898007654934528, guid: 36d6333ec311e7545bba1fdebeeb4f32, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18522,7 +18522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.017354785, y: 0.5}
   m_AnchorMax: {x: 0.9566453, y: 0.5}
-  m_AnchoredPosition: {x: 1.0001, y: -0.6101}
+  m_AnchoredPosition: {x: 1.0001, y: -1.3}
   m_SizeDelta: {x: -2.0001, y: 11.3088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341830960057138398
@@ -20903,6 +20903,7 @@ GameObject:
   - component: {fileID: 6251651311211712829}
   - component: {fileID: 8250551980934872433}
   - component: {fileID: 8395427314514753585}
+  - component: {fileID: 7263178029169447052}
   m_Layer: 5
   m_Name: Day_Text
   m_TagString: Untagged
@@ -20959,8 +20960,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: " 30\uC77C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4d6d56c36b1281d489cfa15012a4c8b2, type: 2}
-  m_sharedMaterial: {fileID: 7349033832636931817, guid: 4d6d56c36b1281d489cfa15012a4c8b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 36d6333ec311e7545bba1fdebeeb4f32, type: 2}
+  m_sharedMaterial: {fileID: -1271898007654934528, guid: 36d6333ec311e7545bba1fdebeeb4f32, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21039,6 +21040,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+--- !u!95 &7263178029169447052
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8084493607428140486}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cf6e28898e442c745a07bffa32e1aca3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8101960349791230617
 GameObject:
   m_ObjectHideFlags: 0
