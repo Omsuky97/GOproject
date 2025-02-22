@@ -1,25 +1,28 @@
+using CW.Common;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : MonoBehaviour
 {
-    private List<Collider> Hit_Bounce_Enemys = new List<Collider>(); // 이미 맞은 적 목록
-    private HashSet<Collider> Hit_Split_Enemys = new HashSet<Collider>(); // 이미 맞은 몬스터 저장
+    public static List<Collider> Hit_Bounce_Enemys = new List<Collider>(); // 이미 맞은 적 목록
+    public HashSet<Collider> Hit_Split_Enemys = new HashSet<Collider>(); // 이미 맞은 몬스터 저장
+    public List<Transform> enemyList = new List<Transform>(); // 현재 반사 대상 리스트
+    public int enemyIndex = 0; // 리스트에서 현재 타겟 인덱스
     private Rigidbody rigid;
     public Player_Scaner player; // 플레이어 위치 참조
     private ParticleSystem bulletParticles; // 파티클 시스템 참조
     public GameObject Bullet_Boomerang_Prefab;
-
     public float damage;
     public Vector3 Bullet_dir;
-
-
 
     [Header("## -- Bullet_Bounce -- ##")]
     public int maxBounces = 5;          // 최대 튕길 횟수
@@ -30,10 +33,6 @@ public class Bullet : MonoBehaviour
     public int max_penetration = 5;
     public int penetration = 0;
 
-    [Header("## -- Bullet_Propulsion -- ##")]
-    public float Origin_Spped;
-    public float Propulsion_Speed;
-
     [Header("## -- BulletBoom -- ##")]
     public GameObject Bullet_Boom;
 
@@ -42,27 +41,24 @@ public class Bullet : MonoBehaviour
     public int Bullet_Spirt_Count;
     public float Bullet_Spirt_Offset = 0.5f;
 
-    [Header("## -- Bullet_Bool_Type -- ##")]
-    public bool Bullet_bounce_Type;             //총알튕김
-    public bool BUllet_penetrate_Type;          //총알관통
-    public bool Bullet_NucBack_Type;            //총알넉백
-    public bool Bullet_Boomerang_Type;          //부메랑
-    public bool Bullet_Propulsion_Type;         //총알추진
-    public bool Bullet_Boom_Type;               //총알폭발
-    public bool Bullet_Spirt_Type;              //총알분열
-
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        Origin_Spped = GameManager.Instance.Bullet_Speed;
+        Bullet_Manager.Instance.Origin_Spped = GameManager.Instance.Bullet_Speed;
+
+    }
+    private void Start()
+    {
+        rigid.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
     private void LateUpdate()
     {
-        if (Bullet_Propulsion_Type)
+        if (Bullet_Manager.Instance.Bullet_Propulsion_Type)
         {
-            Propulsion_Speed = Propulsion_Speed + 1;
-            rigid.velocity = Bullet_dir.normalized * Propulsion_Speed;
+            Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Propulsion_Speed + 1;
+            rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Propulsion_Speed;
         }
+        if (rigid.velocity.magnitude < GameManager.Instance.Bullet_Speed * 0.9f) rigid.velocity = rigid.velocity.normalized * GameManager.Instance.Bullet_Speed;
     }
     // 데미지, 갯수, 속도
     public void Init(float dmg, Vector3 dir)
@@ -70,18 +66,32 @@ public class Bullet : MonoBehaviour
         Bullet_Boom.gameObject.SetActive(false);
         damage = dmg;
         Bullet_dir = dir;
-        // 탄환이 새롭게 활성화될 때 파티클 재생
         if (bulletParticles != null) bulletParticles.Play();
         bounceCount = 0;
+        Hit_Bounce_Enemys.Clear();
         penetration = 0;
-        Propulsion_Speed = Origin_Spped;
-        rigid.velocity = Bullet_dir.normalized * Origin_Spped;
+        enemyList.Clear();
+        enemyIndex = 0;
+        Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Origin_Spped;
+        rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Origin_Spped;
     }
     private void OnEnable()
     {
+        // 적과 충돌했으므로, 맞은 적 리스트에 추가
+        Hit_Bounce_Enemys.Clear();
+        penetration = 0;
+        bounceCount = 0;
+        enemyList.Clear();
+        enemyIndex = 0;
         ResetChildRotation(); // 총알이 활성화될 때 하위 오브젝트 회전 초기화
     }
-
+    private void OnDisable()
+    {
+        Hit_Bounce_Enemys.Clear();
+        enemyList.Clear();
+        bounceCount = 0;
+        enemyIndex = 0;
+    }
     private void ResetChildRotation()
     {
         foreach (Transform child in transform)
@@ -100,22 +110,21 @@ public class Bullet : MonoBehaviour
             //탄환의 공격력에 따라 크기 및 넉백 설정
             //정령은 베지에 곡선이라는 것을 활용할 것
             Vector3 contactPoint = other.ClosestPoint(transform.position);
-            if (Bullet_Boom_Type) Bullet_Boom.gameObject.SetActive(true);
-            if (Bullet_Spirt_Type)
+            if (Bullet_Manager.Instance.Bullet_Boom_Type) Bullet_Boom.gameObject.SetActive(true);
+            if (Bullet_Manager.Instance.Bullet_Spirt_Type)
             {
                 Hit_Split_Enemys.Add(other);
                 Bullet_Split(contactPoint, Hit_Split_Enemys, other);
             }
-            if (Bullet_bounce_Type)
+            if (Bullet_Manager.Instance.Bullet_bounce_Type)
             {
-                if (Hit_Bounce_Enemys.Any(e => e.gameObject == other.gameObject)) return;
 
-                Hit_Bounce_Enemys.Add(other);
-                Bullet_bounce(other);
+                if (Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_bounce_Guided(other);
+                else if (!Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_bounce(other);
             }
-            if (BUllet_penetrate_Type) BUllet_penetrate();
-            if (Bullet_Boomerang_Type) Bullet_Boomerang(other);
-            if(!Bullet_bounce_Type && !Bullet_Boom_Type) gameObject.SetActive(false);
+            if (Bullet_Manager.Instance.BUllet_penetrate_Type) BUllet_penetrate();
+            if (Bullet_Manager.Instance.Bullet_Boomerang_Type) Bullet_Boomerang(other);
+            if(!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type) gameObject.SetActive(false);
         }
     }
     # region Bullet_Split
@@ -163,50 +172,133 @@ public class Bullet : MonoBehaviour
     #region Bullet_bounce
     private void Bullet_bounce(Collider other)
     {
-        // 최대 튕김 횟수를 초과하면 총알 비활성화
         if (bounceCount >= maxBounces)
         {
             gameObject.SetActive(false);
             return;
         }
 
-        // 충돌 지점 및 새로운 방향 찾기
+        if (Hit_Bounce_Enemys.Contains(other)) return; // 이미 맞았으면 더 이상 진행하지 않음
+        Hit_Bounce_Enemys.Add(other);
+
         Vector3 contactPoint = GetContactPoint(other);
         Vector3 nextDirection = FindGeneralEnemyDirection(contactPoint);
 
-        // 튕길 방향이 없으면 비활성화
         if (nextDirection == Vector3.zero)
         {
             gameObject.SetActive(false);
             return;
         }
-        // 기존 총알의 위치 및 방향 변경 (부모는 그대로)
+
         transform.position = contactPoint + (nextDirection.normalized * Bullet_Spirt_Offset);
         transform.rotation = Quaternion.LookRotation(nextDirection);
-
-        // **하위 오브젝트들의 X축 회전을 90도로 고정**
         foreach (Transform child in transform)
         {
             Vector3 childEuler = child.localEulerAngles;
             child.localEulerAngles = new Vector3(0, childEuler.y, childEuler.z);
         }
-
-        // 기존 총알의 Rigidbody 속도를 업데이트하여 튕기게 함
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.velocity = nextDirection * GameManager.Instance.Bullet_Speed;
-        }
-
+        rigid.velocity = nextDirection * GameManager.Instance.Bullet_Speed;
         bounceCount += 1;
+
+        Hit_Bounce_Enemys.Remove(other);
+
         if (gameObject != null && gameObject.activeInHierarchy)
         {
             StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
         }
     }
+    private void Bullet_bounce_Guided(Collider other)
+    {
+        if (bounceCount >= maxBounces)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
+        bounceCount += 1;
+
+        if (!Hit_Bounce_Enemys.Contains(other))
+        {
+            Hit_Bounce_Enemys.Add(other);
+        }
+
+        Vector3 contactPoint = GetContactPoint(other);
+
+        Transform nearestEnemy = GetNextEnemy();
+
+        if (nearestEnemy == null)
+        {
+            enemyIndex = 0;
+            nearestEnemy = GetNextEnemy();
+        }
+
+        if (nearestEnemy == null)
+        {
+            ScanEnemies(contactPoint, 30f);
+            nearestEnemy = GetNextEnemy();
+        }
+
+        if (nearestEnemy == null)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        Vector3 nextDirection = (nearestEnemy.position - transform.position).normalized;
+        float fixedSpeed = GameManager.Instance.Bullet_Speed; // 속도 고정
+        rigid.velocity = nextDirection * fixedSpeed;
+        transform.rotation = Quaternion.LookRotation(nextDirection);
+
+        enemyIndex++;
+
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DestroyAfterDelay(3f));
+        }
+    }
+    private Transform GetNextEnemy()
+    {
+        if (enemyList.Count == 0)
+        {
+            ScanEnemies(transform.position, 30f);
+            enemyIndex = 0;
+        }
+
+        if (enemyIndex >= enemyList.Count)
+        {
+            enemyIndex = 0;
+        }
+        while (enemyIndex < enemyList.Count)
+        {
+            Transform enemy = enemyList[enemyIndex];
+            enemyIndex++;
+
+            if (enemy != null && !Hit_Bounce_Enemys.Contains(enemy.GetComponent<Collider>()))
+            {
+                return enemy;
+            }
+        }
+
+        return null;
+    }
+    private void ScanEnemies(Vector3 position, float range)
+    {
+        enemyList.Clear();
+        enemyIndex = 0;
+
+        Collider[] hitColliders = new Collider[20]; // 최대 감지 수 증가
+        int numColliders = Physics.OverlapSphereNonAlloc(position, range, hitColliders);
+
+        for (int i = 0; i < numColliders; i++)
+        {
+            if (hitColliders[i].CompareTag("Enemy") && !Hit_Bounce_Enemys.Contains(hitColliders[i]) && hitColliders[i].gameObject.activeSelf)
+            {
+                enemyList.Add(hitColliders[i].transform);
+            }
+        }
+    }
     private Vector3 GetContactPoint(Collider other)
     {
-        return other.ClosestPoint(transform.position);
+        return other.bounds.center;  // 정확도를 높이기 위해 중심점을 사용
     }
     Vector3 FindGeneralEnemyDirection(Vector3 currentPosition)
     {

@@ -13,7 +13,7 @@ public class Player_Scaner : MonoBehaviour
     public float scanRange;
     public LayerMask targetLayer;
     public RaycastHit[] targets_monster;
-    public Transform nearestTarget;
+    public static Transform nearestTarget;
 
     public GameObject Fire_Point;
     public GameManager player_Statas;
@@ -22,76 +22,57 @@ public class Player_Scaner : MonoBehaviour
     bool player_attack = false;
     Vector3 targetPos;
 
-    [Header("## -- Bullet_Target_Type -- ##")]
-    public bool target_type = false;
-
-    [Header("## -- Bullet_Participle -- ##")]
-    public bool Bullet_Participle_Type;
-    public float Bullet_Speaker_Speed = 0.3f; //= 가속
-    public float boostDuration_start = 3f;         // 가속 유지 시간
-    public float boostDuration_End = 3f;         // 가속 유지 시간
-
     [Header("## -- Bullet_Bezier -- ##")]
     public bool Bullet_Bezier_Type;
     public GameObject Bullet_Bezier;
-
-    [Header("## -- Bullet_Speaker -- ##")]
-    public bool Bullet_Speaker_Type;
-    private float originalAttackDelay; // 원래 공격 딜레이 값 저장
-    public short Bullet_Speaker_Shot_count;
-    public short Bullet_Speaker_Shot_Max_count;
 
     //파티클
     public GameObject FireEffectPrefab; // 맞았을 때 실행할 파티클 프리팹
 
     private void Start()
     {
-        originalAttackDelay = player_Statas.attack_delay; // 시작 시 원래 값 저장
+        Bullet_Manager.Instance.Origianl_Bullet_Speed = player_Statas.attack_delay; // 시작 시 원래 값 저장
     }
     private void FixedUpdate()
     {
-
-        //범위에 들어오는거 확인 후 벨지에 곡선으로 공격
         targets_monster = Physics.SphereCastAll(transform.position, scanRange, Vector3.forward, scanRange, targetLayer);
-        if (!target_type) nearestTarget = GetNearest();
-        else if (target_type) nearestTarget = GetFarthest();
+        if (!Bullet_Manager.Instance.Bullet_Target_type) nearestTarget = GetNearest();
+        else if (Bullet_Manager.Instance.Bullet_Target_type) nearestTarget = GetFarthest();
         if (nearestTarget != null)
         {
             Player_Rotator();
-
-            if (!player_attack)
-            {
-                timer += Time.deltaTime;
-            }
-
-            if (Bullet_Speaker_Type)
+            if (!player_attack) timer += Time.deltaTime;
+            if (Bullet_Manager.Instance.Bullet_Speaker_Type)
             {
                 //이거 레벨업 할때마다 6을 줄여서 확률 높여줄 것
-                int Random_Speaker_Value = Random.Range(0, 6); // 0~5 사이의 랜덤 값
-                if (timer > player_Statas.attack_delay && Random_Speaker_Value == 0) Bullet_Speaker();
+                int Random_Speaker_Value = Random.Range(0, 1); // 0~5 사이의 랜덤 값
+                if (timer > player_Statas.attack_delay && Random_Speaker_Value == 0)
+                {
+                    Bullet_Speaker();
+                }
                 else
                 {
-                    if (Bullet_Participle_Type)
+                    if (Bullet_Manager.Instance.Bullet_ShotGun_Type)
                         if (timer > player_Statas.attack_delay)
                         {
                             timer = 0f;
-                            Bullet_Participle();
+                            Bullet_ShotGun();
                         }
-                        else if (!Bullet_Participle_Type)
+                        else if (!Bullet_Manager.Instance.Bullet_ShotGun_Type)
                             if (timer > player_Statas.attack_delay)
                             {
                                 timer = 0f;
                                 Fire();
-                                int Random_Bezier_Value = Random.Range(0, 1); // 0~5 사이의 랜덤 값
+                                int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
                                 if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                             }
                 }
             }
-            else if (!Bullet_Speaker_Type && Bullet_Participle_Type)
+            else if (!Bullet_Manager.Instance.Bullet_Speaker_Type && Bullet_Manager.Instance.Bullet_ShotGun_Type)
                 if (timer > player_Statas.attack_delay)
                 {
                     timer = 0f;
-                    Bullet_Participle();
+                    Bullet_ShotGun();
                 }
                 else
                 {
@@ -99,7 +80,7 @@ public class Player_Scaner : MonoBehaviour
                     {
                         timer = 0f;
                         Fire();
-                        int Random_Bezier_Value = Random.Range(0, 1); // 0~5 사이의 랜덤 값
+                        int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
                         if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                     }
                 }
@@ -109,7 +90,7 @@ public class Player_Scaner : MonoBehaviour
                 {
                     timer = 0f;
                     Fire();
-                    int Random_Bezier_Value = Random.Range(0, 1); // 0~5 사이의 랜덤 값
+                    int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
                     if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                 }
             }
@@ -118,18 +99,16 @@ public class Player_Scaner : MonoBehaviour
     #region Bullet_Speaker
     private void Bullet_Speaker()
     {
-        player_Statas.attack_delay *= Bullet_Speaker_Speed;
-
+        player_Statas.attack_delay *= Bullet_Manager.Instance.Speaker_Speed;
         StartCoroutine(FireBurst());
-        Bullet_Speaker_Shot_count = 0;
-        player_Statas.attack_delay = originalAttackDelay; // 공격 속도 원상복구
+        player_Statas.attack_delay = Bullet_Manager.Instance.Origianl_Bullet_Speed; // 공격 속도 원상복구
     }
     IEnumerator FireBurst()
     {
-        for (int short_count = 0; short_count < Bullet_Speaker_Shot_Max_count; short_count++)
+        for (int short_count = 0; short_count < Bullet_Manager.Instance.Shot_Max_count; short_count++)
         {
-            if (Bullet_Participle_Type) Bullet_Participle();
-            else if (!Bullet_Participle_Type) Fire(); // 총알 발사
+            if (Bullet_Manager.Instance.Bullet_ShotGun_Type) Bullet_ShotGun();
+            else if (!Bullet_Manager.Instance.Bullet_ShotGun_Type) Fire(); // 총알 발사
             yield return new WaitForSeconds(player_Statas.attack_delay); // 0.3초 딜레이 후 반복
         }
     }
@@ -176,7 +155,6 @@ public class Player_Scaner : MonoBehaviour
     }
     public void Fire()
     {
-        Bullet_Speaker_Shot_count += 1;
         if (player_attack) return;
         if (!nearestTarget) return;
 
@@ -195,9 +173,7 @@ public class Player_Scaner : MonoBehaviour
         Target_List.RemoveAll(t => t == null || !t.gameObject.activeSelf); // 비활성화된 모든 오브젝트 제거
         StartCoroutine(ResetFire());
     }
-
-
-    private void Bullet_Participle()
+    private void Bullet_ShotGun()
     {
         // 플레이어가 공격 시작
         player_attack = true;
@@ -217,15 +193,14 @@ public class Player_Scaner : MonoBehaviour
             // 발사 위치 계산
             Vector3 spawnPosition = Fire_Point.transform.position + nextDirection;
 
-            // 총알 생성 및 방향 설정
-            Transform bullet = GameManager.Instance.pool.Bullet_Get(0).transform;
+            // 총알 생성 및 위치 설정
+            Transform bullet = GameManager.Instance.pool.Bullet_Get(3).transform;
             bullet.position = spawnPosition;
-            bullet.rotation = Quaternion.LookRotation(nextDirection);
 
-            // Bullet 컴포넌트 초기화 및 속도 설정
-            bullet.GetComponent<Bullet>().Init(player_Statas.bullet_damage, nextDirection);
+            // 총알이 항상 타겟을 바라보도록 설정
+            Quaternion lookAtTarget = Quaternion.LookRotation(targetPos - spawnPosition); // 타겟을 바라보는 방향
+            bullet.rotation = Quaternion.Euler(90, lookAtTarget.eulerAngles.y, lookAtTarget.eulerAngles.z); // X축 90도 고정
         }
-
         // 리셋
         StartCoroutine(ResetFire());
     }
@@ -345,9 +320,5 @@ public class Player_Scaner : MonoBehaviour
         // **비활성화된 타겟을 리스트에서 제거**
         Target_List.RemoveAll(t => t == null || !t.gameObject.activeSelf);
     }
-
-
-
-
     #endregion
 }

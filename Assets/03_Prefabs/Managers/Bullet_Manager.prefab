@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7852777954299495325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3646983723181513093}
+  - component: {fileID: 1171228838417900882}
+  m_Layer: 0
+  m_Name: Bullet_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3646983723181513093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852777954299495325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171228838417900882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852777954299495325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c68e455c02027448bd4dcde69cff02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet_bounce_Type: 0
+  BUllet_penetrate_Type: 0
+  Bullet_NucBack_Type: 0
+  Bullet_Boomerang_Type: 0
+  Bullet_Propulsion_Type: 0
+  Bullet_Boom_Type: 0
+  Bullet_Spirt_Type: 0
+  Bullet_Guided_Type: 0
+  Bullet_ShotGun_Type: 0
+  Bullet_Speaker_Type: 1
+  Bullet_Target_type: 0
+  Origin_Spped: 0
+  Propulsion_Speed: 0
+  Origianl_Bullet_Speed: 0
+  Speaker_Speed: 0.3
+  Shot_Max_count: 3

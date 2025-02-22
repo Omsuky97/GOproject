@@ -38,6 +38,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
                 take_object.SetActive(false);
                 take_object.transform.position = new Vector3(545f, 5f, 500f);
             }
+            if (Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_ShotGun.Bullet_Target = new Vector3(0, 0, 0);
         }
     }
 
