@@ -56,10 +56,6 @@ public class Enumy_Monster : MonoBehaviour
     private Renderer[] renderers;
     private Color[] originalColors;
 
-    //Á¶°Ç
-    public bool Bullet_Boom_Type;               //ÃÑ¾ËÆø¹ß
-    public bool Bullet_Spirt_Type;              //ÃÑ¾ËºÐ¿­
-
     private void Awake()
     {
         monster_rigid = GetComponent<Rigidbody>();

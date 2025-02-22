@@ -13,7 +13,7 @@ public class Player_Scaner : MonoBehaviour
     public float scanRange;
     public LayerMask targetLayer;
     public RaycastHit[] targets_monster;
-    public Transform nearestTarget;
+    public static Transform nearestTarget;
 
     public GameObject Fire_Point;
     public GameManager player_Statas;
@@ -50,7 +50,6 @@ public class Player_Scaner : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
         //범위에 들어오는거 확인 후 벨지에 곡선으로 공격
         targets_monster = Physics.SphereCastAll(transform.position, scanRange, Vector3.forward, scanRange, targetLayer);
         if (!target_type) nearestTarget = GetNearest();
@@ -82,7 +81,7 @@ public class Player_Scaner : MonoBehaviour
                             {
                                 timer = 0f;
                                 Fire();
-                                int Random_Bezier_Value = Random.Range(0, 1); // 0~5 사이의 랜덤 값
+                                int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
                                 if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                             }
                 }
@@ -99,7 +98,7 @@ public class Player_Scaner : MonoBehaviour
                     {
                         timer = 0f;
                         Fire();
-                        int Random_Bezier_Value = Random.Range(0, 1); // 0~5 사이의 랜덤 값
+                        int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
                         if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                     }
                 }
@@ -109,7 +108,7 @@ public class Player_Scaner : MonoBehaviour
                 {
                     timer = 0f;
                     Fire();
-                    int Random_Bezier_Value = Random.Range(0, 1); // 0~5 사이의 랜덤 값
+                    int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
                     if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                 }
             }
@@ -345,9 +344,5 @@ public class Player_Scaner : MonoBehaviour
         // **비활성화된 타겟을 리스트에서 제거**
         Target_List.RemoveAll(t => t == null || !t.gameObject.activeSelf);
     }
-
-
-
-
     #endregion
 }

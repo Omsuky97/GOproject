@@ -13,6 +13,7 @@ public class Bullet_Bezier : MonoBehaviour
     {
         gameObject.transform.position = Fire_Point.transform.position;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy")) gameObject.SetActive(false);
