@@ -204,6 +204,9 @@ public class Enumy_Monster : MonoBehaviour
                 case "Bullet_Boomerang(Clone)":
                     hit_damage = other.gameObject.GetComponent<Bullet_Boomerang>().Boomerang_damage;
                     break;
+                case "Bullet_ShotGun(Clone)":
+                    hit_damage = other.gameObject.GetComponent<Bullet_ShotGun>().ShortGun_damage;
+                    break;
             }
             if(hit_damage != 0)
             {

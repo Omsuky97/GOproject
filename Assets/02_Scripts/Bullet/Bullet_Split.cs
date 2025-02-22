@@ -27,7 +27,6 @@ public class Bullet_Split : MonoBehaviour
         Vector3 newDirection = Vector3.Lerp(rb.velocity.normalized, direction, rotateSpeed * Time.fixedDeltaTime).normalized;
         newDirection.y = 0;
 
-        // 속도 적용
         rb.velocity = newDirection * GameManager.Instance.Bullet_Speed;
     }
     public void Inherit_Hit_Monsters(HashSet<Collider> parentHitMonsters)

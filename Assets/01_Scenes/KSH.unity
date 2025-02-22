@@ -585,7 +585,7 @@ Transform:
   m_GameObject: {fileID: 663187180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 72, y: 34.5, z: -0.9}
+  m_LocalPosition: {x: 56.2, y: 34.5, z: -0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -771,6 +771,7 @@ MonoBehaviour:
   - {fileID: 1046377441548030, guid: d1776cbac3b88f945aa9092bc81a66da, type: 3}
   - {fileID: 4276784567266169360, guid: 0b26a6005f1c2f341ac3a81a9a924600, type: 3}
   - {fileID: 5832166914603083766, guid: 54dac133e6593ce4daa40dd32ef7228f, type: 3}
+  - {fileID: 8312025800624197770, guid: 060fa94616b22be4e9e4e563617af6d7, type: 3}
 --- !u!4 &727185152
 Transform:
   m_ObjectHideFlags: 0
@@ -1235,7 +1236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
       propertyPath: Bullet_Participle_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6202424842617229360, guid: ea4859fb01be4274da028c9be853f83c, type: 3}
       propertyPath: Bullet_Speaker_Shot_Max_count
@@ -1756,6 +1757,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c68e455c02027448bd4dcde69cff02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullet_bounce_Type: 0
+  BUllet_penetrate_Type: 0
+  Bullet_NucBack_Type: 0
+  Bullet_Boomerang_Type: 0
+  Bullet_Propulsion_Type: 0
+  Bullet_Boom_Type: 0
+  Bullet_Spirt_Type: 0
+  Bullet_Guided_Type: 0
+  Bullet_ShotGun_Type: 0
+  Bullet_Speaker_Type: 1
+  Bullet_Target_type: 0
+  Origin_Spped: 0
+  Propulsion_Speed: 0
+  Origianl_Bullet_Speed: 0
+  Speaker_Speed: 0.3
+  Shot_count: 0
+  Shot_Max_count: 3
+  Fire_Burst_Type: 0
+  Fire_Burst_Time: 2
 --- !u!1 &1407752435
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,7 +4176,7 @@ MonoBehaviour:
   player_max_hp: 500
   bullet_damage: 20
   bullet_count: 3
-  attack_delay: 0.2
+  attack_delay: 0.5
   gold_count: 5
   hit_color_Image: {fileID: 0}
   hit_Color: {r: 1, g: 1, b: 1, a: 0}

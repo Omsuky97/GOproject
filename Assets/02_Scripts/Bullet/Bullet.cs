@@ -9,6 +9,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : MonoBehaviour
 {
@@ -22,7 +23,6 @@ public class Bullet : MonoBehaviour
     public GameObject Bullet_Boomerang_Prefab;
     public float damage;
     public Vector3 Bullet_dir;
-    public float rotateSpeed = 5f;   // È¸Àü ¼Óµµ
 
     [Header("## -- Bullet_Bounce -- ##")]
     public int maxBounces = 5;          // ÃÖ´ë Æ¨±æ È½¼ö
@@ -33,10 +33,6 @@ public class Bullet : MonoBehaviour
     public int max_penetration = 5;
     public int penetration = 0;
 
-    [Header("## -- Bullet_Propulsion -- ##")]
-    public float Origin_Spped;
-    public float Propulsion_Speed;
-
     [Header("## -- BulletBoom -- ##")]
     public GameObject Bullet_Boom;
 
@@ -45,20 +41,10 @@ public class Bullet : MonoBehaviour
     public int Bullet_Spirt_Count;
     public float Bullet_Spirt_Offset = 0.5f;
 
-    [Header("## -- Bullet_Bool_Type -- ##")]
-    public bool Bullet_bounce_Type;             //ÃÑ¾ËÆ¨±è
-    public bool BUllet_penetrate_Type;          //ÃÑ¾Ë°üÅë
-    public bool Bullet_NucBack_Type;            //ÃÑ¾Ë³Ë¹é
-    public bool Bullet_Boomerang_Type;          //ºÎ¸Þ¶û
-    public bool Bullet_Propulsion_Type;         //ÃÑ¾ËÃßÁø
-    public bool Bullet_Boom_Type;               //ÃÑ¾ËÆø¹ß
-    public bool Bullet_Spirt_Type;              //ÃÑ¾ËºÐ¿­
-    public bool Bullet_Guided_Type;             //ÃÑ¾Ë À¯µµ
-
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        Origin_Spped = GameManager.Instance.Bullet_Speed;
+        Bullet_Manager.Instance.Origin_Spped = GameManager.Instance.Bullet_Speed;
 
     }
     private void Start()
@@ -67,15 +53,12 @@ public class Bullet : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (Bullet_Propulsion_Type)
+        if (Bullet_Manager.Instance.Bullet_Propulsion_Type)
         {
-            Propulsion_Speed = Propulsion_Speed + 1;
-            rigid.velocity = Bullet_dir.normalized * Propulsion_Speed;
+            Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Propulsion_Speed + 1;
+            rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Propulsion_Speed;
         }
-        if (rigid.velocity.magnitude < GameManager.Instance.Bullet_Speed * 0.9f)
-        {
-            rigid.velocity = rigid.velocity.normalized * GameManager.Instance.Bullet_Speed;
-        }
+        if (rigid.velocity.magnitude < GameManager.Instance.Bullet_Speed * 0.9f) rigid.velocity = rigid.velocity.normalized * GameManager.Instance.Bullet_Speed;
     }
     // µ¥¹ÌÁö, °¹¼ö, ¼Óµµ
     public void Init(float dmg, Vector3 dir)
@@ -83,15 +66,14 @@ public class Bullet : MonoBehaviour
         Bullet_Boom.gameObject.SetActive(false);
         damage = dmg;
         Bullet_dir = dir;
-        // ÅºÈ¯ÀÌ »õ·Ó°Ô È°¼ºÈ­µÉ ¶§ ÆÄÆ¼Å¬ Àç»ý
         if (bulletParticles != null) bulletParticles.Play();
         bounceCount = 0;
         Hit_Bounce_Enemys.Clear();
         penetration = 0;
         enemyList.Clear();
         enemyIndex = 0;
-        Propulsion_Speed = Origin_Spped;
-        rigid.velocity = Bullet_dir.normalized * Origin_Spped;
+        Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Origin_Spped;
+        rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Origin_Spped;
     }
     private void OnEnable()
     {
@@ -128,21 +110,21 @@ public class Bullet : MonoBehaviour
             //ÅºÈ¯ÀÇ °ø°Ý·Â¿¡ µû¶ó Å©±â ¹× ³Ë¹é ¼³Á¤
             //Á¤·ÉÀº º£Áö¿¡ °î¼±ÀÌ¶ó´Â °ÍÀ» È°¿ëÇÒ °Í
             Vector3 contactPoint = other.ClosestPoint(transform.position);
-            if (Bullet_Boom_Type) Bullet_Boom.gameObject.SetActive(true);
-            if (Bullet_Spirt_Type)
+            if (Bullet_Manager.Instance.Bullet_Boom_Type) Bullet_Boom.gameObject.SetActive(true);
+            if (Bullet_Manager.Instance.Bullet_Spirt_Type)
             {
                 Hit_Split_Enemys.Add(other);
                 Bullet_Split(contactPoint, Hit_Split_Enemys, other);
             }
-            if (Bullet_bounce_Type)
+            if (Bullet_Manager.Instance.Bullet_bounce_Type)
             {
 
-                if (Bullet_Guided_Type) Bullet_bounce_Guided(other);
-                else if (!Bullet_Guided_Type) Bullet_bounce(other);
+                if (Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_bounce_Guided(other);
+                else if (!Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_bounce(other);
             }
-            if (BUllet_penetrate_Type) BUllet_penetrate();
-            if (Bullet_Boomerang_Type) Bullet_Boomerang(other);
-            if(!Bullet_bounce_Type && !Bullet_Boom_Type) gameObject.SetActive(false);
+            if (Bullet_Manager.Instance.BUllet_penetrate_Type) BUllet_penetrate();
+            if (Bullet_Manager.Instance.Bullet_Boomerang_Type) Bullet_Boomerang(other);
+            if(!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type) gameObject.SetActive(false);
         }
     }
     # region Bullet_Split

@@ -1,3 +1,4 @@
+using Lean.Gui;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,33 +7,30 @@ public class Bullet_Manager : MonoBehaviour
 {
     public static Bullet_Manager Instance;
 
-    //[Header("## -- Bullet_Targets -- ##")]
+    [Header("## -- Bullet_Type -- ##")]
+    public bool Bullet_bounce_Type;             //총알튕김
+    public bool BUllet_penetrate_Type;          //총알관통
+    public bool Bullet_NucBack_Type;            //총알넉백
+    public bool Bullet_Boomerang_Type;          //부메랑
+    public bool Bullet_Propulsion_Type;         //총알추진
+    public bool Bullet_Boom_Type;               //총알폭발
+    public bool Bullet_Spirt_Type;              //총알분열
+    public bool Bullet_Guided_Type;             //총알 유도
+    public bool Bullet_ShotGun_Type;            //총알 샷건
+    public bool Bullet_Speaker_Type;            //총알 점사
+    public bool Bullet_Target_type;             //총알 멀리 있는 것 부터 쏘는 것
 
+    [Header("## -- Bullet_Propulsion -- ##")]
+    public float Origin_Spped;
+    public float Propulsion_Speed;
+
+    [Header("## -- Bullet_Speaker -- ##")]
+    public float Origianl_Bullet_Speed; // 원래 공격 딜레이 값 저장
+    public float Speaker_Speed = 0.3f; //= 가속
+    public short Shot_Max_count;
 
     void Awake()
     {
         Instance = this;
-    }
-
-
-    public void SpawnNewBullet(Vector3 targetPosition, int currentBounceCount)
-    {
-        Transform bullet = GameManager.Instance.pool.Bullet_Get(0).transform; // 오브젝트 풀에서 가져옴
-        if (bullet != null)
-        {
-            Bullet bulletScript = bullet.GetComponent<Bullet>(); // 새로운 총알의 스크립트 가져오기
-            bulletScript.bounceCount = currentBounceCount; // 현재 튕긴 횟수 유지
-
-            bullet.position = transform.position; // 현재 총알 위치에서 시작
-            bullet.rotation = Quaternion.LookRotation(targetPosition - transform.position);
-            bullet.gameObject.SetActive(true);
-
-            Rigidbody bulletRigid = bullet.GetComponent<Rigidbody>();
-            bulletRigid.velocity = (targetPosition - transform.position).normalized * GameManager.Instance.Bullet_Speed; // 속도 유지
-        }
-    }
-    public Vector3 GetContactPoint(Collider other)
-    {
-        return other.transform.position;
     }
 }
