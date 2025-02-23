@@ -7,6 +7,9 @@ public class Bullet_Manager : MonoBehaviour
 {
     public static Bullet_Manager Instance;
 
+    [Header("## -- Bullet -- ##")]
+    public float Bullet_Speed = 5;           // ÅºÈ¯ ¼Óµµ
+
     [Header("## -- Bullet_Type -- ##")]
     public bool Bullet_bounce_Type;             //ÃÑ¾ËÆ¨±è
     public bool BUllet_penetrate_Type;          //ÃÑ¾Ë°üÅë
@@ -32,6 +35,36 @@ public class Bullet_Manager : MonoBehaviour
     public float Origianl_Bullet_Speed; // ¿ø·¡ °ø°Ý µô·¹ÀÌ °ª ÀúÀå
     public float Speaker_Speed = 0.3f; //= °¡¼Ó
     public short Shot_Max_count;
+
+    [Header("## -- Bullet_ShotGun -- ##")]
+    public int Bullet_ShotGun_Count;
+
+    [Header("## -- Bullet_Penetrate -- ##")]
+    public int max_penetration = 5;
+    public int penetration = 0;
+
+    [Header("## -- Bullet_Bounce -- ##")]
+    public int maxBounces = 5;          // ÃÖ´ë Æ¨±æ È½¼ö
+    public int bounceCount = 0;         // ÇöÀç Æ¨±ä È½¼ö
+    public float Bullet_Bounce_Spawn_Offset = 1.0f;    //Ãæµ¹ À§Ä¡¿¡¼­ ÀÌµ¿ÇÒ °Å¸®
+
+    [Header("## -- Bullet_NucBack -- ##")]
+    public float NucBack_distance = 5.0f;
+
+    [Header("## -- Bullet_Spirt -- ##")]
+    public GameObject Bullet_Spirt;
+    public int Bullet_Spirt_Count;
+    public float Bullet_Spirt_Offset = 0.5f;
+
+    [Header("## -- Bullet_Speaker -- ##")]
+    public int Bullet_Speaker_Count;
+
+    [Header("## -- Bullet_Speaker -- ##")]
+    public float Bullet_Scan_Range;
+
+    [Header("## -- Bullet_Bezier -- ##")]
+    public int Bullet_Bezier_Count;
+
 
     void Awake()
     {

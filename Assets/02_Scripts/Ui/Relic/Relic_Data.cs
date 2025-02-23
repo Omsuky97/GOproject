@@ -52,11 +52,13 @@ public class Relic_Data : ScriptableObject
     [Tooltip("총알 분열체 수 증가")]
     public int[] Bullet_Split_Up;         //총알 분열체 수 증가
     [Tooltip("총알 발사체 수 증가")]
-    public int[] Bullet_Multi_Shot_Up;    //총알 발사체 수 증가
+    public int[] Bullet_Multi_Luck_Up;    //총알 발사 확률 증가
     [Tooltip("조준 범위 증가")]
     public float[] Aiming_Range_Up;       //조준 범위 증가
     [Tooltip("조준 범위 감소")]
     public float[] Aiming_Range_Down;     //조준 범위 감소
+    [Tooltip("총알 연속 발사 수")]
+    public bool Bullet_Speaker_Type;       //총알 연속 발사 수
     [Tooltip("총알 연속 발사 수")]
     public int[] Bullet_Speaker_Up;       //총알 연속 발사 수
     [Tooltip("총알 타겟 명중 후 되돌아오는 여부")]
@@ -65,12 +67,20 @@ public class Relic_Data : ScriptableObject
     public bool Bullet_Sniping;           //가장멀리있는 적 사격 여부
     [Tooltip("총알 점진적 이동 여부")]
     public bool Bullet_Gra_Speed;         //총알 점진적 이동 여부
+    [Tooltip("총알 샷건 여부")]
+    public bool Bullet_ShotGun_Type;         //총알 점진적 이동 여부
+    [Tooltip("총알 샷건 발사 갯수")]
+    public int[] Bullet_ShotGun_Count;         //총알 점진적 이동 여부
     [Tooltip("총알 타겟 명중 시 범위 피해 여부")]
     public bool Bullet_Bomb;              //총알 타겟 명중 시 범위 피해 여부
+    [Tooltip("총알 분열 여부")]
+    public bool Bullet_Spirt_Type;               //총알 유도 여부
     [Tooltip("총알 유도 여부")]
     public bool Bullet_Idt;               //총알 유도 여부
     [Tooltip("총알 넉백 여부")]
     public bool Bullet_Noc;               //총알 넉백 여부 --추가
+    [Tooltip("총알 효과 트리거 횟수")]
+    public bool Bullet_Effec_Type;         //총알 효과 트리거 횟수
     [Tooltip("총알 효과 트리거 횟수")]
     public int[] Bullet_Effec_Tg;         //총알 효과 트리거 횟수
     [Tooltip("소환체 참조 id")]
@@ -80,4 +90,8 @@ public class Relic_Data : ScriptableObject
     public string Bullet_Projec_tile;   //총알 투사체 파티클리소스 경로
     public string Bullet_Hit;           //총알 명중 파티클 리소스 경로
     public string Bullet_Muzzle;        //총알 발사 파티클 리소스 경로
+    public void ResetLevel()
+    {
+        Relics_Lv = 1;
+    }
 }

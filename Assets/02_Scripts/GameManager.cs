@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public Player player;
 
+    [Header("## -- Relic_List_LV_1 -- ##")]
+    public Relic_Data[] allRelics;
+
     [Header("## -- Game_System -- ##")]
     public short count_day = 30;
 
@@ -24,8 +27,7 @@ public class GameManager : MonoBehaviour
     public float player_hp;
     public float player_max_hp;
     public float bullet_damage;
-    public int bullet_count;
-    public float attack_delay;
+    public float Attack_Delay;
     public int gold_count;
 
     [Header("## -- Player_Hit_HUD -- ##")]
@@ -38,9 +40,6 @@ public class GameManager : MonoBehaviour
     [Header("## -- Player_Hit_HUD -- ##")]
     public float boss_hp;
     public float boss_max_hp;
-
-    [Header("## -- Bullet -- ##")]
-    public float Bullet_Speed = 5;           // 탄환 속도
 
     [Header("## -- Player_Game_Over_HUD -- ##")]
     //public GameObject player_statas;
@@ -64,6 +63,17 @@ public class GameManager : MonoBehaviour
 
         WaitAndFadeIn();
 
+    }
+    void ResetAllRelicLevels()
+    {
+        foreach (Relic_Data relic in allRelics)
+        {
+            if (relic != null)
+            {
+                relic.ResetLevel();
+            }
+        }
+        Debug.Log("모든 Relic 레벨이 1로 초기화됨!");
     }
     public void Stage_Level_UP()
     {
