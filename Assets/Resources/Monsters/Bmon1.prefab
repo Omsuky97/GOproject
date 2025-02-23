@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targe_rigid: {fileID: 0}
+  result: {fileID: 0}
   Moster_Id: 0
   Monster_MaxHp: 0
   Monster_Hp: 0
@@ -204,14 +205,14 @@ MonoBehaviour:
   isLive: 0
   monster_run: 0
   monster_attack: 0
-  die_effect_prefab: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
-  monster_isBlinking: 0
+  Hit_effect_prefab: {fileID: 0}
+  Enemy_hit_Type: 0
   hit_damage_text_pro: {fileID: 6158445389720161608, guid: 4035234ebf24b3d4a8959ea74858bff2, type: 3}
   hit_damage_text_pos_name: text_target
-  NucBack_distance: 10
-  blink_distance: 0.2
-  blink_count: 1
-  enemy_hit_Color: {r: 1, g: 1, b: 1, a: 0.5}
+  NucBack_distance: 5
+  Enemy_Hiy_Time: 0.5
+  Hit_Delta_Time: 0
+  True_Hit_Time: 2
 --- !u!136 &148512222014806693
 CapsuleCollider:
   m_ObjectHideFlags: 0

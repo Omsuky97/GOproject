@@ -585,7 +585,7 @@ Animator:
   m_GameObject: {fileID: 1845945369076765872}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b3681b15fa0a0ad4e936d65ce5c2a0fb, type: 3}
-  m_Controller: {fileID: 9100000, guid: 81627e0e9373ae14f9ccc2747b9e4638, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5b0efede1a04b0d49b52969c553e7cda, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -609,6 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targe_rigid: {fileID: 0}
+  result: {fileID: 0}
   Moster_Id: 0
   Monster_MaxHp: 0
   Monster_Hp: 0
@@ -619,22 +620,22 @@ MonoBehaviour:
   Monster_DrItem: 0
   Monster_Prefabs: 
   Monster_MoveSpeed: 0
-  scanRange: 0
+  scanRange: 2
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   nearestTarget: {fileID: 0}
-  isLive: 1
+  isLive: 0
   monster_run: 0
   monster_attack: 0
-  die_effect_prefab: {fileID: 0}
-  monster_isBlinking: 0
-  hit_damage_text_pro: {fileID: 0}
-  hit_damage_text_pos_name: 
-  NucBack_distance: 10
-  blink_distance: 0.2
-  blink_count: 1
-  enemy_hit_Color: {r: 1, g: 1, b: 1, a: 0.5}
+  Hit_effect_prefab: {fileID: 0}
+  Enemy_hit_Type: 0
+  hit_damage_text_pro: {fileID: 6158445389720161608, guid: 4035234ebf24b3d4a8959ea74858bff2, type: 3}
+  hit_damage_text_pos_name: text_target
+  NucBack_distance: 5
+  Enemy_Hiy_Time: 0.5
+  Hit_Delta_Time: 0
+  True_Hit_Time: 2
 --- !u!114 &-4948279212346144862
 MonoBehaviour:
   m_ObjectHideFlags: 0
