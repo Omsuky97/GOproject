@@ -14,9 +14,8 @@ public class Enumy_Monster : MonoBehaviour
     Rigidbody monster_rigid;
     Animator anim;
     public Rigidbody targe_rigid;
-    WaitForFixedUpdate wait;
     private float hit_damage;
-    Transform result;
+    public Transform result;
 
     [Header("## -- Monster_Statas_List -- ##")]
     public int Moster_Id;
@@ -43,18 +42,15 @@ public class Enumy_Monster : MonoBehaviour
     public bool monster_attack = false;
 
     [Header("## -- Monster_Hit -- ##")]
-    public GameObject die_effect_prefab; // 맞았을 때 실행할 파티클 프리팹
-    public bool monster_isBlinking = false;    // 반짝임 여부
+    public GameObject Hit_effect_prefab; // 맞았을 때 실행할 파티클 프리팹
+    WaitForFixedUpdate wait;
+    public bool Enemy_hit_Type;
     public GameObject hit_damage_text_pro;
     public string hit_damage_text_pos_name;
     public float NucBack_distance = 10.0f;
-
-    [Header("## -- Blink_Hit -- ##")]
-    public float blink_distance = 0.2f;
-    public short blink_count = 1;
-    public Color enemy_hit_Color = new Color(1f, 1f, 1f, 0.5f);
-    private Renderer[] renderers;
-    private Color[] originalColors;
+    public float Enemy_Hiy_Time;
+    public float Hit_Delta_Time;
+    public float True_Hit_Time = 2.0f;
 
     private void Awake()
     {
@@ -62,23 +58,19 @@ public class Enumy_Monster : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         wait = new WaitForFixedUpdate();
     }
-    private void Start()
-    {
-        Start_Blick();
-    }
-
     private void FixedUpdate()
     {
         if (!isLive) return;
+        Target_Move_Rotator();
+
         target_player = Physics.SphereCastAll(transform.position, scanRange, Vector3.forward, scanRange, targetLayer);
         nearestTarget = GetNearest();
 
-        if (monster_attack == true && monster_run == false) return;
-        Target_Move_Rotator();
     }
     void Target_Move_Rotator()
     {
-        if (monster_isBlinking) return;
+        Hit_Delta_Time += Time.deltaTime;
+        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("monIdol") || Enemy_hit_Type) return;
         // 대상까지의 방향 계산 (Y축 제외)
         Vector3 dirvec = targe_rigid.position - monster_rigid.position;
         dirvec.y = -3f; // 수직 방향 제거
@@ -100,6 +92,7 @@ public class Enumy_Monster : MonoBehaviour
             monster_run = true;
         }
         anim.SetBool("Monster_Run", monster_run);
+        anim.SetBool("monster_attack", monster_attack);
         monster_rigid.MovePosition(monster_rigid.position + nextVec);
         monster_rigid.velocity = Vector3.zero;
     }
@@ -109,7 +102,7 @@ public class Enumy_Monster : MonoBehaviour
         isLive = true;
         monster_run = true;
         monster_attack = false;
-        monster_isBlinking = true;
+        Enemy_hit_Type = false;
         Monster_Hp = Monster_MaxHp;
         targe_rigid = GameManager.Instance.player.GetComponent<Rigidbody>();
     }
@@ -128,8 +121,6 @@ public class Enumy_Monster : MonoBehaviour
         Monster_Hp = Monster_MaxHp;
 
         // 기타 초기화 작업
-        Start_Blick(); // 피격 시 반짝임 효과 초기화
-        monster_isBlinking = false;
         isLive = true;
         monster_run = true;
         monster_attack = false;
@@ -139,7 +130,6 @@ public class Enumy_Monster : MonoBehaviour
         // 애니메이터 초기화 (필요하다면)
         anim = GetComponentInChildren<Animator>();
     }
-
     //타겟지정
     Transform GetNearest()
     {
@@ -158,6 +148,11 @@ public class Enumy_Monster : MonoBehaviour
                 result = target.transform;
                 Monster_Attack_Anim();
             }
+            else
+            {
+                monster_run = true;
+                monster_attack = false;
+            }
         }
 
         return result;
@@ -165,28 +160,32 @@ public class Enumy_Monster : MonoBehaviour
     //공격
     void Monster_Attack_Anim()
     {
-        if (result == null)
-        {
-            monster_run = true;
-            monster_attack = false;
-        }
-        else
-        {
-            monster_run = false;
-            monster_attack = true;
-        }
-
+        monster_run = false;
+        monster_attack = true;
         anim.SetBool("Monster_Run", monster_run);
         anim.SetBool("monster_attack", monster_attack);
     }
+    IEnumerator KnocBack()
+    {
+        Enemy_hit_Type = true;
+        anim.SetBool("Monster_Hit", Enemy_hit_Type);
 
+        yield return wait;
+        Vector3 playerPos = GameManager.Instance.player.transform.position;
+        Vector3 dirVector = transform.position - playerPos;
+        monster_rigid.AddForce(dirVector.normalized * NucBack_distance, ForceMode.Impulse);
+
+
+        yield return new WaitForSeconds(Enemy_Hiy_Time); // 2초 대기
+
+        Enemy_hit_Type = false;
+        anim.SetBool("Monster_Hit", Enemy_hit_Type);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
         {
             string type_name = "Monster";
-            if(Monster_Hp > 0) StartCoroutine(BlinkEffect());
-
             // 중복 공격 방지: 기존에 맞았던 적이면 무시
             if (Hit_Boomerang_Bullet.Contains(other)) return;
             if(other.gameObject.name == "Bullet_Boomerang(Clone)") Hit_Boomerang_Bullet.Add(other);
@@ -210,81 +209,19 @@ public class Enumy_Monster : MonoBehaviour
             }
             if(hit_damage != 0)
             {
+                if (Hit_Delta_Time >= True_Hit_Time)
+                {
+                    Hit_Delta_Time = 0;
+                    StartCoroutine(KnocBack());
+                }
+
                 Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
                 Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name);
             }
         }
         if(Monster_Hp <= 0)
         {
-            RestoreOriginalColors();
-            Base_Chartacter_Essential_Funtion.instance.Hit_Palticle(die_effect_prefab, gameObject);
-        }
-    }
-    IEnumerator KnocBack()
-    {
-        yield return wait;
-        Vector3 playerPos = GameManager.Instance.player.transform.position;
-        Vector3 dirVector = transform.position - playerPos;
-        monster_rigid.AddForce(dirVector.normalized * NucBack_distance, ForceMode.Impulse);
-
-        // 원래 색상으로 복원
-        RestoreOriginalColors();
-        yield return new WaitForSeconds(blink_distance);
-    }
-    private void Start_Blick()
-    {
-        renderers = GetComponentsInChildren<Renderer>();
-        originalColors = new Color[renderers.Length];
-
-        for (int i = 0; i < renderers.Length; i++)
-        {
-            Material mat = renderers[i].material;
-
-            if (mat.HasProperty("_Color")) // '_Color' 속성이 있는 경우만 저장
-            {
-                originalColors[i] = mat.color;
-            }
-        }
-    }
-    private System.Collections.IEnumerator BlinkEffect()
-    {
-        monster_isBlinking = true;
-        for (int i = 0; i < blink_count; i++)
-        {
-            // 흰색으로 전환
-            SetColor();
-            yield return new WaitForSeconds(blink_distance);
-
-            StartCoroutine(KnocBack());
-        }
-
-        monster_isBlinking = false;
-    }
-    private void SetColor()
-    {
-        // 모든 Renderer의 색상 변경
-        foreach (Renderer renderer in renderers)
-        {
-            if (renderer is MeshRenderer || renderer is SkinnedMeshRenderer)
-            {
-                foreach (var mat in renderer.materials)
-                {
-                    mat.color = enemy_hit_Color;
-                }
-            }
-        }
-    }
-    private void RestoreOriginalColors()
-    {
-        for (int i = 0; i < renderers.Length; i++)
-        {
-            if (renderers[i] is MeshRenderer || renderers[i] is SkinnedMeshRenderer)
-            {
-                foreach (var mat in renderers[i].materials)
-                {
-                    mat.color = originalColors[i];
-                }
-            }
+            Base_Chartacter_Essential_Funtion.instance.Hit_Palticle(Hit_effect_prefab, gameObject);
         }
     }
 }

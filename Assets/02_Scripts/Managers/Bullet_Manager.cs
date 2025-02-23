@@ -19,6 +19,10 @@ public class Bullet_Manager : MonoBehaviour
     public bool Bullet_ShotGun_Type;            //총알 샷건
     public bool Bullet_Speaker_Type;            //총알 점사
     public bool Bullet_Target_type;             //총알 멀리 있는 것 부터 쏘는 것
+    public bool Bullet_Bezier_Type;             //총알 벨지에
+
+    [Header("## -- Bullet_Fire -- ##")]
+    public GameObject[] EffectPrefab; // 맞았을 때 실행할 파티클 프리팹
 
     [Header("## -- Bullet_Propulsion -- ##")]
     public float Origin_Spped;
@@ -32,5 +36,10 @@ public class Bullet_Manager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+    }
+    public void Effect_Fire(short bullet_count, Vector3 Fire_Object)
+    {
+       GameObject effect = Instantiate(EffectPrefab[bullet_count], Fire_Object, Quaternion.identity);
+        Destroy(effect, 1f);
     }
 }

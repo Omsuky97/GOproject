@@ -21,14 +21,15 @@ public class Player_Scaner : MonoBehaviour
     public float timer;
     bool player_attack = false;
     Vector3 targetPos;
+    public Animator anim;
+    public bool Fire_Anim;
 
     [Header("## -- Bullet_Bezier -- ##")]
-    public bool Bullet_Bezier_Type;
     public GameObject Bullet_Bezier;
-
-    //파티클
-    public GameObject FireEffectPrefab; // 맞았을 때 실행할 파티클 프리팹
-
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     private void Start()
     {
         Bullet_Manager.Instance.Origianl_Bullet_Speed = player_Statas.attack_delay; // 시작 시 원래 값 저장
@@ -41,6 +42,7 @@ public class Player_Scaner : MonoBehaviour
         if (nearestTarget != null)
         {
             Player_Rotator();
+            Fire_Anim = true;
             if (!player_attack) timer += Time.deltaTime;
             if (Bullet_Manager.Instance.Bullet_Speaker_Type)
             {
@@ -64,11 +66,12 @@ public class Player_Scaner : MonoBehaviour
                                 timer = 0f;
                                 Fire();
                                 int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
-                                if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
+                                if (Bullet_Manager.Instance.Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                             }
                 }
             }
             else if (!Bullet_Manager.Instance.Bullet_Speaker_Type && Bullet_Manager.Instance.Bullet_ShotGun_Type)
+            {
                 if (timer > player_Statas.attack_delay)
                 {
                     timer = 0f;
@@ -81,9 +84,10 @@ public class Player_Scaner : MonoBehaviour
                         timer = 0f;
                         Fire();
                         int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
-                        if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
+                        if (Bullet_Manager.Instance.Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                     }
                 }
+            }
             else
             {
                 if (timer > player_Statas.attack_delay)
@@ -91,7 +95,7 @@ public class Player_Scaner : MonoBehaviour
                     timer = 0f;
                     Fire();
                     int Random_Bezier_Value = Random.Range(0, 2); // 0~5 사이의 랜덤 값
-                    if (Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
+                    if (Bullet_Manager.Instance.Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                 }
             }
         }
@@ -148,8 +152,8 @@ public class Player_Scaner : MonoBehaviour
             {
                 diff = curDiff;
                 result = target.transform;
+                Target_List.Add(target.transform);
             }
-            Target_List.Add(target.transform);
         }
         return result;
     }
@@ -158,17 +162,16 @@ public class Player_Scaner : MonoBehaviour
         if (player_attack) return;
         if (!nearestTarget) return;
 
+        anim.SetBool("Fire", Fire_Anim);
         player_attack = true;
-        Audio_Manager.instance.PlaySfx(Audio_Manager.SFX.atk);
+        Audio_Manager.instance.GetAttack_Sound();
         targetPos = nearestTarget.position;
         Vector3 bullet_dir = new Vector3(targetPos.x - Fire_Point.transform.position.x, 0f, targetPos.z - Fire_Point.transform.position.z);
         Transform bullet = GameManager.Instance.pool.Bullet_Get(0).transform;
         bullet.position = Fire_Point.transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, bullet_dir);
-        // 총알의 현재 위치에서 이펙트 생성
-        //GameObject effect = Instantiate(FireEffectPrefab, Fire_Point.transform.position, Quaternion.identity);
-        //// 일정 시간 후 파티클 삭제
-        //Destroy(effect, 1f);
+        short Fire_Effect_num = 0;
+        Bullet_Manager.Instance.Effect_Fire(Fire_Effect_num, Fire_Point.transform.position);
         bullet.GetComponent<Bullet>().Init(player_Statas.bullet_damage, bullet_dir);
         Target_List.RemoveAll(t => t == null || !t.gameObject.activeSelf); // 비활성화된 모든 오브젝트 제거
         StartCoroutine(ResetFire());
@@ -177,7 +180,8 @@ public class Player_Scaner : MonoBehaviour
     {
         // 플레이어가 공격 시작
         player_attack = true;
-        Audio_Manager.instance.PlaySfx(Audio_Manager.SFX.atk);
+        anim.SetBool("Fire", Fire_Anim);
+        Audio_Manager.instance.GetAttack_Sound();
         targetPos = nearestTarget.position;
 
         Vector3 bullet_dir = (targetPos - Fire_Point.transform.position).normalized; // 타겟 방향 계산
@@ -185,6 +189,8 @@ public class Player_Scaner : MonoBehaviour
         player_Statas.bullet_count = Mathf.Clamp(player_Statas.bullet_count, 1, 5);
         float angleStep = 45f / (player_Statas.bullet_count - 1);
 
+        short Fire_Effect_num = 1;
+        Bullet_Manager.Instance.Effect_Fire(Fire_Effect_num, Fire_Point.transform.position);
         for (int i = 0; i < player_Statas.bullet_count; i++)
         {
             float angleOffset = (i * angleStep) - 22.5f; // 중심을 기준으로 좌우 균등 분배
@@ -214,14 +220,15 @@ public class Player_Scaner : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(dir.normalized * Time.deltaTime); // 정규화된 방향 벡터로 목표 회전 계산
 
         // Y축에 35도 추가
-        Quaternion adjustedRotation = targetRotation * Quaternion.Euler(0, 45f, 0); // Y축 +35도 추가
+        Quaternion adjustedRotation = targetRotation * Quaternion.Euler(0, 0, 0); // Y축 +35도 추가
         // 부드러운 회전 (현재 회전에서 목표 회전으로 점진적으로 회전)
         transform.rotation = Quaternion.Slerp(transform.rotation, adjustedRotation, Time.deltaTime * 5f); // 5f는 회전 속도
     }
     private IEnumerator ResetFire()
     {
         yield return new WaitForSeconds(player_Statas.attack_delay);
-        Audio_Manager.instance.PlaySfx(Audio_Manager.SFX.cocked);
+        Fire_Anim = false;
+        anim.SetBool("Fire", Fire_Anim);
         player_attack = false;
     }
     #region Bullet_Fire_Bezier
@@ -233,7 +240,6 @@ public class Player_Scaner : MonoBehaviour
         Transform randomTarget = Target_List[Random.Range(0, Target_List.Count)]; // 랜덤 타겟 선택
 
         player_attack = true;
-        Audio_Manager.instance.PlaySfx(Audio_Manager.SFX.atk);
 
         Vector3 start = Fire_Point.transform.position;
         Vector3 end = randomTarget.position;
@@ -242,9 +248,6 @@ public class Player_Scaner : MonoBehaviour
         Vector3 midPoint = (start + end) / 2f;
         midPoint.z += Random.Range(0, 2) == 0 ? -10f : 10f; // Z축 방향으로 -10 또는 10 추가
         Vector3 controlPoint = midPoint;
-
-
-
 
         // **오브젝트 풀링을 사용한 총알 생성**
         Transform bulletObj = GameManager.Instance.pool.Bullet_Get(2).transform;
@@ -264,10 +267,6 @@ public class Player_Scaner : MonoBehaviour
             StartCoroutine(MoveAlongBezierCurve(bullet, start, controlPoint, end, GameManager.Instance.Bullet_Speed, randomTarget));
         }
     }
-    //Target_List.Remove(tarfget);
-    ////벨지에 곡선
-    /// <summary>
-
     private IEnumerator MoveAlongBezierCurve(Transform bullet, Vector3 start, Vector3 control, Vector3 end, float speed, Transform target)
     {
         float time = 0;
