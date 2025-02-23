@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c68e455c02027448bd4dcde69cff02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullet_Speed: 30
   Bullet_bounce_Type: 0
   BUllet_penetrate_Type: 0
   Bullet_NucBack_Type: 0
@@ -52,11 +53,28 @@ MonoBehaviour:
   Bullet_Boom_Type: 0
   Bullet_Spirt_Type: 0
   Bullet_Guided_Type: 0
-  Bullet_ShotGun_Type: 0
+  Bullet_ShotGun_Type: 1
   Bullet_Speaker_Type: 0
   Bullet_Target_type: 0
+  Bullet_Bezier_Type: 0
+  EffectPrefab:
+  - {fileID: 1733671065153278, guid: 3e5350795dda5e3479adbe59bb731ba2, type: 3}
+  - {fileID: 1168789365331922, guid: 4399c657a881a0248a6a8c68b7869ceb, type: 3}
   Origin_Spped: 0
   Propulsion_Speed: 0
   Origianl_Bullet_Speed: 0
   Speaker_Speed: 0.3
   Shot_Max_count: 3
+  Bullet_ShotGun_Count: 3
+  max_penetration: 5
+  penetration: 0
+  maxBounces: 5
+  bounceCount: 0
+  Bullet_Bounce_Spawn_Offset: 1
+  NucBack_distance: 5
+  Bullet_Spirt: {fileID: 4276784567266169360, guid: 0b26a6005f1c2f341ac3a81a9a924600, type: 3}
+  Bullet_Spirt_Count: 0
+  Bullet_Spirt_Offset: 0.5
+  Bullet_Speaker_Count: 1
+  Bullet_Scan_Range: 20
+  Bullet_Bezier_Count: 5

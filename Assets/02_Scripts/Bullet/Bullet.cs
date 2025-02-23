@@ -24,32 +24,26 @@ public class Bullet : MonoBehaviour
     public float damage;
     public Vector3 Bullet_dir;
 
-    [Header("## -- Bullet_Bounce -- ##")]
-    public int maxBounces = 5;          // 최대 튕길 횟수
-    public int bounceCount = 0;         // 현재 튕긴 횟수
-    public float Bullet_Bounce_Spawn_Offset = 1.0f;    //충돌 위치에서 이동할 거리
-
-    [Header("## -- Bullet_Penetrate -- ##")]
-    public int max_penetration = 5;
-    public int penetration = 0;
+    public Transform objectTransform;
+    public Collider objectCollider;
+    private Collider bulletCollider;
+    public static float baseColliderSize = 1f; // 초기 콜리전 크기 저장
+    public static float baseScale = 1f;      // 초기 크기 저장
 
     [Header("## -- BulletBoom -- ##")]
     public GameObject Bullet_Boom;
 
-    [Header("## -- Bullet_Spirt -- ##")]
-    public GameObject Bullet_Spirt;
-    public int Bullet_Spirt_Count;
-    public float Bullet_Spirt_Offset = 0.5f;
-
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        Bullet_Manager.Instance.Origin_Spped = GameManager.Instance.Bullet_Speed;
+        Bullet_Manager.Instance.Origin_Spped = Bullet_Manager.Instance.Bullet_Speed;
 
     }
     private void Start()
     {
         rigid.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        bulletCollider = GetComponent<Collider>(); // 현재 불릿의 콜리전 가져오기
+        baseColliderSize = GetColliderSize(bulletCollider); // 초기 콜리전 크기 저장
     }
     private void LateUpdate()
     {
@@ -58,7 +52,7 @@ public class Bullet : MonoBehaviour
             Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Propulsion_Speed + 1;
             rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Propulsion_Speed;
         }
-        if (rigid.velocity.magnitude < GameManager.Instance.Bullet_Speed * 0.9f) rigid.velocity = rigid.velocity.normalized * GameManager.Instance.Bullet_Speed;
+        if (rigid.velocity.magnitude < Bullet_Manager.Instance.Bullet_Speed * 0.9f) rigid.velocity = rigid.velocity.normalized * Bullet_Manager.Instance.Bullet_Speed;
     }
     // 데미지, 갯수, 속도
     public void Init(float dmg, Vector3 dir)
@@ -67,11 +61,12 @@ public class Bullet : MonoBehaviour
         damage = dmg;
         Bullet_dir = dir;
         if (bulletParticles != null) bulletParticles.Play();
-        bounceCount = 0;
+        Bullet_Manager.Instance.bounceCount = 0;
         Hit_Bounce_Enemys.Clear();
-        penetration = 0;
+        Bullet_Manager.Instance.penetration = 0;
         enemyList.Clear();
         enemyIndex = 0;
+        IncreaseSizeBasedOnAttack(dmg);
         Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Origin_Spped;
         rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Origin_Spped;
     }
@@ -79,8 +74,8 @@ public class Bullet : MonoBehaviour
     {
         // 적과 충돌했으므로, 맞은 적 리스트에 추가
         Hit_Bounce_Enemys.Clear();
-        penetration = 0;
-        bounceCount = 0;
+        Bullet_Manager.Instance.penetration = 0;
+        Bullet_Manager.Instance.bounceCount = 0;
         enemyList.Clear();
         enemyIndex = 0;
         ResetChildRotation(); // 총알이 활성화될 때 하위 오브젝트 회전 초기화
@@ -89,7 +84,7 @@ public class Bullet : MonoBehaviour
     {
         Hit_Bounce_Enemys.Clear();
         enemyList.Clear();
-        bounceCount = 0;
+        Bullet_Manager.Instance.bounceCount = 0;
         enemyIndex = 0;
     }
     private void ResetChildRotation()
@@ -104,11 +99,6 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))  // 적을 맞췄다면
         {
-            //넉백 여부는 몬스터에서 설정
-            //원거리 여부는 플레이어 스캔에서 설정
-            //폭발 여부는 몬스터랑 불릿 동시에 켜줄것
-            //탄환의 공격력에 따라 크기 및 넉백 설정
-            //정령은 베지에 곡선이라는 것을 활용할 것
             Vector3 contactPoint = other.ClosestPoint(transform.position);
             if (Bullet_Manager.Instance.Bullet_Boom_Type) Bullet_Boom.gameObject.SetActive(true);
             if (Bullet_Manager.Instance.Bullet_Spirt_Type)
@@ -127,6 +117,50 @@ public class Bullet : MonoBehaviour
             if(!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type) gameObject.SetActive(false);
         }
     }
+    // 공격력이 증가하면 불릿 크기 & 콜리전 크기 증가
+    public void IncreaseSizeBasedOnAttack(float attackPower)
+    {
+        float scaleMultiplier = 1f + (attackPower / 50f) * 0.25f; // 50 증가할 때마다 25% 증가
+        transform.localScale = Vector3.one * (baseScale * scaleMultiplier);
+
+        // 콜리전 크기 2배 증가
+        float newColliderSize = baseColliderSize * 2f;
+        SetColliderSize(bulletCollider, newColliderSize);
+    }
+    // 콜리전 크기 가져오기 (Collider 타입에 따라 크기 반환)
+    private float GetColliderSize(Collider col)
+    {
+        if (col is BoxCollider boxCol)
+        {
+            return boxCol.size.x; // 박스 콜리전 크기 반환
+        }
+        else if (col is SphereCollider sphereCol)
+        {
+            return sphereCol.radius; // 구체 콜리전 크기 반환
+        }
+        else if (col is CapsuleCollider capsuleCol)
+        {
+            return capsuleCol.height; // 캡슐 콜리전 크기 반환
+        }
+        return 1f; // 기본값
+    }
+
+    // 콜리전 크기 설정 (Collider 타입에 따라 크기 변경)
+    private void SetColliderSize(Collider col, float newSize)
+    {
+        if (col is BoxCollider boxCol)
+        {
+            boxCol.size = Vector3.one * newSize; // 박스 콜리전 크기 설정
+        }
+        else if (col is SphereCollider sphereCol)
+        {
+            sphereCol.radius = newSize; // 구체 콜리전 크기 설정
+        }
+        else if (col is CapsuleCollider capsuleCol)
+        {
+            capsuleCol.height = newSize; // 캡슐 콜리전 크기 설정
+        }
+    }
     # region Bullet_Split
     private void Bullet_Split(Vector3 contactPoint, HashSet<Collider> parentHitMonsters, Collider other)
     {
@@ -136,15 +170,15 @@ public class Bullet : MonoBehaviour
         }
 
         Vector3 originalDirection = Vector3.forward;
-        Bullet_Spirt_Count = Mathf.Clamp(Bullet_Spirt_Count, 1, 5);
-        float angleStep = 360f / Bullet_Spirt_Count;
-        float offsetAngle = (Bullet_Spirt_Count % 2 == 0) ? angleStep / 2 : 0; // 짝수 개수일 경우 중심 맞춤
-        for (int i = 0; i < Bullet_Spirt_Count; i++)
+        Bullet_Manager.Instance.Bullet_Spirt_Count = Mathf.Clamp(Bullet_Manager.Instance.Bullet_Spirt_Count, 1, 5);
+        float angleStep = 360f / Bullet_Manager.Instance.Bullet_Spirt_Count;
+        float offsetAngle = (Bullet_Manager.Instance.Bullet_Spirt_Count % 2 == 0) ? angleStep / 2 : 0; // 짝수 개수일 경우 중심 맞춤
+        for (int i = 0; i < Bullet_Manager.Instance.Bullet_Spirt_Count; i++)
         {
             float angleOffset = (i * angleStep) + offsetAngle;
             Vector3 nextDirection = Quaternion.Euler(0, angleOffset, 0) * originalDirection;
-            Vector3 spawnPosition = contactPoint + (nextDirection * Bullet_Spirt_Offset);
-            GameObject newBullet = Instantiate(Bullet_Spirt, spawnPosition, Quaternion.LookRotation(nextDirection));
+            Vector3 spawnPosition = contactPoint + (nextDirection * Bullet_Manager.Instance.Bullet_Spirt_Offset);
+            GameObject newBullet = Instantiate(Bullet_Manager.Instance.Bullet_Spirt, spawnPosition, Quaternion.LookRotation(nextDirection));
 
             newBullet.SetActive(true);
             Bullet_Split newBulletScript = newBullet.GetComponent<Bullet_Split>();
@@ -152,7 +186,7 @@ public class Bullet : MonoBehaviour
 
 
             Rigidbody newRb = newBullet.GetComponent<Rigidbody>();
-            if (newRb != null) newRb.velocity = nextDirection * GameManager.Instance.Bullet_Speed;
+            if (newRb != null) newRb.velocity = nextDirection * Bullet_Manager.Instance.Bullet_Speed;
             Destroy(newBullet, 3f);
         }
     }
@@ -160,8 +194,8 @@ public class Bullet : MonoBehaviour
     #region BUllet_penetrate
     private void BUllet_penetrate()
     {
-        if (penetration >= max_penetration) gameObject.SetActive(false);
-        else penetration += 1;
+        if (Bullet_Manager.Instance.penetration >= Bullet_Manager.Instance.max_penetration) gameObject.SetActive(false);
+        else Bullet_Manager.Instance.penetration += 1;
         if (gameObject != null && gameObject.activeInHierarchy)
         {
             StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
@@ -172,7 +206,7 @@ public class Bullet : MonoBehaviour
     #region Bullet_bounce
     private void Bullet_bounce(Collider other)
     {
-        if (bounceCount >= maxBounces)
+        if (Bullet_Manager.Instance.bounceCount >= Bullet_Manager.Instance.maxBounces)
         {
             gameObject.SetActive(false);
             return;
@@ -190,15 +224,15 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        transform.position = contactPoint + (nextDirection.normalized * Bullet_Spirt_Offset);
+        transform.position = contactPoint + (nextDirection.normalized * Bullet_Manager.Instance.Bullet_Spirt_Offset);
         transform.rotation = Quaternion.LookRotation(nextDirection);
         foreach (Transform child in transform)
         {
             Vector3 childEuler = child.localEulerAngles;
             child.localEulerAngles = new Vector3(0, childEuler.y, childEuler.z);
         }
-        rigid.velocity = nextDirection * GameManager.Instance.Bullet_Speed;
-        bounceCount += 1;
+        rigid.velocity = nextDirection * Bullet_Manager.Instance.Bullet_Speed;
+        Bullet_Manager.Instance.bounceCount += 1;
 
         Hit_Bounce_Enemys.Remove(other);
 
@@ -209,13 +243,13 @@ public class Bullet : MonoBehaviour
     }
     private void Bullet_bounce_Guided(Collider other)
     {
-        if (bounceCount >= maxBounces)
+        if (Bullet_Manager.Instance.bounceCount >= Bullet_Manager.Instance.maxBounces)
         {
             gameObject.SetActive(false);
             return;
         }
 
-        bounceCount += 1;
+        Bullet_Manager.Instance.bounceCount += 1;
 
         if (!Hit_Bounce_Enemys.Contains(other))
         {
@@ -244,7 +278,7 @@ public class Bullet : MonoBehaviour
             return;
         }
         Vector3 nextDirection = (nearestEnemy.position - transform.position).normalized;
-        float fixedSpeed = GameManager.Instance.Bullet_Speed; // 속도 고정
+        float fixedSpeed = Bullet_Manager.Instance.Bullet_Speed; // 속도 고정
         rigid.velocity = nextDirection * fixedSpeed;
         transform.rotation = Quaternion.LookRotation(nextDirection);
 
@@ -337,11 +371,21 @@ public class Bullet : MonoBehaviour
     #region Bullet_Boomerang
     private void Bullet_Boomerang(Collider other)
     {
+        // 충돌 지점 계산
         Vector3 contactPoint = GetContactPoint(other);
-        // 총알을 생성할 위치 계산
-        Vector3 spawnPosition = contactPoint - other.transform.forward * 3f;
-        // 총알 생성
-        Instantiate(Bullet_Boomerang_Prefab, spawnPosition, Quaternion.identity);
+
+        // 총알이 향해야 할 방향 계산 (대상을 바라보도록)
+        Vector3 bulletDirection = (other.transform.position - contactPoint).normalized;
+
+        // 총알을 생성할 위치 계산 (충돌 지점에서 뒤로 이동)
+        Vector3 spawnPosition = contactPoint - bulletDirection * 3f;
+
+        // 오브젝트 풀에서 총알 가져오기
+        Transform bullet = GameManager.Instance.pool.Bullet_Get(4).transform;
+
+        // 총알의 위치와 방향 설정
+        bullet.position = spawnPosition;
+        bullet.rotation = Quaternion.LookRotation(bulletDirection);
     }
     #endregion
 }

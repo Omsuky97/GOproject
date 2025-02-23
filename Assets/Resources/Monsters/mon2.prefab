@@ -1560,6 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targe_rigid: {fileID: 0}
+  result: {fileID: 0}
   Moster_Id: 0
   Monster_MaxHp: 0
   Monster_Hp: 0
@@ -1573,19 +1574,19 @@ MonoBehaviour:
   scanRange: 0
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   nearestTarget: {fileID: 0}
   isLive: 1
   monster_run: 0
   monster_attack: 0
-  die_effect_prefab: {fileID: 0}
-  monster_isBlinking: 0
-  hit_damage_text_pro: {fileID: 0}
-  hit_damage_text_pos_name: 
-  NucBack_distance: 10
-  blink_distance: 0.2
-  blink_count: 1
-  enemy_hit_Color: {r: 1, g: 1, b: 1, a: 0.5}
+  Hit_effect_prefab: {fileID: 1090680790622714, guid: a1490fee3fdc0de45a549e085241c948, type: 3}
+  Enemy_hit_Type: 0
+  hit_damage_text_pro: {fileID: 6158445389720161608, guid: 4035234ebf24b3d4a8959ea74858bff2, type: 3}
+  hit_damage_text_pos_name: text_target
+  NucBack_distance: 5
+  Enemy_Hiy_Time: 0.5
+  Hit_Delta_Time: 0
+  True_Hit_Time: 2
 --- !u!114 &4981600450549202941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,7 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b876b7b927f80214cb785ed37b50b017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 0}
+  monster: {fileID: 2189965805568914609}
   monster_Attack_damage: 0
 --- !u!136 &4015834218941613073
 CapsuleCollider:

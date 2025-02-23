@@ -12,21 +12,18 @@ public class Bullet_Boom : MonoBehaviour
     private LineRenderer lineRenderer;
     private SphereCollider sphereCollider;
 
+    public Transform objectTransform;
+    public Collider objectCollider;
+    private Collider bulletCollider;
+    public float baseColliderSize = 1f; // 초기 콜리전 크기 저장
+    public float baseScale = 1f;      // 초기 크기 저장
 
     private void Start()
     {
         sphereCollider = GetComponent<SphereCollider>();
-        if (sphereCollider == null) return;
+        bulletCollider = GetComponent<Collider>(); // 현재 불릿의 콜리전 가져오기
+        baseColliderSize = GetColliderSize(bulletCollider); // 초기 콜리전 크기 저장
 
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.positionCount = segments + 1;
-        lineRenderer.loop = true;
-        lineRenderer.widthMultiplier = 0.05f;
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = Color.red;
-        lineRenderer.endColor = Color.red;
-
-        DrawCircle();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,20 +37,50 @@ public class Bullet_Boom : MonoBehaviour
     private void OnEnable()
     {
         boom_damage =  Bullet.damage;
+        IncreaseSizeBasedOnAttack(GameManager.Instance.bullet_damage);
+    }
+    // 공격력이 증가하면 불릿 크기 & 콜리전 크기 증가
+    public void IncreaseSizeBasedOnAttack(float attackPower)
+    {
+        float scaleMultiplier = 1f + (attackPower / 50f) * 0.25f; // 50 증가할 때마다 25% 증가
+        transform.localScale = Vector3.one * (baseScale * scaleMultiplier);
+
+        // 콜리전 크기 2배 증가
+        float newColliderSize = baseColliderSize * 2f;
+        SetColliderSize(bulletCollider, newColliderSize);
+    }
+    // 콜리전 크기 가져오기 (Collider 타입에 따라 크기 반환)
+    private float GetColliderSize(Collider col)
+    {
+        if (col is BoxCollider boxCol)
+        {
+            return boxCol.size.x; // 박스 콜리전 크기 반환
+        }
+        else if (col is SphereCollider sphereCol)
+        {
+            return sphereCol.radius; // 구체 콜리전 크기 반환
+        }
+        else if (col is CapsuleCollider capsuleCol)
+        {
+            return capsuleCol.height; // 캡슐 콜리전 크기 반환
+        }
+        return 1f; // 기본값
     }
 
-    void DrawCircle()
+    // 콜리전 크기 설정 (Collider 타입에 따라 크기 변경)
+    private void SetColliderSize(Collider col, float newSize)
     {
-        float radius = sphereCollider.radius;
-        Vector3 center = transform.position + sphereCollider.center;
-        Vector3[] points = new Vector3[segments + 1];
-
-        for (int i = 0; i <= segments; i++)
+        if (col is BoxCollider boxCol)
         {
-            float angle = i * Mathf.PI * 2 / segments;
-            points[i] = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0) + center;
+            boxCol.size = Vector3.one * newSize; // 박스 콜리전 크기 설정
         }
-
-        lineRenderer.SetPositions(points);
+        else if (col is SphereCollider sphereCol)
+        {
+            sphereCol.radius = newSize; // 구체 콜리전 크기 설정
+        }
+        else if (col is CapsuleCollider capsuleCol)
+        {
+            capsuleCol.height = newSize; // 캡슐 콜리전 크기 설정
+        }
     }
 }

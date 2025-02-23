@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targe_rigid: {fileID: 0}
+  result: {fileID: 0}
   Moster_Id: 0
   Monster_MaxHp: 0
   Monster_Hp: 0
@@ -204,7 +205,7 @@ MonoBehaviour:
   isLive: 0
   monster_run: 0
   monster_attack: 0
-  Hit_effect_prefab: {fileID: 0}
+  Hit_effect_prefab: {fileID: 1090680790622714, guid: a1490fee3fdc0de45a549e085241c948, type: 3}
   Enemy_hit_Type: 0
   hit_damage_text_pro: {fileID: 6158445389720161608, guid: 4035234ebf24b3d4a8959ea74858bff2, type: 3}
   hit_damage_text_pos_name: text_target
@@ -275,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 1705352935703072497}
-  monster_Attack_damage: 0
+  monster_Attack_damage: 5
 --- !u!1 &7432805483160588450
 GameObject:
   m_ObjectHideFlags: 0

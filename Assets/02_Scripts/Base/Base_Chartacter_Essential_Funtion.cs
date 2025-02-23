@@ -59,11 +59,11 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
     public void Hit_Palticle(GameObject hit_effect_prefab, GameObject take_object)
     {
         GameObject effect = Instantiate(hit_effect_prefab, take_object.transform.position, Quaternion.identity);
-        Destroy(effect, 1f);
+        Destroy(effect, GameManager.Instance.Attack_Delay);
     }
     public void Hit_Effect(Vector3 Hit_Object)
     {
         GameObject effect = Instantiate(hitEffect, Hit_Object, Quaternion.identity);
-        Destroy(effect, 1f);
+        Destroy(effect, GameManager.Instance.Attack_Delay);
     }
 }

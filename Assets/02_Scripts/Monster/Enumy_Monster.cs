@@ -47,7 +47,6 @@ public class Enumy_Monster : MonoBehaviour
     public bool Enemy_hit_Type;
     public GameObject hit_damage_text_pro;
     public string hit_damage_text_pos_name;
-    public float NucBack_distance = 10.0f;
     public float Enemy_Hiy_Time;
     public float Hit_Delta_Time;
     public float True_Hit_Time = 2.0f;
@@ -173,7 +172,7 @@ public class Enumy_Monster : MonoBehaviour
         yield return wait;
         Vector3 playerPos = GameManager.Instance.player.transform.position;
         Vector3 dirVector = transform.position - playerPos;
-        monster_rigid.AddForce(dirVector.normalized * NucBack_distance, ForceMode.Impulse);
+        monster_rigid.AddForce(dirVector.normalized * Bullet_Manager.Instance.NucBack_distance, ForceMode.Impulse);
 
 
         yield return new WaitForSeconds(Enemy_Hiy_Time); // 2√  ¥Î±‚
@@ -207,12 +206,15 @@ public class Enumy_Monster : MonoBehaviour
                     hit_damage = other.gameObject.GetComponent<Bullet_ShotGun>().ShortGun_damage;
                     break;
             }
-            if(hit_damage != 0)
+            if (hit_damage != 0)
             {
-                if (Hit_Delta_Time >= True_Hit_Time)
-                {
-                    Hit_Delta_Time = 0;
-                    StartCoroutine(KnocBack());
+                if (Bullet_Manager.Instance.Bullet_NucBack_Type)
+                { 
+                    if (Hit_Delta_Time >= True_Hit_Time)
+                    {
+                        Hit_Delta_Time = 0;
+                        StartCoroutine(KnocBack());
+                    }
                 }
 
                 Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);

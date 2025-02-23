@@ -2490,9 +2490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd3151ccaa43d24face3ea70d0d2ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relic_equip_Image: {fileID: 0}
-  relic_equip_name: {fileID: 0}
-  relic_equip_desc: {fileID: 0}
+  relic_equip_Image: {fileID: 1805281905654785035}
+  relic_equip_name: {fileID: 6842015105997350713}
+  relic_equip_desc: {fileID: 7623350128907305651}
   relic_id_num: 0
 --- !u!1 &821833984335758044
 GameObject:
@@ -5239,6 +5239,7 @@ GameObject:
   - component: {fileID: 3530070570046970085}
   - component: {fileID: 4526737184218174629}
   - component: {fileID: 1937821380314597134}
+  - component: {fileID: 5929424255562689797}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -5334,6 +5335,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5929424255562689797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667007299403070741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d7e27f45e576548bc52bbab8b4d9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relic_Num: 0000000000000000000000000000000000000000
 --- !u!1 &1721189602664398213
 GameObject:
   m_ObjectHideFlags: 0
@@ -13101,6 +13115,7 @@ GameObject:
   - component: {fileID: 7979762688221568061}
   - component: {fileID: 2666223194299308064}
   - component: {fileID: 8384589383614897180}
+  - component: {fileID: 7574817020892062114}
   m_Layer: 5
   m_Name: btn_Relic_3
   m_TagString: Untagged
@@ -13211,6 +13226,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7574817020892062114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5045949463078340222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949f3d8c05e36641810e0bc2b0b2c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button_Bum: 2
 --- !u!1 &5058495509348442731
 GameObject:
   m_ObjectHideFlags: 0
@@ -15387,6 +15415,7 @@ GameObject:
   - component: {fileID: 3233445854015455608}
   - component: {fileID: 2266939646747814769}
   - component: {fileID: 4838697387845308030}
+  - component: {fileID: 4745390872007988522}
   m_Layer: 5
   m_Name: btn_Relic_4
   m_TagString: Untagged
@@ -15497,6 +15526,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4745390872007988522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970013740563854014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949f3d8c05e36641810e0bc2b0b2c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button_Bum: 3
 --- !u!1 &6013789666406134778
 GameObject:
   m_ObjectHideFlags: 0
@@ -18903,6 +18945,7 @@ GameObject:
   - component: {fileID: 563095244486738236}
   - component: {fileID: 7369536526864947315}
   - component: {fileID: 8682749396008889664}
+  - component: {fileID: 7553719210198560874}
   m_Layer: 5
   m_Name: btn_Relic_2
   m_TagString: Untagged
@@ -19013,6 +19056,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7553719210198560874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202484872674266334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949f3d8c05e36641810e0bc2b0b2c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button_Bum: 1
 --- !u!1 &7236443576108586828
 GameObject:
   m_ObjectHideFlags: 0
@@ -20943,6 +20999,7 @@ GameObject:
   - component: {fileID: 841356422159842261}
   - component: {fileID: 8525769752253327982}
   - component: {fileID: 7841820354689116748}
+  - component: {fileID: 7278099987928318433}
   m_Layer: 5
   m_Name: btn_Relic_1
   m_TagString: Untagged
@@ -21053,6 +21110,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7278099987928318433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7829954182888989076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949f3d8c05e36641810e0bc2b0b2c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button_Bum: 0
 --- !u!1 &7860474182940213505
 GameObject:
   m_ObjectHideFlags: 0
@@ -22220,6 +22290,7 @@ GameObject:
   - component: {fileID: 6835691412940053206}
   - component: {fileID: 5502079467615930191}
   - component: {fileID: 6149304445157145561}
+  - component: {fileID: 1034211229881607802}
   m_Layer: 5
   m_Name: btn_Relic_5
   m_TagString: Untagged
@@ -22330,6 +22401,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1034211229881607802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334331823324610309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c949f3d8c05e36641810e0bc2b0b2c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button_Bum: 4
 --- !u!1 &8345214322109406870
 GameObject:
   m_ObjectHideFlags: 0

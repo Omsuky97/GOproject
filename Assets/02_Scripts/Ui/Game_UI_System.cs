@@ -8,6 +8,7 @@ using JetBrains.Annotations;
 using static UnityEngine.GraphicsBuffer;
 using Lean.Gui;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Game_UI_System : MonoBehaviour
 {
@@ -154,6 +155,7 @@ public class Game_UI_System : MonoBehaviour
                 if (level >= 1 && level < 5)
                 {
                     Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_count]).Relics_Lv += 1;
+                    rellic_equip.Relic_Equip_Update(Rellic_Slot.non_relic_id[button_count]);
                     break;
                 }
             }
@@ -183,13 +185,21 @@ public class Game_UI_System : MonoBehaviour
     public void Btn_Equip(Button clickedButton)
     {
         Transform parentTransform = clickedButton.transform.parent;
-        // 부모의 자식들 중 "main_Image"를 이름으로 검색
+        //부모의 자식들 중 "main_Image"를 이름으로 검색
         Transform mainImageTransform = parentTransform.Find("main_Image_Tile");
-        Image equip_image = mainImageTransform.GetComponentsInChildren<Image>()[1];
+        Image equip_image = mainImageTransform.GetComponentsInChildren<Image>()[0];
         Equip_Relic_Explain[] equip_id_nums = clickedButton.GetComponentsInParent<Equip_Relic_Explain>();
         Equip_Relic_Explain equip_id_num = equip_id_nums[0]; // 가장 가까운 부모
         rellic_equip.Relic_Equip(equip_image, equip_id_num.relic_id_num);
         Active_Equip_Relic_Explain.SetActive(false);
         Relic_Gacha_UI_paused = false;
+    }
+    public void Btn_Equip_Exit(Button clickedButton)
+    {
+        int btn_num = clickedButton.GetComponent<Relic_Slot_Num>().Button_Bum;
+        int btn_relic_num = clickedButton.GetComponentInParent<Relic_Exit_Button>().relic_Num[btn_num];
+        Image[] buttonImages = clickedButton.GetComponentsInChildren<Image>();
+        rellic_equip.Relic_Equip_Exit(btn_relic_num);
+        buttonImages[1].sprite = null;
     }
 }
