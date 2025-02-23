@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using JetBrains.Annotations;
 using static UnityEngine.GraphicsBuffer;
 using Lean.Gui;
+using TMPro;
 
 public class Game_UI_System : MonoBehaviour
 {
@@ -30,10 +31,21 @@ public class Game_UI_System : MonoBehaviour
     public Equip_Relic_Explain Equip_Relic_Explain;
     public Relic_Manager Relic_Manager;
     public Equip rellic_equip;
-
     public GameObject Active_Equip_Relic_Explain;
-
     private bool Relic_Gacha_UI_paused = false; // UI 상태 추적
+
+    [Header("## -- Game_Fade_UI -- ##")]
+    public TextMeshProUGUI Day_Text;
+    public TextMeshProUGUI D_Day_Text;
+    public float fadeDuration = 1f; // 페이드 시간
+
+    [Header("## -- Game_Sound_UI -- ##")]
+    public GameObject Option_UI;
+
+    [Header("## -- Game_Sound -- ##")]
+    public Slider Game_Master_Sound_Slider;
+    public Slider Game_SFX_Sound_Slider;
+    public Slider Game_BGM_Sound_Slider;
 
     private void Awake()
     {
@@ -41,6 +53,16 @@ public class Game_UI_System : MonoBehaviour
         Active_Equip_Relic_Explain.SetActive(false);
         Relic_Gacha.SetActive(false);
     }
+    private void Start()
+    {
+        Game_Master_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_Master_Volume);
+        Game_SFX_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_SFX_Volume);
+        Game_BGM_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_BGM_Volume);
+
+        StartCoroutine(FadeOutText(Day_Text));
+        StartCoroutine(FadeOutText(D_Day_Text));
+    }
+
     public void Game_Menu()
     {
         if (menu_ui_paused) menu_ui_paused = false;
@@ -49,13 +71,37 @@ public class Game_UI_System : MonoBehaviour
         pause_menu.SetActive(menu_ui_paused); // UI 활성화/비활성화
         Time.timeScale = menu_ui_paused ? 0 : 1;
     }
-    public void Game_Option()
+    IEnumerator FadeOutText(TextMeshProUGUI text)
     {
-        Debug.Log("일단 옵션");
+        if (text == null) yield break; // 텍스트가 null이면 중단
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            text.alpha = Mathf.Lerp(1, 0, elapsedTime / fadeDuration);
+            yield return null;
+        }
+
+        text.alpha = 0;
+        text.gameObject.SetActive(false); // 필요하면 텍스트 비활성화
+    }
+
+    public void Game_Sound_Option()
+    {
+        Time.timeScale = 0.0f;
+    }
+    public void Game_Sound_Option_Exit()
+    {
+        Time.timeScale = 1.0f;
     }
     public void Game_Exit()
     {
-        Debug.Log("일단 나가");
+        Time.timeScale = 0.0f;
+    }
+    public void Game_Exit_Button_Exit()
+    {
+        Time.timeScale = 1.0f;
     }
     public void Game_Drow()
     {

@@ -4,7 +4,7 @@ using static Audio_Manager;
 public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funtion
 {
     public static Base_Chartacter_Essential_Funtion instance;
-
+    public GameObject hitEffect;
     private void Awake()
     {
         instance = this;
@@ -17,7 +17,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
             if (health > 0)
             {
                 health -= damage;
-                Hit_Sound(Audio_Manager.SFX.hit2);
+                Audio_Manager.instance.Get_Player_Hit_Sound();
             }
             if(health <= 0)
             {
@@ -28,7 +28,11 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
 
         if (type == "Monster")
         {
-            if (health > 0) health -= damage;
+            if (health > 0)
+            {
+                Hit_Effect(take_object.transform.position + new Vector3(0, 1, 0));
+                health -= damage;
+            }
             if (health <= 0)
             {
                 GameManager.Instance.kill_enemy_count += 1;
@@ -57,6 +61,9 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
         GameObject effect = Instantiate(hit_effect_prefab, take_object.transform.position, Quaternion.identity);
         Destroy(effect, 1f);
     }
-    //맞았을 경우 나올 사운드 번호(Audio_Manager 클래스)
-    public void Hit_Sound(SFX hit_Number) => Audio_Manager.instance.PlaySfx(hit_Number);
+    public void Hit_Effect(Vector3 Hit_Object)
+    {
+        GameObject effect = Instantiate(hitEffect, Hit_Object, Quaternion.identity);
+        Destroy(effect, 1f);
+    }
 }

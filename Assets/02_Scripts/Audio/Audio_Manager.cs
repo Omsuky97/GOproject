@@ -2,62 +2,67 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Audio_Manager : MonoBehaviour
 {
     public static Audio_Manager instance;
+    public AudioMixer audioMixer;
 
     [Header("#BGM")]
-    public AudioClip bgm_clip;
-    public float bgm_volume;
-    AudioSource bgm_player;
+    public AudioSource BGM_Source;
+    public AudioClip BGM_Clip;
 
     [Header("#SFX")]
-    public AudioClip[] sfc_clips;
-    public float sfx_volume;
-    public int channels;
-    AudioSource[] sfx_players;
-    int chanel_Index;
+    public AudioSource SFX_Attack_Source;
+    public AudioClip SFX_Attack_Clip;
+
+    public AudioSource SFX_Player_Hit_Source;
+    public AudioClip SFX_Player_Hit_Clip;
+
+
+    public AudioSource SFX_Monster_Hit_Source;
+    public AudioClip SFX_Monster_Hit_Clip;
+
 
     public enum SFX { atk, cocked, hit, hit2 }
 
     private void Awake()
     {
-        instance = this;
-        Init();
-    }
-    void Init()
-    {
-        GameObject bgm_object = new GameObject("BGM_Player");
-        bgm_object.transform.parent = transform;
-        bgm_player = bgm_object.AddComponent<AudioSource>();
-        bgm_player.playOnAwake = false;
-        bgm_player.loop = true;
-        bgm_player.volume = bgm_volume;
-        bgm_player.clip = bgm_clip;
-
-        GameObject sfxobject = new GameObject("SFX_Player");
-        sfxobject.transform.parent = transform;
-        sfx_players = new AudioSource[channels];
-
-        for(int index = 0; index < sfx_players.Length; index++)
+        if (instance == null)
         {
-            sfx_players[index] = sfxobject.AddComponent<AudioSource>();
-            sfx_players[index].playOnAwake = false;
-            sfx_players[index].volume = sfx_volume;
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
-    public void PlaySfx(SFX sfx)
+    #region Master
+    public void Set_Master_Volume(float volume)
     {
-        for(int index = 0; index < sfx_players.Length; index++)
-        {
-            int loopIndex = (index + chanel_Index) % sfx_players.Length;
-            if (sfx_players[loopIndex].isPlaying) continue;
-
-            chanel_Index = loopIndex;
-            sfx_players[loopIndex].clip = sfc_clips[(int)sfx];
-            sfx_players[loopIndex].Play();
-            break;
-        }
+        audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+    }
+    public void Set_SFX_Volume(float volume)
+    {
+        audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+    }
+    public void Set_BGM_Volume(float volume)
+    {
+        audioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+    }
+    #endregion
+    public void GetAttack_Sound()
+    {
+        SFX_Attack_Source.PlayOneShot(SFX_Attack_Clip);
+    }
+    public void Get_Player_Hit_Sound()
+    {
+        SFX_Player_Hit_Source.PlayOneShot(SFX_Player_Hit_Clip);
+    }
+    public void Get_Monster_Hit_Sound()
+    {
+        SFX_Monster_Hit_Source.PlayOneShot(SFX_Monster_Hit_Clip);
     }
 }

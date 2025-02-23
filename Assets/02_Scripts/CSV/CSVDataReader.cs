@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CSVDataReader : MonoBehaviour
 {
+    public static CSVDataReader instance;
     #region Data Tables
     [Tooltip("유물 테이블")]
     public TextAsset RelicsTbl;
@@ -32,6 +33,18 @@ public class CSVDataReader : MonoBehaviour
 
     #endregion
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
