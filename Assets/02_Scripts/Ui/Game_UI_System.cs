@@ -37,7 +37,6 @@ public class Game_UI_System : MonoBehaviour
 
     [Header("## -- Game_Fade_UI -- ##")]
     public TextMeshProUGUI Day_Text;
-    public TextMeshProUGUI D_Day_Text;
     public float fadeDuration = 1f; // 페이드 시간
 
     [Header("## -- Game_Sound_UI -- ##")]
@@ -61,7 +60,6 @@ public class Game_UI_System : MonoBehaviour
         Game_BGM_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_BGM_Volume);
 
         StartCoroutine(FadeOutText(Day_Text));
-        StartCoroutine(FadeOutText(D_Day_Text));
     }
 
     public void Game_Menu()

@@ -213,7 +213,7 @@ public class Player_Scaner : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(dir.normalized * Time.deltaTime); // 정규화된 방향 벡터로 목표 회전 계산
 
         // Y축에 35도 추가
-        Quaternion adjustedRotation = targetRotation * Quaternion.Euler(0, 47f, 0); // Y축 +35도 추가
+        Quaternion adjustedRotation = targetRotation * Quaternion.Euler(0, -15f, 0); // Y축 +35도 추가
         // 부드러운 회전 (현재 회전에서 목표 회전으로 점진적으로 회전)
         transform.rotation = Quaternion.Slerp(transform.rotation, adjustedRotation, Time.deltaTime * 5f); // 5f는 회전 속도
     }

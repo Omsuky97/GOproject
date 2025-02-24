@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static Audio_Manager;
@@ -15,12 +16,12 @@ public class GameManager : MonoBehaviour
     public Relic_Data[] allRelics;
 
     [Header("## -- Game_System -- ##")]
-    public short count_day = 30;
+    public short count_day = 1;
+    public bool Waiting_Time_Type = false;
 
     [Header("## -- Game_Stage_List -- ##")]
     public int spawn_count;
     public float spawn_timer;
-    public int max_spawn_count;
     public int kill_enemy_count;
 
     [Header("## -- Player_Statas_List -- ##")]
@@ -47,22 +48,16 @@ public class GameManager : MonoBehaviour
     public Canvas game_over;
     public GameObject die_player;
 
-    [Header("## -- Fade_UI -- ##")]
-    public TextMeshProUGUI Fade_Text; // 페이드 효과를 적용할 Text
-    public float Fade_Duration = 1.0f; // 페이드 시간
+    [Header("## -- Game_Fade_UI -- ##")]
+    public TextMeshProUGUI Day_Text;
+    public float fadeDuration = 1f; // 페이드 시간
+    public float Fade_TIme;
 
     void Awake()
     {
         Instance = this;
         Hit_Image.color = new Color(1, 0, 0, 0); // 처음엔 완전 투명
-    }
-    private void Start()
-    {
-        Color textColor = Fade_Text.color;
-        Fade_Text.color = textColor;
-
-        WaitAndFadeIn();
-
+        ResetAllRelicLevels();
     }
     void ResetAllRelicLevels()
     {
@@ -73,15 +68,18 @@ public class GameManager : MonoBehaviour
                 relic.ResetLevel();
             }
         }
-        Debug.Log("모든 Relic 레벨이 1로 초기화됨!");
     }
     public void Stage_Level_UP()
     {
-        if (kill_enemy_count == max_spawn_count)
+        if (kill_enemy_count == Spawner.instance.spawnData[count_day].spawnMaxCount)
         {
+            //WaitAndFadeIn();
             spawn_count = 0;
             kill_enemy_count = 0;
-            count_day -= 1;
+            count_day += 1;
+            Waiting_Time_Type = true;
+            Day_Text.text = $"{count_day}일";
+            StartCoroutine(FadeSequence(Day_Text));
         }
     }
 
@@ -98,36 +96,44 @@ public class GameManager : MonoBehaviour
         // 게임 멈춤 (시간 정지)
         Time.timeScale = 0;
     }
+    IEnumerator FadeInText(TextMeshProUGUI text)
+    {
+        if (text == null) yield break; // 텍스트가 null이면 중단
 
-    IEnumerator WaitAndFadeIn()
-    {
-        yield return new WaitForSeconds(2f); // 2초 대기
-        FadeOut();
-    }
-    public void FadeIn()
-    {
-        StartCoroutine(FadeText(Fade_Text, Fade_Duration, 0, 1)); // 투명 → 보임
-    }
-
-    public void FadeOut()
-    {
-        StartCoroutine(FadeText(Fade_Text, Fade_Duration, 0, 1)); // 보임 → 투명
-    }
-    IEnumerator FadeText(TextMeshProUGUI Text, float Duration, float startAlpha, float endAlpha)
-    {
+        text.gameObject.SetActive(true); // 페이드 인 전에 오브젝트 활성화
         float elapsedTime = 0f;
-        Color textColor = Text.color; // 기존 텍스트 색상 저장
 
-        while (elapsedTime < Duration)
+        while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / Duration);
-            Text.color = new Color(textColor.r, textColor.g, textColor.b, alpha);
+            text.alpha = Mathf.Lerp(0, 1, elapsedTime / fadeDuration);
+            yield return null;
+        }
+        text.alpha = 1; // 최종적으로 완전히 보이게 설정
+    }
+
+    IEnumerator FadeOutText(TextMeshProUGUI text)
+    {
+        if (text == null) yield break; // 텍스트가 null이면 중단
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            text.alpha = Mathf.Lerp(1, 0, elapsedTime / fadeDuration);
             yield return null;
         }
 
-        // 최종 상태 적용
-        Text.color = new Color(textColor.r, textColor.g, textColor.b, endAlpha);
+        text.alpha = 0;
+        text.gameObject.SetActive(false); // 필요하면 텍스트 비활성화
+    }
+
+    // 인 → 2초 대기 → 아웃 실행 코루틴 추가
+    IEnumerator FadeSequence(TextMeshProUGUI text)
+    {
+        yield return StartCoroutine(FadeInText(text)); // 먼저 페이드 인
+        yield return new WaitForSeconds(Fade_TIme); // 2초 유지
+        yield return StartCoroutine(FadeOutText(text)); // 그 후 페이드 아웃
     }
 }
 

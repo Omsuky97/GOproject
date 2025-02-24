@@ -250,17 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d7e27f45e576548bc52bbab8b4d9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &202040600 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8250551980934872433, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
-  m_PrefabInstance: {fileID: 1479135724}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &209110094 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8317016289389390671, guid: 137b5a6f5dde58f4f885887205c9644d, type: 3}
@@ -413,6 +402,11 @@ MonoBehaviour:
 --- !u!1 &532287595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8002977126973447250, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+  m_PrefabInstance: {fileID: 1479135724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &538517964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8943944884517029947, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
   m_PrefabInstance: {fileID: 1479135724}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &564362964 stripped
@@ -651,100 +645,104 @@ MonoBehaviour:
   - {fileID: 2040635961}
   - {fileID: 1836622771}
   spawnData:
-  - monsterId: 1001
-    spawnTime: 10
-    spawnCount: 20
-  - monsterId: 1002
+  - monsterId: 2
     spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
-  - monsterId: 0
-    spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 30
   - monsterId: 1001
     spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 2
   - monsterId: 1001
     spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 2
+  - monsterId: 1001
+    spawnTime: 0
+    spawnMaxCount: 2
+  - monsterId: 1001
+    spawnTime: 0
+    spawnMaxCount: 2
   - monsterId: 2001
     spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 1
+  - monsterId: 2002
+    spawnTime: 0
+    spawnMaxCount: 1
+  - monsterId: 2003
+    spawnTime: 0
+    spawnMaxCount: 1
+  - monsterId: 2004
+    spawnTime: 0
+    spawnMaxCount: 1
+  - monsterId: 2005
+    spawnTime: 0
+    spawnMaxCount: 1
+  - monsterId: 2006
+    spawnTime: 0
+    spawnMaxCount: 1
+  - monsterId: 2007
+    spawnTime: 0
+    spawnMaxCount: 1
+  - monsterId: 2008
+    spawnTime: 0
+    spawnMaxCount: 1
+  - monsterId: 0
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 0
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 1001
+    spawnTime: 0
+    spawnMaxCount: 0
+  - monsterId: 1001
+    spawnTime: 0
+    spawnMaxCount: 0
   - monsterId: 2001
     spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 0
   - monsterId: 2001
     spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 7
   - monsterId: 2001
     spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 6
   - monsterId: 2001
     spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 5
   - monsterId: 2001
     spawnTime: 0
-    spawnCount: 0
+    spawnMaxCount: 4
+  - monsterId: 2001
+    spawnTime: 0
+    spawnMaxCount: 33
   - monsterId: 1002
     spawnTime: 0
-    spawnCount: 50
+    spawnMaxCount: 3
   - monsterId: 1002
     spawnTime: 0
-    spawnCount: 20
+    spawnMaxCount: 30
   dataReader: {fileID: 642160661}
+  timer: 0
+  Day_Time: 0
+  spawn_type: 0
+  boss_hp_Slider: {fileID: 538517964}
 --- !u!114 &674361160 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2405564241198825759, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
@@ -1940,6 +1938,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 216129230452062510, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: monster
+      value: 
+      objectReference: {fileID: 1705352935703072497, guid: bd2f7fd3645fb034ea54536224f6ddcb, type: 3}
     - target: {fileID: 234022483039017313, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2330,11 +2332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381760446462840355, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.342
       objectReference: {fileID: 0}
     - target: {fileID: 1381760446462840355, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1416159396535683922, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_SortingOrder
@@ -3019,6 +3021,10 @@ PrefabInstance:
     - target: {fileID: 3064442087339032176, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149802725752172485, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: m_text
+      value: "1\uC77C"
       objectReference: {fileID: 0}
     - target: {fileID: 3324665949255724820, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4898,7 +4904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8663203507169726286, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00007247925
+      value: -0.000014662743
       objectReference: {fileID: 0}
     - target: {fileID: 8682749396008889664, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4982,7 +4988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8943944884517029947, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8958106157894608847, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_Name
@@ -5055,6 +5061,7 @@ PrefabInstance:
     - {fileID: 5534091049775169853, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
     - {fileID: 4438057727969930386, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
     - {fileID: 8345214322109406870, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+    - {fileID: 5214664982295794604, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
@@ -5624,10 +5631,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8fe0e0c72fd711b44bbcc6ccb6355c2d, type: 2}
   - {fileID: 11400000, guid: d2688f25dc18ff046ae646234dde316a, type: 2}
   - {fileID: 11400000, guid: 558c99b57f459964f9f21518673cb534, type: 2}
-  count_day: 30
+  count_day: 1
+  Waiting_Time_Type: 0
   spawn_count: 0
   spawn_timer: 0.2
-  max_spawn_count: 5
   kill_enemy_count: 0
   player_hp: 100000
   player_max_hp: 500
@@ -5642,8 +5649,9 @@ MonoBehaviour:
   boss_max_hp: 100
   game_over: {fileID: 0}
   die_player: {fileID: 3862787726321022519, guid: 1e1fbcaa04b03c64680bc0765c7ca9d9, type: 3}
-  Fade_Text: {fileID: 1400392431}
-  Fade_Duration: 1
+  Day_Text: {fileID: 1400392431}
+  fadeDuration: 1
+  Fade_TIme: 2
 --- !u!4 &1945947571
 Transform:
   m_ObjectHideFlags: 0
@@ -5896,7 +5904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5796453001037037499, guid: 1e1fbcaa04b03c64680bc0765c7ca9d9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5796453001037037499, guid: 1e1fbcaa04b03c64680bc0765c7ca9d9, type: 3}
       propertyPath: m_LocalScale.z
@@ -6053,6 +6061,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: b384426d0b060ca49b73d5e813b322d2, type: 3}
     - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d4c921ee8f410694eb75ef5b21e2acf4, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
       propertyPath: Sound_All.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -6076,6 +6088,66 @@ PrefabInstance:
       propertyPath: sfc_clips.Array.data[3]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[0]
+      value: 
+      objectReference: {fileID: -4540342933866389920, guid: bd2f7fd3645fb034ea54536224f6ddcb, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[1]
+      value: 
+      objectReference: {fileID: -6197542436017631544, guid: c5385e642d978ec458c3c689faa464e7, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[2]
+      value: 
+      objectReference: {fileID: 95742585295208501, guid: 7f020fd912d0ba947914e0d45dcb0265, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[3]
+      value: 
+      objectReference: {fileID: 7006370728507546657, guid: b79689d7c73c2f14da48d1965771a9f5, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[4]
+      value: 
+      objectReference: {fileID: -6781310042816651878, guid: bcecba4305265074da96e5caff2bb940, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[5]
+      value: 
+      objectReference: {fileID: 8726356978718236975, guid: 81a910f38ae82e84889e1354063696a2, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[6]
+      value: 
+      objectReference: {fileID: -5556036456000508983, guid: 9ad6ef1244d80334db36fa743db244dd, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[7]
+      value: 
+      objectReference: {fileID: -8471098781957074367, guid: 96d887848c12b0d4784b12a51bd8dcc4, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[8]
+      value: 
+      objectReference: {fileID: -2269754010283257079, guid: 88e480c990c9d6a458b5fc85fe1da2aa, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[9]
+      value: 
+      objectReference: {fileID: -8226493312696677860, guid: d9af52bf624fb004abc7f4d28bdf39e2, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[10]
+      value: 
+      objectReference: {fileID: -15522691248987887, guid: ca4f0b6e9ce12d5448f6d34b576d9593, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[11]
+      value: 
+      objectReference: {fileID: 2337752369734974885, guid: 9940df91e88f6b24e93072963e6298ec, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[12]
+      value: 
+      objectReference: {fileID: 8754907227185713957, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source.Array.data[13]
+      value: 
+      objectReference: {fileID: -5125329411585585892, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6380,16 +6452,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 1945947571}
     m_Modifications:
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: Bullet_Spirt_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: Bullet_Guided_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_Target_type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: Bullet_bounce_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: Bullet_NucBack_Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_ShotGun_Type
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: BUllet_penetrate_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_Boomerang_Type
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: Bullet_Propulsion_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3646983723181513093, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6564,7 +6660,7 @@ PrefabInstance:
     - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
       propertyPath: D_Day_Text
       value: 
-      objectReference: {fileID: 202040600}
+      objectReference: {fileID: 0}
     - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
       propertyPath: Relic_Item
       value: 

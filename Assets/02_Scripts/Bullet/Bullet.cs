@@ -378,7 +378,7 @@ public class Bullet : MonoBehaviour
         Vector3 bulletDirection = (other.transform.position - contactPoint).normalized;
 
         // 총알을 생성할 위치 계산 (충돌 지점에서 뒤로 이동)
-        Vector3 spawnPosition = contactPoint - bulletDirection * 3f;
+        Vector3 spawnPosition = contactPoint - bulletDirection;
 
         // 오브젝트 풀에서 총알 가져오기
         Transform bullet = GameManager.Instance.pool.Bullet_Get(4).transform;

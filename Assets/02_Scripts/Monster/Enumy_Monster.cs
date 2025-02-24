@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class Enumy_Monster : MonoBehaviour
 {
+    public static Enumy_Monster Instance;
     //기능
     private List<Collider> Hit_Boomerang_Bullet = new List<Collider>(); // 이미 맞은 적 목록
     Rigidbody monster_rigid;
@@ -50,9 +51,11 @@ public class Enumy_Monster : MonoBehaviour
     public float Enemy_Hiy_Time;
     public float Hit_Delta_Time;
     public float True_Hit_Time = 2.0f;
+    public int Hit_Sound;
 
     private void Awake()
     {
+        Instance = this;
         monster_rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         wait = new WaitForFixedUpdate();
@@ -69,7 +72,7 @@ public class Enumy_Monster : MonoBehaviour
     void Target_Move_Rotator()
     {
         Hit_Delta_Time += Time.deltaTime;
-        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("monIdol") || Enemy_hit_Type) return;
+        if (!isLive ||  Enemy_hit_Type) return; //anim.GetCurrentAnimatorStateInfo(0).IsName("monIdol")
         // 대상까지의 방향 계산 (Y축 제외)
         Vector3 dirvec = targe_rigid.position - monster_rigid.position;
         dirvec.y = -3f; // 수직 방향 제거
@@ -167,7 +170,7 @@ public class Enumy_Monster : MonoBehaviour
     IEnumerator KnocBack()
     {
         Enemy_hit_Type = true;
-        anim.SetBool("Monster_Hit", Enemy_hit_Type);
+        //anim.SetBool("Monster_Hit", Enemy_hit_Type);
 
         yield return wait;
         Vector3 playerPos = GameManager.Instance.player.transform.position;
@@ -178,7 +181,7 @@ public class Enumy_Monster : MonoBehaviour
         yield return new WaitForSeconds(Enemy_Hiy_Time); // 2초 대기
 
         Enemy_hit_Type = false;
-        anim.SetBool("Monster_Hit", Enemy_hit_Type);
+        //anim.SetBool("Monster_Hit", Enemy_hit_Type);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -217,7 +220,8 @@ public class Enumy_Monster : MonoBehaviour
                     }
                 }
 
-                Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
+                Audio_Manager.instance.Get_Monster_Hit_Sound(Hit_Sound);
+                //Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
                 Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name);
             }
         }

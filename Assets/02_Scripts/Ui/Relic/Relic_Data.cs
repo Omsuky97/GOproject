@@ -21,7 +21,7 @@ public class Relic_Data : ScriptableObject
     public string item_desc;           //--레벨별 설명 추가해야함--
     public string Relic_lcon;          //유물아이콘 리소스 경로
 
-    [Header("## -- Player -- ##")]
+    [Header("## -- Player_Stat -- ##")]
 
     [Tooltip("공격력 증가")]
     public float[] Bullet_Pow_UP;         //공격력 증가
@@ -57,10 +57,14 @@ public class Relic_Data : ScriptableObject
     public float[] Aiming_Range_Up;       //조준 범위 증가
     [Tooltip("조준 범위 감소")]
     public float[] Aiming_Range_Down;     //조준 범위 감소
-    [Tooltip("총알 연속 발사 수")]
-    public bool Bullet_Speaker_Type;       //총알 연속 발사 수
+    [Tooltip("총알 샷건 발사 갯수")]
+    public int[] Bullet_ShotGun_Count;         //총알 점진적 이동 여부
     [Tooltip("총알 연속 발사 수")]
     public int[] Bullet_Speaker_Up;       //총알 연속 발사 수
+
+    [Header("## -- Bullet_Type -- ##")]
+    [Tooltip("총알 효과 트리거 횟수")]
+    public int[] Bullet_Effec_Tg;         //총알 효과 트리거 횟수
     [Tooltip("총알 타겟 명중 후 되돌아오는 여부")]
     public bool Bullet_Return;            //총알 타겟 명중 후 되돌아오는 여부
     [Tooltip("가장멀리있는 적 사격 여부")]
@@ -69,8 +73,6 @@ public class Relic_Data : ScriptableObject
     public bool Bullet_Gra_Speed;         //총알 점진적 이동 여부
     [Tooltip("총알 샷건 여부")]
     public bool Bullet_ShotGun_Type;         //총알 점진적 이동 여부
-    [Tooltip("총알 샷건 발사 갯수")]
-    public int[] Bullet_ShotGun_Count;         //총알 점진적 이동 여부
     [Tooltip("총알 타겟 명중 시 범위 피해 여부")]
     public bool Bullet_Bomb;              //총알 타겟 명중 시 범위 피해 여부
     [Tooltip("총알 분열 여부")]
@@ -81,8 +83,8 @@ public class Relic_Data : ScriptableObject
     public bool Bullet_Noc;               //총알 넉백 여부 --추가
     [Tooltip("총알 효과 트리거 횟수")]
     public bool Bullet_Effec_Type;         //총알 효과 트리거 횟수
-    [Tooltip("총알 효과 트리거 횟수")]
-    public int[] Bullet_Effec_Tg;         //총알 효과 트리거 횟수
+    [Tooltip("총알 연속 발사 여부")]
+    public bool Bullet_Speaker_Type;       //총알 연속 발사 여부
     [Tooltip("소환체 참조 id")]
     public int[] Summons_ld;              //소환체 참조 id
 
@@ -92,6 +94,6 @@ public class Relic_Data : ScriptableObject
     public string Bullet_Muzzle;        //총알 발사 파티클 리소스 경로
     public void ResetLevel()
     {
-        Relics_Lv = 1;
+        Relics_Lv = 0;
     }
 }

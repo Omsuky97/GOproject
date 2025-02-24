@@ -42,8 +42,8 @@ public class Player_Statas_HUD : MonoBehaviour
                 paleyr_hp_Slider.value = hp / max_hp;
                 break;
             case InfoType.BossHealth:
-                float boss_hp = GameManager.Instance.boss_hp;
-                float boss_max_hp = GameManager.Instance.boss_max_hp;
+                float boss_hp = Enumy_Monster.Instance.Monster_Hp;
+                float boss_max_hp = Enumy_Monster.Instance.Monster_MaxHp;
                 boss_hp_Slider.value = boss_hp / boss_max_hp;
                 break;
             case InfoType.Day:

@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: -4948279212346144862}
   - component: {fileID: 4255011867059076539}
   - component: {fileID: 8747641113816254699}
+  - component: {fileID: 95742585295208501}
   m_Layer: 12
   m_Name: Bmon3
   m_TagString: Enemy
@@ -620,7 +621,7 @@ MonoBehaviour:
   Monster_DrItem: 0
   Monster_Prefabs: 
   Monster_MoveSpeed: 0
-  scanRange: 2
+  scanRange: 5
   targetLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -628,14 +629,14 @@ MonoBehaviour:
   isLive: 0
   monster_run: 0
   monster_attack: 0
-  Hit_effect_prefab: {fileID: 0}
+  Hit_effect_prefab: {fileID: 1090680790622714, guid: a1490fee3fdc0de45a549e085241c948, type: 3}
   Enemy_hit_Type: 0
   hit_damage_text_pro: {fileID: 6158445389720161608, guid: 4035234ebf24b3d4a8959ea74858bff2, type: 3}
   hit_damage_text_pos_name: text_target
-  NucBack_distance: 5
   Enemy_Hiy_Time: 0.5
   Hit_Delta_Time: 0
   True_Hit_Time: 2
+  Hit_Sound: 2
 --- !u!114 &-4948279212346144862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,8 +699,104 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!82 &95742585295208501
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845945369076765872}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1665698293954773503, guid: 320f2831b44ac744c8d736ef0cc97b5e, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2125977167109061285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,7 +2171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b876b7b927f80214cb785ed37b50b017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 0}
+  monster: {fileID: 221149249278963369}
   monster_Attack_damage: 15
 --- !u!1 &7926545195830790147
 GameObject:
