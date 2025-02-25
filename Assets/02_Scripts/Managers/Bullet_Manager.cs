@@ -43,11 +43,6 @@ public class Bullet_Manager : MonoBehaviour
     public int max_penetration = 5;
     public int penetration = 0;
 
-    [Header("## -- Bullet_Bounce -- ##")]
-    public int maxBounces = 5;          // 최대 튕길 횟수
-    public int bounceCount = 0;         // 현재 튕긴 횟수
-    public float Bullet_Bounce_Spawn_Offset = 1.0f;    //충돌 위치에서 이동할 거리
-
     [Header("## -- Bullet_NucBack -- ##")]
     public float NucBack_distance = 5.0f;
 

@@ -15,9 +15,20 @@ public class Scene_Manager : MonoBehaviour
     public Image Transition_Image; // 씬 전환 전에 잠깐 보여줄 이미지
     public float fadeDuration = .5f;
 
+    [Header("## -- Game_Sound_UI -- ##")]
+    public GameObject Option_UI;
+
+    [Header("## -- Game_Sound -- ##")]
+    public Slider Game_Master_Sound_Slider;
+    public Slider Game_SFX_Sound_Slider;
+    public Slider Game_BGM_Sound_Slider;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+
+        Game_Master_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_Master_Volume);
+        Game_SFX_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_SFX_Volume);
+        Game_BGM_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_BGM_Volume);
     }
     private void Start()
     {
@@ -77,6 +88,14 @@ public class Scene_Manager : MonoBehaviour
             Destroy(Transition_Image.gameObject);
             Transition_Image = null; // 변수도 null로 설정하여 더 이상 참조되지 않도록 함
         }
+    }
+    public void Game_Sound_Option()
+    {
+        Time.timeScale = 0.0f;
+    }
+    public void Game_Sound_Option_Exit()
+    {
+        Time.timeScale = 1.0f;
     }
     IEnumerator FadeInImage(Image img)
     {

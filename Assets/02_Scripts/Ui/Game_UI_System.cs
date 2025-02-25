@@ -117,9 +117,12 @@ public class Game_UI_System : MonoBehaviour
     {
         if (!Relic_Gacha_UI_paused)
         {
-            Relic_Gacha_UI_paused = true;
-            Relic_Gacha_UI.SetActive(true);
-            Time.timeScale = 0.0f;
+            if (GameManager.Instance.gold_count >= 200)
+            {
+                Relic_Gacha_UI_paused = true;
+                Relic_Gacha_UI.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
         }
     }
     //Btn_Open_Relic_Gacha
@@ -163,6 +166,7 @@ public class Game_UI_System : MonoBehaviour
                 break;
             }
         }
+        GameManager.Instance.gold_count -= 200;
         Relic_Gacha_UI.SetActive(false);
         Relic_Gacha_UI_paused = false;
         Time.timeScale = 1.0f;
