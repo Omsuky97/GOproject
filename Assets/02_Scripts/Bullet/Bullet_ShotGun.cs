@@ -79,13 +79,8 @@ public class Bullet_ShotGun : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (Bullet_Manager.Instance.Bullet_Propulsion_Type)
-        {
-            Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Propulsion_Speed + 1;
-            rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Propulsion_Speed;
-        }
         if (rigid.velocity.magnitude < Bullet_Manager.Instance.Bullet_Speed * 0.9f) rigid.velocity = rigid.velocity.normalized * Bullet_Manager.Instance.Bullet_Speed;
-        if (Bullet_Manager.Instance.Bullet_Guided_Type)
+        if (!Bullet_Manager.Instance.Bullet_bounce_Type && Bullet_Manager.Instance.Bullet_Guided_Type)
         {
             if (Bullet_Target == new Vector3(0, 0, 0)) Bullet_Target = Player_Scaner.nearestTarget.position;
             Vector3 targetPosition = Bullet_Target;
@@ -93,6 +88,11 @@ public class Bullet_ShotGun : MonoBehaviour
             Vector3 newDirection = Vector3.Lerp(rigid.velocity.normalized, direction, rotateSpeed * Time.fixedDeltaTime).normalized;
 
             rigid.velocity = newDirection * Bullet_Manager.Instance.Bullet_Speed;
+        }
+        if (Bullet_Manager.Instance.Bullet_Propulsion_Type)
+        {
+            Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Propulsion_Speed + 1;
+            rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Propulsion_Speed;
         }
     }
     private void OnTriggerEnter(Collider other)

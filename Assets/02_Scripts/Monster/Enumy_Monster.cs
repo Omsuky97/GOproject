@@ -106,6 +106,7 @@ public class Enumy_Monster : MonoBehaviour
         monster_attack = false;
         Enemy_hit_Type = false;
         Monster_Hp = Monster_MaxHp;
+        Hit_effect_prefab.SetActive(false);
         targe_rigid = GameManager.Instance.player.GetComponent<Rigidbody>();
     }
     public void Init(MonsterData data)

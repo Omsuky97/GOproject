@@ -39,7 +39,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
                 GameManager.Instance.gold_count += 5;
                 GameManager.Instance.Stage_Level_UP();
                 live = false;
-                Monster_Did_Effect(Did_Effect, take_object.transform.position + new Vector3(0, 0.5f, 0));
+                Monster_Did_Effect(Did_Effect);
                 take_object.SetActive(false);
                 take_object.transform.position = new Vector3(545f, 5f, 500f);
             }
@@ -67,9 +67,10 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
         GameObject effect = Instantiate(hitEffect, Hit_Object, Quaternion.identity);
         Destroy(effect, GameManager.Instance.Attack_Delay);
     }
-    public void Monster_Did_Effect(GameObject Did_Effect, Vector3 Hit_Object)
+    public void Monster_Did_Effect(GameObject Did_Effect)
     {
-        GameObject effect = Instantiate(Did_Effect, Hit_Object, Quaternion.identity);
-        Destroy(effect, GameManager.Instance.Attack_Delay+1.5f);
+        Did_Effect.SetActive(true);
+        //GameObject effect = Instantiate(Did_Effect, Hit_Object, Quaternion.identity);
+        //Destroy(effect, GameManager.Instance.Attack_Delay+1.5f);
     }
 }

@@ -655,7 +655,7 @@ MonoBehaviour:
     spawnMaxCount: 30
   - monsterId: 1001
     spawnTime: 0
-    spawnMaxCount: 5
+    spawnMaxCount: 20
   - monsterId: 1001
     spawnTime: 0
     spawnMaxCount: 2
@@ -2127,6 +2127,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 658453853269577241, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 714128507964595344, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: Data.Value.b
       value: 0.34901962
@@ -3355,6 +3359,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4076263066613450547, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4159609499673407548, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: Data.Value.b
       value: 0.34901962
@@ -4118,6 +4126,14 @@ PrefabInstance:
     - target: {fileID: 6215790241446811680, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241838858751343867, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241838858751343867, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.202026
       objectReference: {fileID: 0}
     - target: {fileID: 6278997259406863393, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: uiAnimator
@@ -6465,6 +6481,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: Bullet_Bezier_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_Guided_Type
       value: 0
       objectReference: {fileID: 0}
@@ -6474,7 +6494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_bounce_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_NucBack_Type
@@ -6482,7 +6502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_ShotGun_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: BUllet_penetrate_Type

@@ -13,6 +13,7 @@ public class Equip : MonoBehaviour
     public GameObject[] Relic_Plus_Icon;
     bool exitLoop = false;
     public Relic_Exit_Button relic_exit_button;
+    public Sprite non_equip_Image;
 
     public void Relic_Equip(Image relic_image, int relic_id)
     {

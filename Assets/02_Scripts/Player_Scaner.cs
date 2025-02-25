@@ -181,24 +181,30 @@ public class Player_Scaner : MonoBehaviour
         Audio_Manager.instance.GetAttack_Sound();
         targetPos = nearestTarget.position;
 
-        Vector3 bullet_dir = (targetPos - Fire_Point.transform.position).normalized; // 타겟 방향 계산
+        Vector3 bullet_dir = (targetPos - Fire_Point.transform.position).normalized;
+        bullet_dir.y = 0; // Y축 고정
 
         Bullet_Manager.Instance.Bullet_ShotGun_Count = Mathf.Clamp(Bullet_Manager.Instance.Bullet_ShotGun_Count, 1, 5);
         float angleStep = 45f / (Bullet_Manager.Instance.Bullet_ShotGun_Count - 1);
 
         short Fire_Effect_num = 1;
         Bullet_Manager.Instance.Effect_Fire(Fire_Effect_num, Fire_Point.transform.position);
+
         for (int i = 0; i < Bullet_Manager.Instance.Bullet_ShotGun_Count; i++)
         {
             float angleOffset = (i * angleStep) - 22.5f; // 중심을 기준으로 좌우 균등 분배
             Vector3 nextDirection = Quaternion.Euler(0, angleOffset, 0) * bullet_dir; // 타겟 방향을 기준으로 퍼지게 조정
+            nextDirection.y = 0; // Y축 고정
+
             Vector3 spawnPosition = Fire_Point.transform.position + nextDirection;
             Transform bullet = GameManager.Instance.pool.Bullet_Get(3).transform;
             bullet.position = spawnPosition;
-            Quaternion lookAtTarget = Quaternion.LookRotation(targetPos - spawnPosition); // 타겟을 바라보는 방향
+
+            Quaternion lookAtTarget = Quaternion.LookRotation(new Vector3(targetPos.x, spawnPosition.y, targetPos.z) - spawnPosition); // Y축을 고정한 방향 계산
             bullet.rotation = Quaternion.Euler(90, lookAtTarget.eulerAngles.y, lookAtTarget.eulerAngles.z); // X축 90도 고정
+
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-            bulletRb.velocity = nextDirection * Bullet_Manager.Instance.Bullet_Speed;
+            bulletRb.velocity = nextDirection.normalized * Bullet_Manager.Instance.Bullet_Speed;
         }
         // 리셋
         StartCoroutine(ResetFire());
