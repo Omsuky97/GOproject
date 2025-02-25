@@ -1370,98 +1370,102 @@ MonoBehaviour:
   spawnData:
   - monsterId: 1002
     spawnTime: 10
-    spawnCount: 20
+    spawnMaxCount: 0
   - monsterId: 1002
     spawnTime: 10
-    spawnCount: 50
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 100
+    spawnMaxCount: 0
   - monsterId: 1002
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1001
     spawnTime: 10
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1004
     spawnTime: 0
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1003
     spawnTime: 0
-    spawnCount: 10
+    spawnMaxCount: 0
   - monsterId: 1002
     spawnTime: 0
-    spawnCount: 50
+    spawnMaxCount: 0
   - monsterId: 1007
     spawnTime: 0
-    spawnCount: 20
+    spawnMaxCount: 0
   dataReader: {fileID: 1547819365}
+  timer: 0
+  Day_Time: 0
+  spawn_type: 0
+  boss_hp_Slider: {fileID: 0}
 --- !u!1 &691825504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,7 +1889,8 @@ MonoBehaviour:
   SFX_Attack_Clip: {fileID: 0}
   SFX_Player_Hit_Source: {fileID: 0}
   SFX_Player_Hit_Clip: {fileID: 0}
-  SFX_Monster_Hit_Source: {fileID: 0}
+  SFX_Monster_Hit_Source:
+  - {fileID: 0}
   SFX_Monster_Hit_Clip: {fileID: 0}
 --- !u!1001 &814659723
 PrefabInstance:
@@ -4713,16 +4718,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: {fileID: 727185151}
   player: {fileID: 1825136261}
+  allRelics: []
   count_day: 30
+  Waiting_Time_Type: 0
   spawn_count: 0
   spawn_timer: 0.2
-  max_spawn_count: 8
   kill_enemy_count: 0
   player_hp: 500
   player_max_hp: 500
   bullet_damage: 20
-  bullet_count: 1
-  attack_delay: 0.2
+  Attack_Delay: 0
   gold_count: 5
   Hit_Image: {fileID: 0}
   hit_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -4730,11 +4735,11 @@ MonoBehaviour:
   colorFadeSpeed: 5
   boss_hp: 70
   boss_max_hp: 100
-  Bullet_Speed: 5
   game_over: {fileID: 0}
   die_player: {fileID: 3862787726321022519, guid: 1e1fbcaa04b03c64680bc0765c7ca9d9, type: 3}
-  Fade_Text: {fileID: 0}
-  Fade_Duration: 1
+  Day_Text: {fileID: 0}
+  fadeDuration: 1
+  Fade_TIme: 0
 --- !u!4 &1945947571
 Transform:
   m_ObjectHideFlags: 0

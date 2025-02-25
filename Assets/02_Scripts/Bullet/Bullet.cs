@@ -13,6 +13,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : MonoBehaviour
 {
+    public static Bullet Instance;
+
     public static List<Collider> Hit_Bounce_Enemys = new List<Collider>(); // 이미 맞은 적 목록
     public HashSet<Collider> Hit_Split_Enemys = new HashSet<Collider>(); // 이미 맞은 몬스터 저장
     public List<Transform> enemyList = new List<Transform>(); // 현재 반사 대상 리스트
@@ -33,8 +35,13 @@ public class Bullet : MonoBehaviour
     [Header("## -- BulletBoom -- ##")]
     public GameObject Bullet_Boom;
 
+    public int maxBounces = 5;          // 최대 튕길 횟수
+    public int bounceCount = 0;         // 현재 튕긴 횟수
+    public float Bullet_Bounce_Spawn_Offset = 1.0f;    //충돌 위치에서 이동할 거리
+
     private void Awake()
     {
+        Instance = this;
         rigid = GetComponent<Rigidbody>();
         Bullet_Manager.Instance.Origin_Spped = Bullet_Manager.Instance.Bullet_Speed;
 
@@ -61,7 +68,7 @@ public class Bullet : MonoBehaviour
         damage = dmg;
         Bullet_dir = dir;
         if (bulletParticles != null) bulletParticles.Play();
-        Bullet_Manager.Instance.bounceCount = 0;
+        bounceCount = 0;
         Hit_Bounce_Enemys.Clear();
         Bullet_Manager.Instance.penetration = 0;
         enemyList.Clear();
@@ -75,7 +82,7 @@ public class Bullet : MonoBehaviour
         // 적과 충돌했으므로, 맞은 적 리스트에 추가
         Hit_Bounce_Enemys.Clear();
         Bullet_Manager.Instance.penetration = 0;
-        Bullet_Manager.Instance.bounceCount = 0;
+        bounceCount = 0;
         enemyList.Clear();
         enemyIndex = 0;
         ResetChildRotation(); // 총알이 활성화될 때 하위 오브젝트 회전 초기화
@@ -84,7 +91,7 @@ public class Bullet : MonoBehaviour
     {
         Hit_Bounce_Enemys.Clear();
         enemyList.Clear();
-        Bullet_Manager.Instance.bounceCount = 0;
+        bounceCount = 0;
         enemyIndex = 0;
     }
     private void ResetChildRotation()
@@ -206,7 +213,7 @@ public class Bullet : MonoBehaviour
     #region Bullet_bounce
     private void Bullet_bounce(Collider other)
     {
-        if (Bullet_Manager.Instance.bounceCount >= Bullet_Manager.Instance.maxBounces)
+        if (bounceCount >= maxBounces)
         {
             gameObject.SetActive(false);
             return;
@@ -232,7 +239,7 @@ public class Bullet : MonoBehaviour
             child.localEulerAngles = new Vector3(0, childEuler.y, childEuler.z);
         }
         rigid.velocity = nextDirection * Bullet_Manager.Instance.Bullet_Speed;
-        Bullet_Manager.Instance.bounceCount += 1;
+        bounceCount += 1;
 
         Hit_Bounce_Enemys.Remove(other);
 
@@ -243,13 +250,13 @@ public class Bullet : MonoBehaviour
     }
     private void Bullet_bounce_Guided(Collider other)
     {
-        if (Bullet_Manager.Instance.bounceCount >= Bullet_Manager.Instance.maxBounces)
+        if (bounceCount >= maxBounces)
         {
             gameObject.SetActive(false);
             return;
         }
 
-        Bullet_Manager.Instance.bounceCount += 1;
+        bounceCount += 1;
 
         if (!Hit_Bounce_Enemys.Contains(other))
         {

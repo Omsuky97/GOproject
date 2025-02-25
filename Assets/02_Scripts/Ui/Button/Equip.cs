@@ -31,7 +31,8 @@ public class Equip : MonoBehaviour
                         GameManager.Instance.Attack_Delay -= Relic[Relic_NUm].Bullet_Fispeed_UP[Relic[Relic_NUm].Relics_Lv];     //¹ß»ç ¼Óµµ Áõ°¡
                         Bullet_Manager.Instance.Bullet_Speed += Relic[Relic_NUm].Bullet_Move_Speed_Up[Relic[Relic_NUm].Relics_Lv];  //ÃÑ¾Ë ÀÌµ¿ ¼Óµµ Áõ°¡
                         Bullet_Manager.Instance.max_penetration += Relic[Relic_NUm].Bullet_Pec_Up[Relic[Relic_NUm].Relics_Lv];           //°üÅë È½¼ö Áõ°¡
-                        Bullet_Manager.Instance.maxBounces += Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
+                        Bullet.Instance.maxBounces += Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
+                        Bullet_ShotGun.Instance.maxBounces += Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
                         Bullet_Manager.Instance.NucBack_distance += Relic[Relic_NUm].Bullet_Noc_Up[Relic[Relic_NUm].Relics_Lv];         //³Ë¹é Áõ°¡
                         Bullet_Manager.Instance.Bullet_Spirt_Type = Relic[Relic_NUm].Bullet_Spirt_Type;         //ÃÑ¾Ë ºÐ¿­Ã¼ ¼ö Áõ°¡
                         Bullet_Manager.Instance.Bullet_Spirt_Count += Relic[Relic_NUm].Bullet_Split_Up[Relic[Relic_NUm].Relics_Lv];         //ÃÑ¾Ë ºÐ¿­Ã¼ ¼ö Áõ°¡
@@ -75,7 +76,8 @@ public class Equip : MonoBehaviour
                         GameManager.Instance.Attack_Delay += Relic[Relic_NUm].Bullet_Fispeed_UP[Relic[Relic_NUm].Relics_Lv];     //¹ß»ç ¼Óµµ Áõ°¡
                         Bullet_Manager.Instance.Bullet_Speed -= Relic[Relic_NUm].Bullet_Move_Speed_Up[Relic[Relic_NUm].Relics_Lv];  //ÃÑ¾Ë ÀÌµ¿ ¼Óµµ Áõ°¡
                         Bullet_Manager.Instance.max_penetration -= Relic[Relic_NUm].Bullet_Pec_Up[Relic[Relic_NUm].Relics_Lv];           //°üÅë È½¼ö Áõ°¡
-                        Bullet_Manager.Instance.maxBounces -= Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
+                        Bullet.Instance.maxBounces -= Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
+                        Bullet_ShotGun.Instance.maxBounces -= Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
                         Bullet_Manager.Instance.NucBack_distance -= Relic[Relic_NUm].Bullet_Noc_Up[Relic[Relic_NUm].Relics_Lv];         //³Ë¹é Áõ°¡
                         Bullet_Manager.Instance.Bullet_Spirt_Count += Relic[Relic_NUm].Bullet_Split_Up[Relic[Relic_NUm].Relics_Lv];         //ÃÑ¾Ë ºÐ¿­Ã¼ ¼ö Áõ°¡
                         Bullet_Manager.Instance.Bullet_Speaker_Count -= Relic[Relic_NUm].Bullet_Speaker_Up[Relic[Relic_NUm].Relics_Lv];    //ÃÑ¾Ë ¿¬¼Ó¹ß»ç È®·ü
@@ -121,7 +123,8 @@ public class Equip : MonoBehaviour
                         GameManager.Instance.Attack_Delay += Relic[Relic_NUm].Bullet_Fispeed_UP[Relic[Relic_NUm].Relics_Lv];     //¹ß»ç ¼Óµµ Áõ°¡
                         Bullet_Manager.Instance.Bullet_Speed -= Relic[Relic_NUm].Bullet_Move_Speed_Up[Relic[Relic_NUm].Relics_Lv];  //ÃÑ¾Ë ÀÌµ¿ ¼Óµµ Áõ°¡
                         Bullet_Manager.Instance.max_penetration -= Relic[Relic_NUm].Bullet_Pec_Up[Relic[Relic_NUm].Relics_Lv];           //°üÅë È½¼ö Áõ°¡
-                        Bullet_Manager.Instance.maxBounces -= Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
+                        Bullet.Instance.maxBounces -= Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
+                        Bullet_ShotGun.Instance.maxBounces -= Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
                         Bullet_Manager.Instance.NucBack_distance -= Relic[Relic_NUm].Bullet_Noc_Up[Relic[Relic_NUm].Relics_Lv];         //³Ë¹é Áõ°¡
                         Bullet_Manager.Instance.Bullet_Spirt_Count += Relic[Relic_NUm].Bullet_Split_Up[Relic[Relic_NUm].Relics_Lv];         //ÃÑ¾Ë ºÐ¿­Ã¼ ¼ö Áõ°¡
                         Bullet_Manager.Instance.Bullet_Speaker_Count -= Relic[Relic_NUm].Bullet_Speaker_Up[Relic[Relic_NUm].Relics_Lv];    //ÃÑ¾Ë ¿¬¼Ó¹ß»ç È®·ü
@@ -146,7 +149,8 @@ public class Equip : MonoBehaviour
                         GameManager.Instance.Attack_Delay -= Relic[Relic_NUm].Bullet_Fispeed_UP[Relic[Relic_NUm].Relics_Lv];     //¹ß»ç ¼Óµµ Áõ°¡
                         Bullet_Manager.Instance.Bullet_Speed += Relic[Relic_NUm].Bullet_Move_Speed_Up[Relic[Relic_NUm].Relics_Lv];  //ÃÑ¾Ë ÀÌµ¿ ¼Óµµ Áõ°¡
                         Bullet_Manager.Instance.max_penetration += Relic[Relic_NUm].Bullet_Pec_Up[Relic[Relic_NUm].Relics_Lv];           //°üÅë È½¼ö Áõ°¡
-                        Bullet_Manager.Instance.maxBounces += Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
+                        Bullet.Instance.maxBounces += Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
+                        Bullet_ShotGun.Instance.maxBounces += Relic[Relic_NUm].Bullet_Buc_Up[Relic[Relic_NUm].Relics_Lv];           //Æ¨±è È½¼ö Áõ°¡
                         Bullet_Manager.Instance.NucBack_distance += Relic[Relic_NUm].Bullet_Noc_Up[Relic[Relic_NUm].Relics_Lv];         //³Ë¹é Áõ°¡
                         Bullet_Manager.Instance.Bullet_Spirt_Type = Relic[Relic_NUm].Bullet_Spirt_Type;         //ÃÑ¾Ë ºÐ¿­Ã¼ ¼ö Áõ°¡
                         Bullet_Manager.Instance.Bullet_Spirt_Count += Relic[Relic_NUm].Bullet_Split_Up[Relic[Relic_NUm].Relics_Lv];         //ÃÑ¾Ë ºÐ¿­Ã¼ ¼ö Áõ°¡
