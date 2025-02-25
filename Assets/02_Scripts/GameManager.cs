@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
 public interface IEssential_funtion
 {
     //Text_pro, target이름, 데미지, 생존 여부
-    void TakeDamage(GameObject take_object, ref float Health, float damage, bool live, string type);
+    void TakeDamage(GameObject take_object, ref float Health, float damage, bool live, string type, GameObject Did_Effect);
     //Text_pro, target이름, 데미지
     void Take_Hit_Text_Damage(GameObject damage_text_pro, GameObject target_objectstring, string text_position_target, float damage);
     //파티클 프리펩, 파티클대상

@@ -10,7 +10,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
         instance = this;
     }
     //Text_pro, target이름, 데미지, 생존 여부
-    public void TakeDamage(GameObject take_object, ref float health, float damage, bool live, string type)
+    public void TakeDamage(GameObject take_object, ref float health, float damage, bool live, string type, GameObject Did_Effect)
     {
         if (type == "Player")
         {
@@ -39,6 +39,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
                 GameManager.Instance.gold_count += 5;
                 GameManager.Instance.Stage_Level_UP();
                 live = false;
+                Monster_Did_Effect(Did_Effect, take_object.transform.position + new Vector3(0, 0.5f, 0));
                 take_object.SetActive(false);
                 take_object.transform.position = new Vector3(545f, 5f, 500f);
             }
@@ -65,5 +66,10 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
     {
         GameObject effect = Instantiate(hitEffect, Hit_Object, Quaternion.identity);
         Destroy(effect, GameManager.Instance.Attack_Delay);
+    }
+    public void Monster_Did_Effect(GameObject Did_Effect, Vector3 Hit_Object)
+    {
+        GameObject effect = Instantiate(Did_Effect, Hit_Object, Quaternion.identity);
+        Destroy(effect, GameManager.Instance.Attack_Delay+1.5f);
     }
 }

@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
             string type_name = "Player";
             Monster_Attack monster = other.GetComponent<Monster_Attack>();
             cameraShake.ShowDamageEffect();
-            Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref GameManager.Instance.player_hp, monster.monster_Attack_damage, isLive, type_name);
+            Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref GameManager.Instance.player_hp, monster.monster_Attack_damage, isLive, type_name, null);
         }
     }
 }

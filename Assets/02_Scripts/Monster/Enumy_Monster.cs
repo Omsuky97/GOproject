@@ -222,11 +222,8 @@ public class Enumy_Monster : MonoBehaviour
 
                 Audio_Manager.instance.Get_Monster_Hit_Sound(Hit_Sound);
                 //Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
-                Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name);
-            }
-            else if (Monster_Hp <= 0)
-            {
-                Base_Chartacter_Essential_Funtion.instance.Hit_Palticle(Hit_effect_prefab, gameObject);
+                Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name, Hit_effect_prefab);
+
             }
         }
     }
