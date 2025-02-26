@@ -66,6 +66,7 @@ public class Relic_Item : MonoBehaviour
     //리스트에서 원하는 개수만큼 랜덤으로 선택 (중복 없음)
     public List<Relic_Data> GetRandomRelics(int count)
     {
+        //List<Relic_Data> filteredRelics = Relic.Where(x => x.Relics_Lv != 5).ToList(); // Lv 5 제외
         if (Relic.Count == 0)
         {
             return new List<Relic_Data>();

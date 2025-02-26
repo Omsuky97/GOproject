@@ -202,6 +202,6 @@ public class Game_UI_System : MonoBehaviour
         int btn_relic_num = clickedButton.GetComponentInParent<Relic_Exit_Button>().relic_Num[btn_num];
         Image[] buttonImages = clickedButton.GetComponentsInChildren<Image>();
         rellic_equip.Relic_Equip_Exit(btn_relic_num);
-        buttonImages[1].sprite = null;
+        //buttonImages[1].sprite = null;
     }
 }

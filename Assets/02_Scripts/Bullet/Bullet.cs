@@ -13,8 +13,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : MonoBehaviour
 {
-    public static Bullet Instance;
-
     public static List<Collider> Hit_Bounce_Enemys = new List<Collider>(); // 이미 맞은 적 목록
     public HashSet<Collider> Hit_Split_Enemys = new HashSet<Collider>(); // 이미 맞은 몬스터 저장
     public List<Transform> enemyList = new List<Transform>(); // 현재 반사 대상 리스트
@@ -35,13 +33,12 @@ public class Bullet : MonoBehaviour
     [Header("## -- BulletBoom -- ##")]
     public GameObject Bullet_Boom;
 
-    public int maxBounces = 5;          // 최대 튕길 횟수
+    public static int maxBounces = 5;          // 최대 튕길 횟수
     public int bounceCount = 0;         // 현재 튕긴 횟수
     public float Bullet_Bounce_Spawn_Offset = 1.0f;    //충돌 위치에서 이동할 거리
 
     private void Awake()
     {
-        Instance = this;
         rigid = GetComponent<Rigidbody>();
         Bullet_Manager.Instance.Origin_Spped = Bullet_Manager.Instance.Bullet_Speed;
 
