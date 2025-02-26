@@ -2095,6 +2095,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 574858169413854616, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: Data.Value.b
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 574858169413854616, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: Data.Value.g
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 574858169413854616, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
+      propertyPath: Data.Value.r
+      value: 0.34901962
+      objectReference: {fileID: 0}
     - target: {fileID: 636311535805737860, guid: 417b47915c1099a42815418a2a1758e7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -5683,7 +5695,7 @@ MonoBehaviour:
   kill_enemy_count: 0
   player_hp: 100000
   player_max_hp: 500
-  bullet_damage: 600
+  bullet_damage: 20
   Attack_Delay: 0.5
   gold_count: 900000
   Hit_Image: {fileID: 1235521126}
@@ -6233,6 +6245,14 @@ PrefabInstance:
     - target: {fileID: 5385065790425871886, guid: 137b5a6f5dde58f4f885887205c9644d, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226232191023654423, guid: 137b5a6f5dde58f4f885887205c9644d, type: 3}
+      propertyPath: maxAlpha
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226232191023654423, guid: 137b5a6f5dde58f4f885887205c9644d, type: 3}
+      propertyPath: fadeDuration
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8317016289389390671, guid: 137b5a6f5dde58f4f885887205c9644d, type: 3}
       propertyPath: m_LocalPosition.x

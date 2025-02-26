@@ -117,7 +117,7 @@ public class Game_UI_System : MonoBehaviour
     {
         if (!Relic_Gacha_UI_paused)
         {
-            if (GameManager.Instance.gold_count >= 200)
+            if (GameManager.Instance.gold_count >= 100)
             {
                 Relic_Gacha_UI_paused = true;
                 Relic_Gacha_UI.SetActive(true);
@@ -174,9 +174,9 @@ public class Game_UI_System : MonoBehaviour
     // 유물에서 장착할 렐릭 창 표시
     public void Equip_Relic(LeanButton clickedButton)
     {
-        Relic_Gacha_UI_paused = true;
         Rellic_Slot_Count button_slot_num = clickedButton.GetComponentsInChildren<Rellic_Slot_Count>()[0];
         if (Rellic_Slot.non_relic_id[button_slot_num.slot_num] == 0) return;
+        Relic_Gacha_UI_paused = true;
         Active_Equip_Relic_Explain.SetActive(true);
         Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
         Equip_Relic_Explain.Equip_Relic_Explain_Panel(button_Image, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).Relics_Name, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).item_desc, Rellic_Slot.non_relic_id[button_slot_num.slot_num]);
@@ -200,7 +200,6 @@ public class Game_UI_System : MonoBehaviour
     {
         int btn_num = clickedButton.GetComponent<Relic_Slot_Num>().Button_Bum;
         int btn_relic_num = clickedButton.GetComponentInParent<Relic_Exit_Button>().relic_Num[btn_num];
-        Image[] buttonImages = clickedButton.GetComponentsInChildren<Image>();
         rellic_equip.Relic_Equip_Exit(btn_relic_num);
         //buttonImages[1].sprite = null;
     }
