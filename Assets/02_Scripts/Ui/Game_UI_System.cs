@@ -55,6 +55,10 @@ public class Game_UI_System : MonoBehaviour
     }
     private void Start()
     {
+        Game_Master_Sound_Slider.value = PlayerPrefs.GetFloat("Master", 1f);
+        Game_SFX_Sound_Slider.value = PlayerPrefs.GetFloat("SFX", 1f);
+        Game_BGM_Sound_Slider.value = PlayerPrefs.GetFloat("BGM", 1f);
+
         Game_Master_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_Master_Volume);
         Game_SFX_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_SFX_Volume);
         Game_BGM_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_BGM_Volume);

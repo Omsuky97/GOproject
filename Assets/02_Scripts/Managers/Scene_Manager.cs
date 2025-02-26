@@ -20,15 +20,16 @@ public class Scene_Manager : MonoBehaviour
 
     [Header("## -- Game_Sound -- ##")]
     public Slider Game_Master_Sound_Slider;
-    public Slider Game_SFX_Sound_Slider;
     public Slider Game_BGM_Sound_Slider;
+    public Slider Game_SFX_Sound_Slider;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
 
         Game_Master_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_Master_Volume);
-        Game_SFX_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_SFX_Volume);
         Game_BGM_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_BGM_Volume);
+        Game_SFX_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_SFX_Volume);
     }
     private void Start()
     {

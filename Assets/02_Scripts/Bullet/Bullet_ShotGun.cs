@@ -31,6 +31,14 @@ public class Bullet_ShotGun : MonoBehaviour
     public int bounceCount = 0;         // 현재 튕긴 횟수
     public float Bullet_Bounce_Spawn_Offset = 1.0f;    //충돌 위치에서 이동할 거리
 
+    [Header("## -- Bullet_Particle -- ##")]
+    public static GameObject[] Relic_ON_Particle;
+    public GameObject[] relicParticles; // 인스펙터에서 설정할 배열
+
+    private void Awake()
+    {
+        Relic_ON_Particle = relicParticles; // 인스펙터에서 넣은 배열을 static 배열에 복사
+    }
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
@@ -109,7 +117,7 @@ public class Bullet_ShotGun : MonoBehaviour
                 if (Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_bounce_Guided(other);
                 else if (!Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_bounce(other);
             }
-            if (Bullet_Manager.Instance.BUllet_penetrate_Type) BUllet_penetrate();
+            if (Bullet_Manager.Instance.Bullet_Pec_Type) BUllet_penetrate();
             if (Bullet_Manager.Instance.Bullet_Boomerang_Type) Bullet_Boomerang(other);
             if (!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type) gameObject.SetActive(false);
         }

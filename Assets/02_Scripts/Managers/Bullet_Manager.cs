@@ -13,7 +13,7 @@ public class Bullet_Manager : MonoBehaviour
 
     [Header("## -- Bullet_Type -- ##")]
     public bool Bullet_bounce_Type;             //ÃÑ¾ËÆ¨±è
-    public bool BUllet_penetrate_Type;          //ÃÑ¾Ë°üÅë
+    public bool Bullet_Pec_Type;          //ÃÑ¾Ë°üÅë
     public bool Bullet_NucBack_Type;            //ÃÑ¾Ë³Ë¹é
     public bool Bullet_Boomerang_Type;          //ºÎ¸Þ¶û
     public bool Bullet_Propulsion_Type;         //ÃÑ¾ËÃßÁø

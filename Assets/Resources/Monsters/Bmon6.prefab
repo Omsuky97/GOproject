@@ -92,14 +92,17 @@ MonoBehaviour:
   isLive: 0
   monster_run: 0
   monster_attack: 0
-  Hit_effect_prefab: {fileID: 1090680790622714, guid: a1490fee3fdc0de45a549e085241c948, type: 3}
+  Hit_effect_prefab:
+  - {fileID: 1090680790622714, guid: a1490fee3fdc0de45a549e085241c948, type: 3}
+  - {fileID: 8726698167028453879, guid: 0f10607114786a941a7cd26ff57c2564, type: 3}
+  - {fileID: 0}
+  Hit_effect: {fileID: 0}
   Enemy_hit_Type: 0
   hit_damage_text_pro: {fileID: 6158445389720161608, guid: 4035234ebf24b3d4a8959ea74858bff2, type: 3}
   hit_damage_text_pos_name: text_target
   Enemy_Hiy_Time: 0.5
   Hit_Delta_Time: 0
   True_Hit_Time: 2
-  Hit_Sound: 5
 --- !u!114 &1180393884158761913
 MonoBehaviour:
   m_ObjectHideFlags: 0

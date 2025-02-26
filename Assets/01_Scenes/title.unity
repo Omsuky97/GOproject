@@ -872,18 +872,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1242075823}
-        m_TargetAssemblyTypeName: Scene_Manager, Assembly-CSharp
-        m_MethodName: Game_Sound_Option
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &474696058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535913411}
   - component: {fileID: 535913410}
+  - component: {fileID: 535913412}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -1050,6 +1039,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &535913412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535913409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d05b6e80e713cd4588d688fabf9d5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &561713940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,9 +1463,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1957732222}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2676,9 +2677,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 165939723}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 0.54
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3565,9 +3566,9 @@ MonoBehaviour:
   Transition_Image: {fileID: 2109178708}
   fadeDuration: 1
   Option_UI: {fileID: 0}
-  Game_Master_Sound_Slider: {fileID: 0}
-  Game_SFX_Sound_Slider: {fileID: 0}
-  Game_BGM_Sound_Slider: {fileID: 0}
+  Game_Master_Sound_Slider: {fileID: 1058921654}
+  Game_BGM_Sound_Slider: {fileID: 1349995887}
+  Game_SFX_Sound_Slider: {fileID: 625029718}
 --- !u!1 &1302220375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,9 +3820,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1502107815}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 0.38
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4478,7 +4479,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1565805821}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 794084016}
+        m_TargetAssemblyTypeName: Lean.Gui.LeanToggle, Assembly-CSharp
+        m_MethodName: TurnOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1565805821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6348,7 +6361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -199.00232}
+  m_AnchoredPosition: {x: 0, y: -199.00229}
   m_SizeDelta: {x: -417.469, y: -1776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112505412
