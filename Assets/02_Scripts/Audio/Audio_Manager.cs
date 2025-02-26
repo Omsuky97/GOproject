@@ -21,11 +21,8 @@ public class Audio_Manager : MonoBehaviour
     public AudioClip SFX_Player_Hit_Clip;
 
 
-    public AudioSource[] SFX_Monster_Hit_Source;
+    public AudioSource SFX_Monster_Hit_Source;
     public AudioClip SFX_Monster_Hit_Clip;
-
-
-    public enum SFX { atk, cocked, hit, hit2 }
 
     private void Awake()
     {
@@ -61,8 +58,12 @@ public class Audio_Manager : MonoBehaviour
     {
         SFX_Player_Hit_Source.PlayOneShot(SFX_Player_Hit_Clip);
     }
-    public void Get_Monster_Hit_Sound(int count)
+    public void Get_Monster_Hit_Sound()
     {
-        SFX_Monster_Hit_Source[count].PlayOneShot(SFX_Monster_Hit_Clip);
+        SFX_Monster_Hit_Source.PlayOneShot(SFX_Monster_Hit_Clip);
+    }
+    public void Get_BGM_Sound()
+    {
+        BGM_Source.PlayOneShot(BGM_Clip);
     }
 }

@@ -51,7 +51,6 @@ public class Enumy_Monster : MonoBehaviour
     public float Enemy_Hiy_Time;
     public float Hit_Delta_Time;
     public float True_Hit_Time = 2.0f;
-    public int Hit_Sound;
 
     private void Awake()
     {
@@ -219,9 +218,7 @@ public class Enumy_Monster : MonoBehaviour
                         Hit_Delta_Time = 0;
                         StartCoroutine(KnocBack());
                     }
-                }
-
-                Audio_Manager.instance.Get_Monster_Hit_Sound(Hit_Sound);
+}
                 //Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
                 Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name, Hit_effect_prefab);
 

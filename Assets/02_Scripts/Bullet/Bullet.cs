@@ -83,6 +83,10 @@ public class Bullet : MonoBehaviour
         enemyList.Clear();
         enemyIndex = 0;
         ResetChildRotation(); // 총알이 활성화될 때 하위 오브젝트 회전 초기화
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
+        }
     }
     private void OnDisable()
     {
@@ -119,6 +123,10 @@ public class Bullet : MonoBehaviour
             if (Bullet_Manager.Instance.BUllet_penetrate_Type) BUllet_penetrate();
             if (Bullet_Manager.Instance.Bullet_Boomerang_Type) Bullet_Boomerang(other);
             if(!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type) gameObject.SetActive(false);
+        }
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
         }
     }
     // 공격력이 증가하면 불릿 크기 & 콜리전 크기 증가
@@ -170,7 +178,7 @@ public class Bullet : MonoBehaviour
     {
         if (gameObject != null && gameObject.activeInHierarchy)
         {
-            StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false)); // 3초 후 자동 삭제
         }
 
         Vector3 originalDirection = Vector3.forward;
@@ -202,7 +210,7 @@ public class Bullet : MonoBehaviour
         else Bullet_Manager.Instance.penetration += 1;
         if (gameObject != null && gameObject.activeInHierarchy)
         {
-            StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false)); // 3초 후 자동 삭제
         }
 
     }
@@ -240,9 +248,9 @@ public class Bullet : MonoBehaviour
 
         Hit_Bounce_Enemys.Remove(other);
 
-        if (gameObject != null && gameObject.activeInHierarchy)
+        if (gameObject.activeInHierarchy)
         {
-            StartCoroutine(DestroyAfterDelay(3f)); // 3초 후 자동 삭제
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
         }
     }
     private void Bullet_bounce_Guided(Collider other)
@@ -290,7 +298,7 @@ public class Bullet : MonoBehaviour
 
         if (gameObject.activeInHierarchy)
         {
-            StartCoroutine(DestroyAfterDelay(3f));
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
         }
     }
     private Transform GetNextEnemy()

@@ -38,6 +38,15 @@ public class Bullet_Boom : MonoBehaviour
     {
         boom_damage =  Bullet.damage;
         IncreaseSizeBasedOnAttack(GameManager.Instance.bullet_damage);
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
+        }
+    }
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.SetActive(false);
     }
     // 공격력이 증가하면 불릿 크기 & 콜리전 크기 증가
     public void IncreaseSizeBasedOnAttack(float attackPower)

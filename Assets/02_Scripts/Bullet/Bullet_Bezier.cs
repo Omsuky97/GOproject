@@ -26,8 +26,16 @@ public class Bullet_Bezier : MonoBehaviour
         gameObject.transform.position = Fire_Point.transform.position;
         bulletCollider = GetComponent<Collider>(); // 현재 불릿의 콜리전 가져오기
         baseColliderSize = GetColliderSize(bulletCollider); // 초기 콜리전 크기 저장
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
+        }
     }
-
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy")) gameObject.SetActive(false);

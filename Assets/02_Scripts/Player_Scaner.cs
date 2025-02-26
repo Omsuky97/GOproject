@@ -47,6 +47,7 @@ public class Player_Scaner : MonoBehaviour
                 int Random_Speaker_Value = Random.Range(0, Bullet_Manager.Instance.Bullet_Speaker_Count); // 0~5 사이의 랜덤 값
                 if (timer > player_Statas.Attack_Delay && Random_Speaker_Value == 0)
                 {
+                    timer = 0f;
                     Bullet_Speaker();
                 }
                 else
