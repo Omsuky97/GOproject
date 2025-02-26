@@ -17,6 +17,9 @@ public class Equip : MonoBehaviour
     public bool Relic_equip_Type = false;
     public int Relic_count;
 
+    [Header("## -- Bullet_Particle -- ##")]
+    public GameObject[] Relic_ON_Particle;
+
     public void Relic_Equip(Image relic_image, int relic_id)
     {
         for (int Slot_Count = 0; Slot_Count < relic_id_num.Length; Slot_Count++)
@@ -43,7 +46,7 @@ public class Equip : MonoBehaviour
                 {
                     if (Relic[Relic_NUm].Relics_id == relic_id_num[Slot_Count])
                     {
-                        GameManager.Instance.bullet_damage += (GameManager.Instance.bullet_damage *= Relic[Relic_NUm].Bullet_Pow_UP[Relic[Relic_NUm].Relics_Lv-1]);   //공격력 증가
+                        GameManager.Instance.bullet_damage += (GameManager.Instance.bullet_damage *= Relic[Relic_NUm].Bullet_Pow_UP[Relic[Relic_NUm].Relics_Lv - 1]);   //공격력 증가
                         GameManager.Instance.Attack_Delay -= Relic[Relic_NUm].Bullet_Fispeed_UP[Relic[Relic_NUm].Relics_Lv - 1];     //발사 속도 증가
                         Bullet_Manager.Instance.Bullet_Speed += (Bullet_Manager.Instance.Bullet_Speed *= Relic[Relic_NUm].Bullet_Pow_UP[Relic[Relic_NUm].Relics_Lv - 1]);   //공격력 증가
                         Bullet_Manager.Instance.max_penetration += Relic[Relic_NUm].Bullet_Pec_Up[Relic[Relic_NUm].Relics_Lv - 1];           //관통 횟수 증가
@@ -57,15 +60,58 @@ public class Equip : MonoBehaviour
                         Bullet_Manager.Instance.Bullet_ShotGun_Count += Relic[Relic_NUm].Bullet_ShotGun_Count[Relic[Relic_NUm].Relics_Lv - 1];         //총알 효과 트리거 횟수
                         Bullet_Manager.Instance.Bullet_Bezier_Count -= Relic[Relic_NUm].Bullet_Effec_Tg[Relic[Relic_NUm].Relics_Lv - 1];         //총알 효과 트리거 횟수
 
-                        if (Relic[Relic_NUm].Bullet_Spirt_Type) Bullet_Manager.Instance.Bullet_Spirt_Type = Relic[Relic_NUm].Bullet_Spirt_Type;         //총알 분열체 수 증가
+                        if (Relic[Relic_NUm].Bullet_Spirt_Type)
+                        {
+                            Bullet.Relic_ON_Particle[6].SetActive(true);
+                            Bullet_ShotGun.Relic_ON_Particle[6].SetActive(true);
+                            Bullet_Manager.Instance.Bullet_Spirt_Type = Relic[Relic_NUm].Bullet_Spirt_Type;         //총알 분열체 수 증가
+                        }
+                        if (Relic[Relic_NUm].Bullet_Pec)
+                        {
+                            Bullet.Relic_ON_Particle[0].SetActive(true);
+                            Bullet_ShotGun.Relic_ON_Particle[0].SetActive(true);
+                            Bullet_Manager.Instance.Bullet_Pec_Type = Relic[Relic_NUm].Bullet_Pec;
+                        }
                         if (Relic[Relic_NUm].Bullet_Speaker_Type) Bullet_Manager.Instance.Bullet_Speaker_Type = Relic[Relic_NUm].Bullet_Speaker_Type;    //총알 연속발사 확률
+                        
                         if (Relic[Relic_NUm].Bullet_Return) Bullet_Manager.Instance.Bullet_Boomerang_Type = Relic[Relic_NUm].Bullet_Return;            //총알 타겟 명중 후 되돌아오는 여부
-                        if (Relic[Relic_NUm].Bullet_Sniping) Bullet_Manager.Instance.Bullet_Target_type = Relic[Relic_NUm].Bullet_Sniping;           //가장멀리있는 적 사격 여부
+                        if (Relic[Relic_NUm].Bullet_Bounce)
+                        {
+                            Bullet.Relic_ON_Particle[1].SetActive(true);
+                            Bullet_ShotGun.Relic_ON_Particle[1].SetActive(true);
+                            Bullet_Manager.Instance.Bullet_bounce_Type = Relic[Relic_NUm].Bullet_Bounce;           //가장멀리있는 적 사격 여부
+                        }
+                        if (Relic[Relic_NUm].Bullet_Sniping)
+                        {
+                            Bullet.Relic_ON_Particle[4].SetActive(true);
+                            Bullet_ShotGun.Relic_ON_Particle[4].SetActive(true);
+                            Bullet_Manager.Instance.Bullet_Target_type = Relic[Relic_NUm].Bullet_Sniping;           //가장멀리있는 적 사격 여부
+                        }
                         if (Relic[Relic_NUm].Bullet_Gra_Speed) Bullet_Manager.Instance.Bullet_Propulsion_Type = Relic[Relic_NUm].Bullet_Gra_Speed;         //총알 점진적 이동 여부
-                        if (Relic[Relic_NUm].Bullet_Bomb) Bullet_Manager.Instance.Bullet_Boom_Type = Relic[Relic_NUm].Bullet_Bomb;              //총알 타겟 명중 시 범위 피해 여부
-                        if (Relic[Relic_NUm].Bullet_Idt) Bullet_Manager.Instance.Bullet_Guided_Type = Relic[Relic_NUm].Bullet_Idt;               //총알 유도 여부
-                        if (Relic[Relic_NUm].Bullet_Noc) Bullet_Manager.Instance.Bullet_NucBack_Type = Relic[Relic_NUm].Bullet_Noc;               //총알 넉백 여부 --추가
-                        if (Relic[Relic_NUm].Bullet_Effec_Type) Bullet_Manager.Instance.Bullet_Bezier_Type = Relic[Relic_NUm].Bullet_Effec_Type;         //총알 효과 트리거 횟수
+                        if (Relic[Relic_NUm].Bullet_Bomb)
+                        {
+                            Bullet.Relic_ON_Particle[3].SetActive(true);
+                            Bullet_ShotGun.Relic_ON_Particle[3].SetActive(true);
+                            Bullet_Manager.Instance.Bullet_Boom_Type = Relic[Relic_NUm].Bullet_Bomb;              //총알 타겟 명중 시 범위 피해 여부
+                        }
+                        if (Relic[Relic_NUm].Bullet_Idt)
+                        {
+                            Bullet.Relic_ON_Particle[2].SetActive(true);
+                            Bullet_ShotGun.Relic_ON_Particle[2].SetActive(true);
+                            Bullet_Manager.Instance.Bullet_Guided_Type = Relic[Relic_NUm].Bullet_Idt;
+                        }
+                        if (Relic[Relic_NUm].Bullet_Noc)
+                        {
+                            Bullet.Relic_ON_Particle[5].SetActive(true);
+                            Bullet_ShotGun.Relic_ON_Particle[5].SetActive(true);
+                            Bullet_Manager.Instance.Bullet_NucBack_Type = Relic[Relic_NUm].Bullet_Noc;               //총알 넉백 여부 --추가
+                        }
+                        if (Relic[Relic_NUm].Bullet_Effec_Type)
+                        {
+                            Bullet.Relic_ON_Particle[7].SetActive(true);
+                            Bullet_ShotGun.Relic_ON_Particle[7].SetActive(true);
+                            Bullet_Manager.Instance.Bullet_Bezier_Type = Relic[Relic_NUm].Bullet_Effec_Type;         //총알 효과 트리거 횟수
+                        }
                         if (Relic[Relic_NUm].Bullet_ShotGun_Type) Bullet_Manager.Instance.Bullet_ShotGun_Type = Relic[Relic_NUm].Bullet_ShotGun_Type;               //총알 넉백 여부 --추가
                         exitLoop = true;
                         relic_exit_button.relic_Num[Slot_Count] = relic_id;

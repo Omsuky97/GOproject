@@ -67,6 +67,10 @@ public class Relic_Data : ScriptableObject
     public int[] Bullet_Effec_Tg;         //총알 효과 트리거 횟수
     [Tooltip("총알 타겟 명중 후 되돌아오는 여부")]
     public bool Bullet_Return;            //총알 타겟 명중 후 되돌아오는 여부
+    [Tooltip("총알 타겟 명중 후 되돌아오는 여부")]
+    public bool Bullet_Bounce;            //총알 타겟 명중 후 되돌아오는 여부
+    [Tooltip("총알 관통 여부")]
+    public bool Bullet_Pec;           //가장멀리있는 적 사격 여부
     [Tooltip("가장멀리있는 적 사격 여부")]
     public bool Bullet_Sniping;           //가장멀리있는 적 사격 여부
     [Tooltip("총알 점진적 이동 여부")]

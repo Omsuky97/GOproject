@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         cameraShake = Camera.main.GetComponent<Player_Camera>();
-        Audio_Manager.instance.Get_BGM_Sound();
     }
     private void OnTriggerEnter(Collider other)
     {

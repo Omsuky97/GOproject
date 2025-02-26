@@ -29,25 +29,26 @@ public class Audio_Manager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
     #region Master
     public void Set_Master_Volume(float volume)
     {
         audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("Master", volume); // 저장
+        PlayerPrefs.Save();
     }
     public void Set_SFX_Volume(float volume)
     {
         audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SFX", volume); // 저장
+        PlayerPrefs.Save();
     }
     public void Set_BGM_Volume(float volume)
     {
         audioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("BGM", volume); // 저장
+        PlayerPrefs.Save();
     }
     #endregion
     public void GetAttack_Sound()
@@ -65,5 +66,15 @@ public class Audio_Manager : MonoBehaviour
     public void Get_BGM_Sound()
     {
         BGM_Source.PlayOneShot(BGM_Clip);
+    }
+    private void Load_Volume()
+    {
+        float masterVol = PlayerPrefs.GetFloat("Master", 1f);
+        float sfxVol = PlayerPrefs.GetFloat("SFX", 1f);
+        float bgmVol = PlayerPrefs.GetFloat("BGM", 1f);
+
+        audioMixer.SetFloat("MasterVolume", Mathf.Log10(masterVol) * 20);
+        audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVol) * 20);
+        audioMixer.SetFloat("BGMVolume", Mathf.Log10(bgmVol) * 20);
     }
 }

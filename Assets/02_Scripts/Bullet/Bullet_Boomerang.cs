@@ -18,7 +18,7 @@ public class Bullet_Boomerang : MonoBehaviour
     private Collider bulletCollider;
     public float baseColliderSize = 1f; // 초기 콜리전 크기 저장
     public float baseScale = 1f;      // 초기 크기 저장
-    private float fixedY;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -26,7 +26,6 @@ public class Bullet_Boomerang : MonoBehaviour
     }
     private void Start()
     {
-        fixedY = rigid.position.y; // 몬스터가 처음 위치한 Y 값 저장
         Boomerang_damage = Bullet.damage;
         bulletCollider = GetComponent<Collider>(); // 현재 불릿의 콜리전 가져오기
         baseColliderSize = GetColliderSize(bulletCollider); // 초기 콜리전 크기 저장
