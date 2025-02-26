@@ -94,6 +94,6 @@ public class Relic_Data : ScriptableObject
     public string Bullet_Muzzle;        //총알 발사 파티클 리소스 경로
     public void ResetLevel()
     {
-        Relics_Lv = 0;
+        Relics_Lv = 1;
     }
 }
