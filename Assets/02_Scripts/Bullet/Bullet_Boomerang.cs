@@ -31,6 +31,10 @@ public class Bullet_Boomerang : MonoBehaviour
         bulletCollider = GetComponent<Collider>(); // 현재 불릿의 콜리전 가져오기
         baseColliderSize = GetColliderSize(bulletCollider); // 초기 콜리전 크기 저장
         IncreaseSizeBasedOnAttack(GameManager.Instance.bullet_damage);
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
+        }
     }
     private void FixedUpdate()
     {
@@ -72,6 +76,11 @@ public class Bullet_Boomerang : MonoBehaviour
     {
         Debug.Log(other.tag);
         if (other.CompareTag("Player")) gameObject.SetActive(false);
+    }
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.SetActive(false);
     }
     // 공격력이 증가하면 불릿 크기 & 콜리전 크기 증가
     public void IncreaseSizeBasedOnAttack(float attackPower)

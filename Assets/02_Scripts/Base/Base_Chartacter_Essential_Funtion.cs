@@ -31,6 +31,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
             if (health > 0)
             {
                 Hit_Effect(take_object.transform.position + new Vector3(0, 1, 0));
+                Audio_Manager.instance.Get_Monster_Hit_Sound();
                 health -= damage;
             }
             if (health <= 0)
@@ -60,7 +61,9 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
     public void Hit_Palticle(GameObject hit_effect_prefab, GameObject take_object)
     {
         GameObject effect = Instantiate(hit_effect_prefab, take_object.transform.position, Quaternion.identity);
-        Destroy(effect, GameManager.Instance.Attack_Delay);
+        effect.SetActive(true);
+        //Destroy(effect, GameManager.Instance.Attack_Delay);
+        effect.SetActive(false);
     }
     public void Hit_Effect(Vector3 Hit_Object)
     {

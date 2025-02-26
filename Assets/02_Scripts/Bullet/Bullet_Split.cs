@@ -25,8 +25,17 @@ public class Bullet_Split : MonoBehaviour
         bulletCollider = GetComponent<Collider>(); // 현재 불릿의 콜리전 가져오기
         baseColliderSize = GetColliderSize(bulletCollider); // 초기 콜리전 크기 저장
         IncreaseSizeBasedOnAttack(GameManager.Instance.bullet_damage);
-    }
 
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
+        }
+    }
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.SetActive(false);
+    }
     private void LateUpdate()
     {
         if (Bullet_Manager.Instance.Bullet_Guided_Type)

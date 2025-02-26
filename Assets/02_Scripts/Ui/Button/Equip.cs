@@ -27,11 +27,11 @@ public class Equip : MonoBehaviour
                 if (Relic_count == relic_id_num.Length)
                 {
                     Relic_equip_Type = true;
-                    Relic_count = 0;
                     break;
                 }
             }
         }
+        Relic_count = 0;
         if (Relic_equip_Type == false) return;
         for (int Slot_Count = 0; Slot_Count < relic_id_num.Length+1; Slot_Count++)
         {

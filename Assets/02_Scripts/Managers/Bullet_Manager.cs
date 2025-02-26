@@ -9,6 +9,7 @@ public class Bullet_Manager : MonoBehaviour
 
     [Header("## -- Bullet -- ##")]
     public float Bullet_Speed = 5;           // ÅºÈ¯ ¼Óµµ
+    public float Bullet_Active_false = 1.0f;
 
     [Header("## -- Bullet_Type -- ##")]
     public bool Bullet_bounce_Type;             //ÃÑ¾ËÆ¨±è
