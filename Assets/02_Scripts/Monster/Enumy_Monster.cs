@@ -43,8 +43,7 @@ public class Enumy_Monster : MonoBehaviour
     public bool monster_attack = false;
 
     [Header("## -- Monster_Hit -- ##")]
-    public GameObject[] Hit_effect_prefab; // 맞았을 때 실행할 파티클 프리팹
-    public GameObject Hit_effect;
+    public GameObject Hit_effect_prefab; // 맞았을 때 실행할 파티클 프리팹
     WaitForFixedUpdate wait;
     public bool Enemy_hit_Type;
     public GameObject hit_damage_text_pro;
@@ -106,8 +105,7 @@ public class Enumy_Monster : MonoBehaviour
         monster_attack = false;
         Enemy_hit_Type = false;
         Monster_Hp = Monster_MaxHp;
-        Hit_effect_prefab[0].SetActive(false);
-        Hit_effect_prefab[1].SetActive(false);
+        Hit_effect_prefab.SetActive(false);
         targe_rigid = GameManager.Instance.player.GetComponent<Rigidbody>();
     }
     public void Init(MonsterData data)
@@ -221,10 +219,8 @@ public class Enumy_Monster : MonoBehaviour
                         StartCoroutine(KnocBack());
                     }
                 }
-                if (!Bullet_Manager.Instance.Bullet_Boom_Type) Hit_effect = Hit_effect_prefab[0]; ;
-                if (Bullet_Manager.Instance.Bullet_Boom_Type) Hit_effect = Hit_effect_prefab[1]; ;
                 //Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
-                Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name, Hit_effect);
+                Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name, Hit_effect_prefab);
 
             }
         }

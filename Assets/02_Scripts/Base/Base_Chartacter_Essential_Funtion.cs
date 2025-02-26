@@ -4,10 +4,15 @@ using static Audio_Manager;
 public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funtion
 {
     public static Base_Chartacter_Essential_Funtion instance;
-    public GameObject hitEffect;
+    public GameObject[] hitEffect;
+    ParticleSystem ps;
     private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        ParticleSystem ps = GetComponent<ParticleSystem>();
     }
     //Text_pro, target이름, 데미지, 생존 여부
     public void TakeDamage(GameObject take_object, ref float health, float damage, bool live, string type, GameObject Did_Effect)
@@ -40,7 +45,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
                 GameManager.Instance.gold_count += 5;
                 GameManager.Instance.Stage_Level_UP();
                 live = false;
-                Monster_Did_Effect(Did_Effect);
+                Monster_Did_Effect(Did_Effect, take_object.transform.position + new Vector3(0, 1, 0));
                 take_object.SetActive(false);
                 take_object.transform.position = new Vector3(545f, 5f, 500f);
             }
@@ -67,13 +72,33 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
     }
     public void Hit_Effect(Vector3 Hit_Object)
     {
-        GameObject effect = Instantiate(hitEffect, Hit_Object, Quaternion.identity);
-        Destroy(effect, GameManager.Instance.Attack_Delay);
+        if(!Bullet_Manager.Instance.Bullet_Boom_Type)
+        {
+            if (hitEffect == null || hitEffect.Length == 0)
+            {
+                Debug.LogError("hitEffect 배열이 초기화되지 않았습니다!");
+                return;
+            }
+
+            if (hitEffect[0] == null)
+            {
+                Debug.LogError("hitEffect[0]가 null입니다! 인스펙터에서 프리팹을 설정하세요.");
+                return;
+            }
+
+            GameObject effect = Instantiate(hitEffect[0], Hit_Object, Quaternion.identity);
+            Destroy(effect, GameManager.Instance.Attack_Delay);
+        }
+        else if (Bullet_Manager.Instance.Bullet_Boom_Type)
+        {
+            GameObject effect = Instantiate(hitEffect[1], Hit_Object, Quaternion.identity);
+            Destroy(effect, GameManager.Instance.Attack_Delay);
+        }
+
     }
-    public void Monster_Did_Effect(GameObject Did_Effect)
+    public void Monster_Did_Effect(GameObject Did_Effect, Vector3 Hit_Object)
     {
-        Did_Effect.SetActive(true);
-        //GameObject effect = Instantiate(Did_Effect, Hit_Object, Quaternion.identity);
-        //Destroy(effect, GameManager.Instance.Attack_Delay+1.5f);
+        GameObject effect = Instantiate(Did_Effect, Hit_Object, Quaternion.Euler(0, 90, 0));
+        Destroy(effect, GameManager.Instance.Attack_Delay + 1.5f);
     }
 }

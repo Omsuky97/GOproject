@@ -72,7 +72,6 @@ public class PoolManager : MonoBehaviour
             GameObject prefab = Resources.Load<GameObject>(prefabPath);
             if (prefab == null)
             {
-                Debug.LogError($"프리팹을 로드할 수 없습니다. 경로: {prefabPath}");
                 return null;
             }
             select = Instantiate(prefab, transform);

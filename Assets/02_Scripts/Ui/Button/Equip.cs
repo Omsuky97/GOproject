@@ -91,7 +91,8 @@ public class Equip : MonoBehaviour
                         if (Relic[Relic_NUm].Bullet_Bomb)
                         {
                             Bullet.Relic_ON_Particle[3].SetActive(true);
-                            Bullet_ShotGun.Relic_ON_Particle[3].SetActive(true);
+                            //Bullet_ShotGun.Relic_ON_Particle[3].SetActive(true); 
+                            // 이거 그냥 불 형식으로 조건으로 만들어서 활성화 될 경우 불릿들 OnEnable에서 동작하도록 해줄 것 개쉬울듯
                             Bullet_Manager.Instance.Bullet_Boom_Type = Relic[Relic_NUm].Bullet_Bomb;              //총알 타겟 명중 시 범위 피해 여부
                         }
                         if (Relic[Relic_NUm].Bullet_Idt)
