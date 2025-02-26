@@ -822,7 +822,7 @@ MonoBehaviour:
   - monsterId: 2
     spawnTime: 0
     spawnMaxCount: 30
-  - monsterId: 1003
+  - monsterId: 1001
     spawnTime: 0
     spawnMaxCount: 10
   - monsterId: 1002
@@ -6732,6 +6732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Equip_Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4234772605370620982, guid: a0fd735ae5714354fae0b86b432170bf, type: 3}
+      propertyPath: non_equip_Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 18a0254a010a34149a82f1069d0883ed, type: 3}
     - target: {fileID: 4234772605370620982, guid: a0fd735ae5714354fae0b86b432170bf, type: 3}
       propertyPath: Relic.Array.size
       value: 15
