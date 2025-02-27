@@ -195,6 +195,7 @@ public class Game_UI_System : MonoBehaviour
             if (Rellic_Slot.non_relic_id[button_count] != 0 && (Relic_Item.data_id[button_number.button_num] == Rellic_Slot.non_relic_id[button_count]))
             {
                 int level = Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_count]).Relics_Lv;
+                Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_count]).item_desc = "현재 레벨 : " + Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_count]).Relics_Lv;
                 if (level >= 1 && level < 5)
                 {
                     Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_count]).Relics_Lv += 1;
@@ -207,6 +208,7 @@ public class Game_UI_System : MonoBehaviour
                 Rellic_Slot.Button_Setting(button_Image, Relic_Item.data_id[button_number.button_num]);
                 break;
             }
+
         }
         GameManager.Instance.gold_count -= 100;
         Relic_Gacha_UI.SetActive(false);
@@ -221,7 +223,8 @@ public class Game_UI_System : MonoBehaviour
         Relic_Gacha_UI_paused = true;
         Active_Equip_Relic_Explain.SetActive(true);
         Image button_Image = clickedButton.GetComponentsInChildren<Image>()[2];
-        Equip_Relic_Explain.Equip_Relic_Explain_Panel(button_Image, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).Relics_Name, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).item_desc, Rellic_Slot.non_relic_id[button_slot_num.slot_num]);
+        string desc = "현재 레벨 : " + Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).Relics_Lv;
+        Equip_Relic_Explain.Equip_Relic_Explain_Panel(button_Image, Relic_Manager.GetRelicById(Rellic_Slot.non_relic_id[button_slot_num.slot_num]).Relics_Name, desc, Rellic_Slot.non_relic_id[button_slot_num.slot_num]);
         Relic_Gacha_UI.SetActive(false);
         Relic_Gacha_UI_paused = false;
     }

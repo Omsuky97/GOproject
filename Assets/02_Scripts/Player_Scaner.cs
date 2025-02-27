@@ -23,13 +23,18 @@ public class Player_Scaner : MonoBehaviour
     public Animator anim;
     public bool Fire_Anim;
 
+    public Player_Camera cameraShake;
+    public float shakeTime; // 흔들림 지속 시간
+    public float shakePower; // 흔들림 강도
     private void Awake()
     {
         anim = GetComponent<Animator>();
+
     }
     private void Start()
     {
         Bullet_Manager.Instance.Origianl_Bullet_Speed = player_Statas.Attack_Delay; // 시작 시 원래 값 저장
+        cameraShake = Camera.main.GetComponent<Player_Camera>();
     }
     private void FixedUpdate()
     {
@@ -160,6 +165,9 @@ public class Player_Scaner : MonoBehaviour
         if (player_attack) return;
         if (!nearestTarget) return;
 
+        cameraShake.ShowDamageEffect();
+        cameraShake.Camera_Shake(shakeTime, shakePower);
+
         anim.SetBool("Fire", Fire_Anim);
         player_attack = true;
         Audio_Manager.instance.GetAttack_Sound();
@@ -177,6 +185,10 @@ public class Player_Scaner : MonoBehaviour
     private void Bullet_ShotGun()
     {
         // 플레이어가 공격 시작
+
+        cameraShake.ShowDamageEffect();
+        cameraShake.Camera_Shake(shakeTime, shakePower);
+
         player_attack = true;
         anim.SetBool("Fire", Fire_Anim);
         Audio_Manager.instance.GetAttack_Sound();

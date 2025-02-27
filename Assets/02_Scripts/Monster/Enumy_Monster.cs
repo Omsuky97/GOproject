@@ -17,6 +17,7 @@ public class Enumy_Monster : MonoBehaviour
     public Rigidbody targe_rigid;
     private float hit_damage;
     public Transform result;
+    public int monster_gold;
 
     [Header("## -- Monster_Statas_List -- ##")]
     public int Moster_Id;
@@ -220,7 +221,7 @@ public class Enumy_Monster : MonoBehaviour
                     }
                 }
                 //Base_Chartacter_Essential_Funtion.instance.Take_Hit_Text_Damage(hit_damage_text_pro, gameObject, hit_damage_text_pos_name, hit_damage);
-                Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name, Hit_effect_prefab);
+                Base_Chartacter_Essential_Funtion.instance.TakeDamage(gameObject, ref Monster_Hp, hit_damage, isLive, type_name, Hit_effect_prefab, monster_gold);
 
             }
         }

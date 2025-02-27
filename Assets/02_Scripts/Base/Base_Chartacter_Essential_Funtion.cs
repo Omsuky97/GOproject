@@ -15,7 +15,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
         ParticleSystem ps = GetComponent<ParticleSystem>();
     }
     //Text_pro, target이름, 데미지, 생존 여부
-    public void TakeDamage(GameObject take_object, ref float health, float damage, bool live, string type, GameObject Did_Effect)
+    public void TakeDamage(GameObject take_object, ref float health, float damage, bool live, string type, GameObject Did_Effect, int gold)
     {
         if (type == "Player")
         {
@@ -42,7 +42,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
             if (health <= 0)
             {
                 GameManager.Instance.kill_enemy_count += 1;
-                GameManager.Instance.gold_count += 5;
+                GameManager.Instance.gold_count += gold;
                 GameManager.Instance.Stage_Level_UP();
                 live = false;
                 Monster_Did_Effect(Did_Effect, take_object.transform.position + new Vector3(0, 1, 0));
