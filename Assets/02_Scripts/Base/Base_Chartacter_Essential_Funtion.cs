@@ -74,18 +74,6 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
     {
         if(!Bullet_Manager.Instance.Bullet_Boom_Type)
         {
-            if (hitEffect == null || hitEffect.Length == 0)
-            {
-                Debug.LogError("hitEffect 배열이 초기화되지 않았습니다!");
-                return;
-            }
-
-            if (hitEffect[0] == null)
-            {
-                Debug.LogError("hitEffect[0]가 null입니다! 인스펙터에서 프리팹을 설정하세요.");
-                return;
-            }
-
             GameObject effect = Instantiate(hitEffect[0], Hit_Object, Quaternion.identity);
             Destroy(effect, GameManager.Instance.Attack_Delay);
         }

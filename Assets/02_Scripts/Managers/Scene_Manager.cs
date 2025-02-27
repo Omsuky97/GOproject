@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Scene_Manager : MonoBehaviour
 {
+    private static Scene_Manager instance;
+
     public TextMeshProUGUI Loading_Text1;
     public TextMeshProUGUI Loading_Text2;
     public TextMeshProUGUI Loading_Text3; // 추가된 텍스트
@@ -22,14 +25,48 @@ public class Scene_Manager : MonoBehaviour
     public Slider Game_Master_Sound_Slider;
     public Slider Game_BGM_Sound_Slider;
     public Slider Game_SFX_Sound_Slider;
+    public TextMeshProUGUI Master_Text;
+    public TextMeshProUGUI SFX_Text;
+    public TextMeshProUGUI BGM_Text;
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance != null && instance != this)
+        {
+            instance.StopAllCoroutines(); // 기존 인스턴스의 모든 코루틴 정지
+            Destroy(instance.gameObject); // 기존 인스턴스 삭제
+        }
 
+        instance = this;
+        Game_Master_Sound_Slider.onValueChanged.RemoveAllListeners();
+        Game_SFX_Sound_Slider.onValueChanged.RemoveAllListeners();
+        Game_BGM_Sound_Slider.onValueChanged.RemoveAllListeners();
+
+        // 오디오 매니저에 슬라이더 값 전달
         Game_Master_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_Master_Volume);
-        Game_BGM_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_BGM_Volume);
         Game_SFX_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_SFX_Volume);
+        Game_BGM_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_BGM_Volume);
+
+        Game_Master_Sound_Slider.onValueChanged.AddListener(UpdatMasterText);
+        Game_SFX_Sound_Slider.onValueChanged.AddListener(UpdateSFXText);
+        Game_BGM_Sound_Slider.onValueChanged.AddListener(UpdateBGMText);
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+    void UpdatMasterText(float value)
+    {
+        int percentage = Mathf.RoundToInt(value * 20); // 0~1 값을 0~100으로 변환
+        Master_Text.text = percentage + "%"; // 퍼센트로 표시
+    }
+    void UpdateSFXText(float value)
+    {
+        int percentage = Mathf.RoundToInt(value * 20); // 0~1 값을 0~100으로 변환
+        SFX_Text.text = percentage + "%"; // 퍼센트로 표시
+    }
+    void UpdateBGMText(float value)
+    {
+        int percentage = Mathf.RoundToInt(value * 20); // 0~1 값을 0~100으로 변환
+        BGM_Text.text = percentage + "%"; // 퍼센트로 표시
     }
     private void Start()
     {
@@ -67,7 +104,7 @@ public class Scene_Manager : MonoBehaviour
         }
 
         // 2초 동안 이미지 표시
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
 
         // 씬 전환 실행
         SceneManager.LoadScene(sceneName);
@@ -178,13 +215,13 @@ public class Scene_Manager : MonoBehaviour
         buttonColor.a = alpha;
         buttonText.color = buttonColor;
     }
+
     IEnumerator LoadingProgress()
     {
         int progress = 0;
 
         progress += Random.Range(10, 31);
         UpdateLoadingUI(progress);
-        yield return new WaitForSeconds(0.5f);
 
         while (progress < 100)
         {
@@ -196,15 +233,12 @@ public class Scene_Manager : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
 
-        // 100% 도달 후 1초 대기
         yield return new WaitForSeconds(1.0f);
 
-        // 로딩 바 & 텍스트 동시에 페이드 아웃
         yield return StartCoroutine(FadeOutMultiple(Loadign_Bar, Loading_Text1, Loading_Text2, Loading_Text3));
-
-        // 버튼 활성화
         Start_Button.gameObject.SetActive(true);
-        yield return FadeInText(Start_Button.GetComponentInChildren<TextMeshProUGUI>());
+        FadeInText(Start_Button.GetComponentInChildren<TextMeshProUGUI>());
+        yield return null;
     }
     IEnumerator FadeOutMultiple(Image img, TextMeshProUGUI text1, TextMeshProUGUI text2, TextMeshProUGUI text3)
     {
