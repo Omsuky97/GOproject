@@ -25,47 +25,47 @@ public class Player_Camera : MonoBehaviour
         camTransform = transform;
         originalPosition = camTransform.localPosition;
     }
-    public void ShowDamageEffect()
-    {
-        if (!Hit_Image_Type) return; // 1초 쿨다운 중이면 실행 X
-
-        Hit_Image_Type = false; // 쿨다운 시작
-        if (fadeCoroutine != null)
-        {
-            StopCoroutine(fadeCoroutine);
-        }
-        fadeCoroutine = StartCoroutine(FadeEffect());
-
-        StartCoroutine(ResetCooldown()); // 1초 후 쿨다운 해제
-    }
-
-    IEnumerator FadeEffect()
-    {
-        for (float i = 0; i <= 1; i += Time.deltaTime / fadeDuration)
-        {
-            float alpha = Mathf.Lerp(0, maxAlpha, i);
-            GameManager.Instance.Hit_Image.color = new Color(1, 0, 0, alpha);
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(0.3f);
-
-        for (float i = 1; i >= 0; i -= Time.deltaTime / fadeDuration)
-        {
-            float alpha = Mathf.Lerp(0, maxAlpha, i);
-            GameManager.Instance.Hit_Image.color = new Color(1, 0, 0, alpha);
-            yield return null;
-        }
-
-        GameManager.Instance.Hit_Image.color = new Color(1, 0, 0, 0);
-    }
-
-    IEnumerator ResetCooldown()
-    {
-        yield return new WaitForSeconds(1f); // 1초 대기
-        Hit_Image_Type = true; // 쿨다운 해제
-    }
-
+    //public void ShowDamageEffect()
+    //{
+    //    if (!Hit_Image_Type) return; // 1초 쿨다운 중이면 실행 X
+    //
+    //    Hit_Image_Type = false; // 쿨다운 시작
+    //    if (fadeCoroutine != null)
+    //    {
+    //        StopCoroutine(fadeCoroutine);
+    //    }
+    //    fadeCoroutine = StartCoroutine(FadeEffect());
+    //
+    //    StartCoroutine(ResetCooldown()); // 1초 후 쿨다운 해제
+    //}
+    //
+    //IEnumerator FadeEffect()
+    //{
+    //    for (float i = 0; i <= 1; i += Time.deltaTime / fadeDuration)
+    //    {
+    //        float alpha = Mathf.Lerp(0, maxAlpha, i);
+    //        GameManager.Instance.Hit_Image.color = new Color(1, 0, 0, alpha);
+    //        yield return null;
+    //    }
+    //
+    //    yield return new WaitForSeconds(0.3f);
+    //
+    //    for (float i = 1; i >= 0; i -= Time.deltaTime / fadeDuration)
+    //    {
+    //        float alpha = Mathf.Lerp(0, maxAlpha, i);
+    //        GameManager.Instance.Hit_Image.color = new Color(1, 0, 0, alpha);
+    //        yield return null;
+    //    }
+    //
+    //    GameManager.Instance.Hit_Image.color = new Color(1, 0, 0, 0);
+    //}
+    //
+    //IEnumerator ResetCooldown()
+    //{
+    //    yield return new WaitForSeconds(1f); // 1초 대기
+    //    Hit_Image_Type = true; // 쿨다운 해제
+    //}
+    //
 
     private void Update()
     {

@@ -165,7 +165,7 @@ public class Player_Scaner : MonoBehaviour
         if (player_attack) return;
         if (!nearestTarget) return;
 
-        cameraShake.ShowDamageEffect();
+        //cameraShake.ShowDamageEffect();
         cameraShake.Camera_Shake(shakeTime, shakePower);
 
         anim.SetBool("Fire", Fire_Anim);
@@ -186,7 +186,7 @@ public class Player_Scaner : MonoBehaviour
     {
         // 플레이어가 공격 시작
 
-        cameraShake.ShowDamageEffect();
+        //cameraShake.ShowDamageEffect();
         cameraShake.Camera_Shake(shakeTime, shakePower);
 
         player_attack = true;
