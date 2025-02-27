@@ -569,7 +569,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3261763706537246753}
@@ -621,7 +621,7 @@ MonoBehaviour:
   Monster_DrItem: 0
   Monster_Prefabs: 
   Monster_MoveSpeed: 0
-  scanRange: 2
+  scanRange: 5
   targetLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -629,7 +629,7 @@ MonoBehaviour:
   isLive: 0
   monster_run: 0
   monster_attack: 0
-  Hit_effect_prefab: {fileID: 1090680790622714, guid: 674988556de561e4292e29604722d5f6, type: 3}
+  Hit_effect_prefab: {fileID: 1783506229463669827, guid: c88683386e7d8c34eaeffad852e09795, type: 3}
   Enemy_hit_Type: 0
   hit_damage_text_pro: {fileID: 6158445389720161608, guid: 4035234ebf24b3d4a8959ea74858bff2, type: 3}
   hit_damage_text_pos_name: text_target
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 221149249278963369}
-  monster_Attack_damage: 0
+  monster_Attack_damage: 5
 --- !u!136 &4255011867059076539
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2155,8 +2155,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
-  m_Height: 1.1
+  m_Radius: 0.09
+  m_Height: 1.23
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6297875320728185714
@@ -2454,7 +2454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1783506229463669827, guid: c88683386e7d8c34eaeffad852e09795, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
