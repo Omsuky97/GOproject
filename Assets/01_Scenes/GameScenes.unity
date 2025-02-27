@@ -207,7 +207,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 50738333}
-  - component: {fileID: 50738334}
   - component: {fileID: 50738335}
   m_Layer: 5
   m_Name: Demo2
@@ -237,58 +236,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 237}
   m_SizeDelta: {x: 0, y: -600}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &50738334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50738332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4fd146527b61614a96da3a84e74ad78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  on: 0
-  turnOffSiblings: 0
-  onTransitions:
-    speed: 5
-    roots: []
-    aliases: []
-    targets: []
-    entries:
-    - root: {fileID: 4109546631880772, guid: 8c614b2a58c4e2540b396e03fbec3861, type: 3}
-      speed: 5
-      aliases:
-      - Key: Fade
-        Obj: {fileID: 50738335}
-    - root: {fileID: 4781537505444806, guid: 50d5767c319bc3546995e8b4067e4083, type: 3}
-      speed: 5
-      aliases:
-      - Key: Scale
-        Obj: {fileID: 1276611239}
-  offTransitions:
-    speed: 5
-    roots: []
-    aliases: []
-    targets: []
-    entries:
-    - root: {fileID: 4109546631880772, guid: 31850616c769f194bb1e0cca518f21ca, type: 3}
-      speed: 5
-      aliases:
-      - Key: Fade
-        Obj: {fileID: 50738335}
-    - root: {fileID: 4781537505444806, guid: c361efa5d59a37848aa47f921d42721c, type: 3}
-      speed: 5
-      aliases:
-      - Key: Scale
-        Obj: {fileID: 1276611239}
-  onOn:
-    m_PersistentCalls:
-      m_Calls: []
-  onOff:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!225 &50738335
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -437,19 +384,7 @@ MonoBehaviour:
       aliases: []
   onDown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1123310949}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: TurnOff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1171,6 +1106,17 @@ MonoBehaviour:
   Day_Time: 0
   spawn_type: 0
   boss_hp_Slider: {fileID: 8943944883847469527}
+--- !u!114 &674145785 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1250213210573981527, guid: a846d77e3f5d1bb48bd8893d19408697, type: 3}
+  m_PrefabInstance: {fileID: 3210734501683223279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &727185150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1167,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1183133989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &733245723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1161031728968937085, guid: a846d77e3f5d1bb48bd8893d19408697, type: 3}
+  m_PrefabInstance: {fileID: 3210734501683223279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &817216488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1189,6 @@ GameObject:
   - component: {fileID: 817216489}
   - component: {fileID: 817216492}
   - component: {fileID: 817216491}
-  - component: {fileID: 817216490}
   m_Layer: 5
   m_Name: Background (LeanButton)
   m_TagString: Untagged
@@ -1259,120 +1215,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2.5, y: -271.35}
   m_SizeDelta: {x: 5, y: 542.7}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &817216490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817216488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81fef0563e898f74f87bcb68d10688aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 817216491}
-  interactableTransitions:
-    speed: -1
-    roots: []
-    aliases: []
-    targets: []
-    entries:
-    - root: {fileID: 0}
-      speed: -1
-      aliases: []
-  nonInteractableTransitions:
-    speed: -1
-    roots: []
-    aliases: []
-    targets: []
-    entries:
-    - root: {fileID: 0}
-      speed: -1
-      aliases: []
-  onInteractable:
-    m_PersistentCalls:
-      m_Calls: []
-  onNonInteractable:
-    m_PersistentCalls:
-      m_Calls: []
-  expectedInteractable: 0
-  requiredButtons: -1
-  multiDown: 0
-  dragThreshold: 10
-  normalTransitions:
-    speed: 0
-    roots: []
-    aliases: []
-    targets: []
-    entries:
-    - root: {fileID: 0}
-      speed: -1
-      aliases: []
-  downTransitions:
-    speed: 0
-    roots: []
-    aliases: []
-    targets: []
-    entries:
-    - root: {fileID: 0}
-      speed: -1
-      aliases: []
-  clickTransitions:
-    speed: 0
-    roots: []
-    aliases: []
-    targets: []
-    entries:
-    - root: {fileID: 0}
-      speed: -1
-      aliases: []
-  onDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 50738334}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: TurnOff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &817216491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,6 +2158,17 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1161012128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6273081521244465940, guid: a846d77e3f5d1bb48bd8893d19408697, type: 3}
+  m_PrefabInstance: {fileID: 3210734501683223279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1170509267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3611,9 +3464,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 50738334}
-        m_TargetAssemblyTypeName: Lean.Gui.LeanToggle, Assembly-CSharp
-        m_MethodName: TurnOff
+      - m_Target: {fileID: 1945947570}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Game_Re_Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3985,7 +3838,7 @@ MonoBehaviour:
   kill_enemy_count: 0
   player_hp: 500
   player_max_hp: 500
-  bullet_damage: 30
+  bullet_damage: 100
   Attack_Delay: 0.5
   gold_count: 195
   Hit_Image: {fileID: 6616967428470638220}
@@ -3994,7 +3847,8 @@ MonoBehaviour:
   colorFadeSpeed: 5
   boss_hp: 70
   boss_max_hp: 100
-  game_over: {fileID: 0}
+  Game_Clrear: {fileID: 1123310947}
+  Game_Over_Pre: {fileID: 50738332}
   die_player: {fileID: 3862787726321022519, guid: 1e1fbcaa04b03c64680bc0765c7ca9d9, type: 3}
   Day_Text: {fileID: 3149802727231077929}
   fadeDuration: 1
@@ -4277,9 +4131,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1123310949}
-        m_TargetAssemblyTypeName: Lean.Gui.LeanToggle, Assembly-CSharp
-        m_MethodName: TurnOff
+      - m_Target: {fileID: 1945947570}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Game_Re_Start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4788,6 +4642,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1313788700385680499}
     - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+      propertyPath: SFX_Monster_Hit_Source
+      value: 
+      objectReference: {fileID: 3149352063171803220}
+    - target: {fileID: 9087172382822170456, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
       propertyPath: sfc_clips.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -4868,6 +4726,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+--- !u!82 &3149352063171803220 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1774502667846155214, guid: 28e0a560380182e46b12ccbad1e21ca2, type: 3}
+  m_PrefabInstance: {fileID: 3149352063171803219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3149802727231077929 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3665548735314917012, guid: a846d77e3f5d1bb48bd8893d19408697, type: 3}
@@ -6254,12 +6117,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: Bullet_Active_false
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_NucBack_Type
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_ShotGun_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
+      propertyPath: Bullet_Speaker_Count
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: BUllet_penetrate_Type
@@ -6271,7 +6142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1171228838417900882, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: Bullet_Propulsion_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3646983723181513093, guid: 1281abf139fd5674c91fd90fcc521f13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6470,9 +6341,17 @@ PrefabInstance:
       value: Button_Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
+      propertyPath: BGM_Text
+      value: 
+      objectReference: {fileID: 733245723}
+    - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
       propertyPath: Day_Text
       value: 
       objectReference: {fileID: 3149802727231077929}
+    - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
+      propertyPath: SFX_Text
+      value: 
+      objectReference: {fileID: 1161012128}
     - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
       propertyPath: Fade_Text
       value: 
@@ -6493,6 +6372,10 @@ PrefabInstance:
       propertyPath: Relic_View
       value: 
       objectReference: {fileID: 7086022286112472421}
+    - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
+      propertyPath: Master_Text
+      value: 
+      objectReference: {fileID: 674145785}
     - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
       propertyPath: Relic_Gacha
       value: 

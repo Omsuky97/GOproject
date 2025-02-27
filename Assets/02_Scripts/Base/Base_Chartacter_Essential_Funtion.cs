@@ -47,7 +47,7 @@ public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funti
                 live = false;
                 Monster_Did_Effect(Did_Effect, take_object.transform.position + new Vector3(0, 1, 0));
                 take_object.SetActive(false);
-                take_object.transform.position = new Vector3(545f, 5f, 500f);
+                take_object.transform.position = new Vector3(1000f, 5f, 1000f);
             }
             if (Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_ShotGun.Bullet_Target = new Vector3(0, 0, 0);
         }

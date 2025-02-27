@@ -12,6 +12,7 @@ using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 public class Game_UI_System : MonoBehaviour
 {
@@ -152,6 +153,9 @@ public class Game_UI_System : MonoBehaviour
     //Btn_Relic_Gacha
     public void Open_Gacha()
     {
+        List<Relic_Data> highLevelRelics = Relic_Item.Relic.Where(x => x.Relics_Lv >= 5).ToList();
+        // 모든 유물이 5레벨 이상이라면 빈 리스트 반환
+        if (highLevelRelics.Count == Relic_Item.Relic.Count) return;
         if (!Relic_Gacha_UI_paused)
         {
             if (GameManager.Instance.gold_count >= 100)
@@ -185,6 +189,7 @@ public class Game_UI_System : MonoBehaviour
     {
         Image button_Image = clickedButton.GetComponentsInChildren<Image>()[1];
         Button_Count button_number = clickedButton.GetComponentsInChildren<Button_Count>()[0];  //3개중 하나를 눌렀을 경우 값 전달 (0, 1, 2)
+            if (Relic_Item.data_id[button_number.button_num] == 0) return;
         for (int button_count = 0; button_count < Rellic_Slot.slot_button.Length; button_count++)
         {
             if (Rellic_Slot.non_relic_id[button_count] != 0 && (Relic_Item.data_id[button_number.button_num] == Rellic_Slot.non_relic_id[button_count]))
@@ -203,7 +208,7 @@ public class Game_UI_System : MonoBehaviour
                 break;
             }
         }
-        GameManager.Instance.gold_count -= 200;
+        GameManager.Instance.gold_count -= 100;
         Relic_Gacha_UI.SetActive(false);
         Relic_Gacha_UI_paused = false;
         Time.timeScale = 1.0f;

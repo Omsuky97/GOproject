@@ -44,7 +44,6 @@ public class Bullet_ShotGun : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         bulletCollider = GetComponent<Collider>(); // 현재 불릿의 콜리전 가져오기
         baseColliderSize = GetColliderSize(bulletCollider); // 초기 콜리전 크기 저장
-        IncreaseSizeBasedOnAttack(GameManager.Instance.bullet_damage);
 
         bounceCount = 0;
         Hit_Bounce_Enemys.Clear();
@@ -62,6 +61,7 @@ public class Bullet_ShotGun : MonoBehaviour
         enemyList.Clear();
         enemyIndex = 0;
         ResetChildRotation(); // 총알이 활성화될 때 하위 오브젝트 회전 초기화
+        IncreaseSizeBasedOnAttack(GameManager.Instance.bullet_damage);
         if (gameObject.activeInHierarchy)
         {
             StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
@@ -127,7 +127,7 @@ public class Bullet_ShotGun : MonoBehaviour
             }
             if (Bullet_Manager.Instance.Bullet_Pec_Type) BUllet_penetrate();
             if (Bullet_Manager.Instance.Bullet_Boomerang_Type) Bullet_Boomerang(other);
-            if (!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type) gameObject.SetActive(false);
+            if (!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type && !Bullet_Manager.Instance.Bullet_Pec_Type) gameObject.SetActive(false);
         }
         if (gameObject.activeInHierarchy)
         {

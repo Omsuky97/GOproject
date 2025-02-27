@@ -74,7 +74,6 @@ public class Bullet : MonoBehaviour
         Bullet_Manager.Instance.penetration = 0;
         enemyList.Clear();
         enemyIndex = 0;
-        IncreaseSizeBasedOnAttack(dmg);
         Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Origin_Spped;
         rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Origin_Spped;
     }
@@ -87,6 +86,7 @@ public class Bullet : MonoBehaviour
         enemyList.Clear();
         enemyIndex = 0;
         ResetChildRotation(); // 총알이 활성화될 때 하위 오브젝트 회전 초기화
+        IncreaseSizeBasedOnAttack(GameManager.Instance.bullet_damage);
         if (gameObject.activeInHierarchy)
         {
             StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));
@@ -126,7 +126,7 @@ public class Bullet : MonoBehaviour
             }
             if (Bullet_Manager.Instance.Bullet_Pec_Type) BUllet_penetrate();
             if (Bullet_Manager.Instance.Bullet_Boomerang_Type) Bullet_Boomerang(other);
-            if(!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type) gameObject.SetActive(false);
+            if(!Bullet_Manager.Instance.Bullet_bounce_Type && !Bullet_Manager.Instance.Bullet_Boom_Type && !Bullet_Manager.Instance.Bullet_Pec_Type) gameObject.SetActive(false);
         }
         if (gameObject.activeInHierarchy)
         {
@@ -297,7 +297,11 @@ public class Bullet : MonoBehaviour
         float fixedSpeed = Bullet_Manager.Instance.Bullet_Speed; // 속도 고정
         rigid.velocity = nextDirection * fixedSpeed;
         transform.rotation = Quaternion.LookRotation(nextDirection);
-
+        foreach (Transform child in transform)
+        {
+            Vector3 childEuler = child.localEulerAngles;
+            child.localEulerAngles = new Vector3(0, childEuler.y, childEuler.z);
+        }
         enemyIndex++;
 
         if (gameObject.activeInHierarchy)

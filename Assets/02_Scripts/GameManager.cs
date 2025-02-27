@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -43,9 +45,8 @@ public class GameManager : MonoBehaviour
     public float boss_max_hp;
 
     [Header("## -- Player_Game_Over_HUD -- ##")]
-    //public GameObject player_statas;
-    //public Canvas game_option;
-    public Canvas game_over;
+    public GameObject Game_Clrear;
+    public GameObject Game_Over_Pre;
     public GameObject die_player;
 
     [Header("## -- Game_Fade_UI -- ##")]
@@ -86,7 +87,20 @@ public class GameManager : MonoBehaviour
             StartCoroutine(FadeSequence(Day_Text));
         }
     }
+    public void Game_Re_Start()
+    {
+        string exePath = Application.dataPath;
+        exePath = Path.Combine(Application.dataPath, "../", Application.productName + ".exe");
+        exePath = Path.Combine(Application.dataPath, "../", Application.productName);
+        if (File.Exists(exePath))
+        {
+            // 현재 실행 중인 게임의 새 프로세스를 시작
+            Process.Start(exePath);
 
+            // 현재 게임 종료
+            Application.Quit();
+        }
+    }
     public void Game_Over()
     {
         // 일정 시간 후에 게임 멈추기
@@ -94,10 +108,7 @@ public class GameManager : MonoBehaviour
     }
     private void StopGame()
     {
-        //player_statas.gameObject.SetActive(false);
-        //game_option.gameObject.SetActive(true);
-        game_over.gameObject.SetActive(true);
-        // 게임 멈춤 (시간 정지)
+        Game_Over_Pre.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
     IEnumerator FadeInText(TextMeshProUGUI text)

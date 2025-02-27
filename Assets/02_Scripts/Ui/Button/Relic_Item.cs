@@ -63,16 +63,12 @@ public class Relic_Item : MonoBehaviour
         // Texture2D를 Sprite로 변환 후 Image에 적용
         relic_icon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
-    //리스트에서 원하는 개수만큼 랜덤으로 선택 (중복 없음)
     public List<Relic_Data> GetRandomRelics(int count)
     {
-        //List<Relic_Data> filteredRelics = Relic.Where(x => x.Relics_Lv != 5).ToList(); // Lv 5 제외
-        if (Relic.Count == 0)
-        {
-            return new List<Relic_Data>();
-        }
-
-        return Relic.OrderBy(x => Random.value).Take(count).ToList();
+        // 레벨 5 이상인 유물을 제외한 리스트
+        List<Relic_Data> filteredRelics = Relic.Where(x => x.Relics_Lv < 5).ToList();
+        // 랜덤하게 actualCount 개수만큼 선택
+        return filteredRelics.OrderBy(x => Random.value).Take(count).ToList();
     }
 
     //3개 뽑은 리스트에서 다시 하나를 랜덤으로 선택
