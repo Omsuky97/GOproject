@@ -9,6 +9,9 @@ using static UnityEngine.GraphicsBuffer;
 using Lean.Gui;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using System.Diagnostics;
+using System.IO;
 
 public class Game_UI_System : MonoBehaviour
 {
@@ -46,6 +49,9 @@ public class Game_UI_System : MonoBehaviour
     public Slider Game_Master_Sound_Slider;
     public Slider Game_SFX_Sound_Slider;
     public Slider Game_BGM_Sound_Slider;
+    public TextMeshProUGUI Master_Text;
+    public TextMeshProUGUI SFX_Text;
+    public TextMeshProUGUI BGM_Text;
 
     private void Awake()
     {
@@ -55,17 +61,44 @@ public class Game_UI_System : MonoBehaviour
     }
     private void Start()
     {
-        Game_Master_Sound_Slider.value = PlayerPrefs.GetFloat("Master", 1f);
-        Game_SFX_Sound_Slider.value = PlayerPrefs.GetFloat("SFX", 1f);
-        Game_BGM_Sound_Slider.value = PlayerPrefs.GetFloat("BGM", 1f);
+        Game_Master_Sound_Slider.value = PlayerPrefs.GetFloat("Master", 5f);
+        Game_SFX_Sound_Slider.value = PlayerPrefs.GetFloat("SFX", 5f);
+        Game_BGM_Sound_Slider.value = PlayerPrefs.GetFloat("BGM", 5f);
 
+        UpdatMasterText(Game_Master_Sound_Slider.value);
+        UpdateSFXText(Game_SFX_Sound_Slider.value);
+        UpdateBGMText(Game_BGM_Sound_Slider.value);
+
+        Game_Master_Sound_Slider.onValueChanged.RemoveAllListeners();
+        Game_SFX_Sound_Slider.onValueChanged.RemoveAllListeners();
+        Game_BGM_Sound_Slider.onValueChanged.RemoveAllListeners();
+
+        // 오디오 매니저에 슬라이더 값 전달
         Game_Master_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_Master_Volume);
         Game_SFX_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_SFX_Volume);
         Game_BGM_Sound_Slider.onValueChanged.AddListener(Audio_Manager.instance.Set_BGM_Volume);
 
+        Game_Master_Sound_Slider.onValueChanged.AddListener(UpdatMasterText);
+        Game_SFX_Sound_Slider.onValueChanged.AddListener(UpdateSFXText);
+        Game_BGM_Sound_Slider.onValueChanged.AddListener(UpdateBGMText);
+
         StartCoroutine(FadeOutText(Day_Text));
     }
-
+    void UpdatMasterText(float value)
+    {
+        int percentage = Mathf.RoundToInt(value * 20); // 0~1 값을 0~100으로 변환
+        Master_Text.text = percentage + "%"; // 퍼센트로 표시
+    }
+    void UpdateSFXText(float value)
+    {
+        int percentage = Mathf.RoundToInt(value * 20); // 0~1 값을 0~100으로 변환
+        SFX_Text.text = percentage + "%"; // 퍼센트로 표시
+    }
+    void UpdateBGMText(float value)
+    {
+        int percentage = Mathf.RoundToInt(value * 20); // 0~1 값을 0~100으로 변환
+        BGM_Text.text = percentage + "%"; // 퍼센트로 표시
+    }
     public void Game_Menu()
     {
         if (menu_ui_paused) menu_ui_paused = false;
@@ -206,5 +239,19 @@ public class Game_UI_System : MonoBehaviour
         int btn_relic_num = clickedButton.GetComponentInParent<Relic_Exit_Button>().relic_Num[btn_num];
         rellic_equip.Relic_Equip_Exit(btn_relic_num);
         //buttonImages[1].sprite = null;
+    }
+    public void ChangeScene( )
+    {
+        string exePath = Application.dataPath;
+        exePath = Path.Combine(Application.dataPath, "../", Application.productName + ".exe");                                         
+        exePath = Path.Combine(Application.dataPath, "../", Application.productName);
+        if (File.Exists(exePath))
+        {
+            // 현재 실행 중인 게임의 새 프로세스를 시작
+            Process.Start(exePath);
+
+            // 현재 게임 종료
+            Application.Quit();
+        }
     }
 }

@@ -55,6 +55,10 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        if(Instance != null)
+        {
+            Destroy(Instance.gameObject);
+        }
         Instance = this;
         Hit_Image.color = new Color(1, 0, 0, 0); // 처음엔 완전 투명
         ResetAllRelicLevels();

@@ -35,7 +35,7 @@ public class Spawner : MonoBehaviour
         if (!spawn_type)
             timer += Time.deltaTime;
 
-        if (Day_Time > GameManager.Instance.Fade_TIme +2.0f)
+        if (Day_Time > GameManager.Instance.Fade_TIme +5.0f)
         {
             Day_Time = 0.0f;
             spawn_type = true;

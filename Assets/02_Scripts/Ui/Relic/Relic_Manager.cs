@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Relic_Manager : MonoBehaviour
 {
+    private static Relic_Manager instance;
     public RelicDatabase relicDatabase;  // ScriptableObject 데이터베이스 가져오기
 
+    private void Awake()
+    {
+        instance = this;
+    }
     public Relic_Data GetRelicById(int id)
     {
         foreach (var relic in relicDatabase.relicsList)
