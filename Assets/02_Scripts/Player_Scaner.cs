@@ -48,12 +48,15 @@ public class Player_Scaner : MonoBehaviour
             if (!player_attack) timer += Time.deltaTime;
             if (Bullet_Manager.Instance.Bullet_Speaker_Type)
             {
-                //이거 레벨업 할때마다 6을 줄여서 확률 높여줄 것
-                int Random_Speaker_Value = Random.Range(0, Bullet_Manager.Instance.Bullet_Speaker_Count); // 0~5 사이의 랜덤 값
-                if (timer > player_Statas.Attack_Delay && Random_Speaker_Value == 0)
+                if (timer > player_Statas.Attack_Delay )
                 {
-                    timer = 0f;
-                    Bullet_Speaker();
+                    //이거 레벨업 할때마다 6을 줄여서 확률 높여줄 것
+                    int Random_Speaker_Value = Random.Range(0, Bullet_Manager.Instance.Bullet_Speaker_Count); // 0~5 사이의 랜덤 값
+                    if (Random_Speaker_Value == 0)
+                    {
+                        timer = 0f;
+                        Bullet_Speaker();
+                    }
                 }
                 else
                 {
