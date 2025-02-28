@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Audio_Manager;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<MonoBehaviour>
 {
     public static GameManager Instance;
     public PoolManager pool;

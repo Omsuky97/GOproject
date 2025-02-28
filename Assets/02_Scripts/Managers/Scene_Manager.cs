@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Scene_Manager : MonoBehaviour
+public class Scene_Manager : Singleton <Scene_Manager>
 {
     private static Scene_Manager instance;
 
@@ -71,16 +71,16 @@ public class Scene_Manager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1.0f;
-        // 로딩 바 초기 설정 (fillAmount를 0으로 유지하면서 alpha 값 유지)
-        Loadign_Bar.fillAmount = 0f;
-        SetImageAlpha(Loadign_Bar, 1); // 로딩 바가 보이게 설정
-
-        SetTextAlpha(Loading_Text1, 0); // 텍스트는 숨김
-        SetTextAlpha(Loading_Text2, 0);
-        SetButtonAlpha(1); // 버튼도 숨김
-        Start_Button.gameObject.SetActive(false);
-
-        StartCoroutine(LoadingProgress());
+      //  // 로딩 바 초기 설정 (fillAmount를 0으로 유지하면서 alpha 값 유지)
+      //  Loadign_Bar.fillAmount = 0f;
+      //  SetImageAlpha(Loadign_Bar, 1); // 로딩 바가 보이게 설정
+      //
+      //  SetTextAlpha(Loading_Text1, 0); // 텍스트는 숨김
+      //  SetTextAlpha(Loading_Text2, 0);
+      //  SetButtonAlpha(1); // 버튼도 숨김
+      //  Start_Button.gameObject.SetActive(false);
+      //
+      //  StartCoroutine(LoadingProgress());
     }
     void SetImageAlpha(Image img, float alpha)
     {

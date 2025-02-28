@@ -1,10 +1,11 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class Audio_Manager : MonoBehaviour
+public class Audio_Manager : Singleton<Audio_Manager>
 {
     public static Audio_Manager instance;
     public AudioMixer audioMixer;

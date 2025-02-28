@@ -14,7 +14,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-public class Game_UI_System : MonoBehaviour
+public class Game_UI_System : Singleton<Game_UI_System> 
 {
     public float selectionTimeout = 30f; // 자동 선택 시간 (초)
 

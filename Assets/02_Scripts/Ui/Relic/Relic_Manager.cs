@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Relic_Manager : MonoBehaviour
+public class Relic_Manager : Singleton <Relic_Manager>
 {
     private static Relic_Manager instance;
     public RelicDatabase relicDatabase;  // ScriptableObject 데이터베이스 가져오기

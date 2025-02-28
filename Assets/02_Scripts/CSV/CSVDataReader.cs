@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 
-public class CSVDataReader : MonoBehaviour
+public class CSVDataReader : Singleton<CSVDataReader>
 {
     public static CSVDataReader instance;
     #region Data Tables

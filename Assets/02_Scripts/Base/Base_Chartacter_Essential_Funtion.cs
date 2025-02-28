@@ -1,7 +1,7 @@
 using UnityEngine;
 using static Audio_Manager;
 
-public class Base_Chartacter_Essential_Funtion : MonoBehaviour, IEssential_funtion
+public class Base_Chartacter_Essential_Funtion : Singleton<Base_Chartacter_Essential_Funtion>, IEssential_funtion
 {
     public static Base_Chartacter_Essential_Funtion instance;
     public GameObject[] hitEffect;

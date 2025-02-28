@@ -1,9 +1,10 @@
 using Lean.Gui;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Bullet_Manager : MonoBehaviour
+public class Bullet_Manager : Singleton<Bullet_Manager>
 {
     public static Bullet_Manager Instance;
 
