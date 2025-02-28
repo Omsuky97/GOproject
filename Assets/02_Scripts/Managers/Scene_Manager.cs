@@ -16,7 +16,7 @@ public class Scene_Manager : MonoBehaviour
     public Button Start_Button; // 게임 시작 버튼
     public Image Loadign_Bar; // 로딩 바 (게이지)
     public Image Transition_Image; // 씬 전환 전에 잠깐 보여줄 이미지
-    public float fadeDuration = .5f;
+    private float fadeDuration = .5f; // 기본값 설정
 
     [Header("## -- Game_Sound_UI -- ##")]
     public GameObject Option_UI;
@@ -33,10 +33,9 @@ public class Scene_Manager : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            instance.StopAllCoroutines(); // 기존 인스턴스의 모든 코루틴 정지
-            Destroy(instance.gameObject); // 기존 인스턴스 삭제
+            Destroy(gameObject);
+            return; // 기존 인스턴스가 존재하면 중단
         }
-
         instance = this;
         Game_Master_Sound_Slider.onValueChanged.RemoveAllListeners();
         Game_SFX_Sound_Slider.onValueChanged.RemoveAllListeners();
@@ -52,6 +51,7 @@ public class Scene_Manager : MonoBehaviour
         Game_BGM_Sound_Slider.onValueChanged.AddListener(UpdateBGMText);
 
         DontDestroyOnLoad(this.gameObject);
+
     }
     void UpdatMasterText(float value)
     {
@@ -77,7 +77,7 @@ public class Scene_Manager : MonoBehaviour
 
         SetTextAlpha(Loading_Text1, 0); // 텍스트는 숨김
         SetTextAlpha(Loading_Text2, 0);
-        SetButtonAlpha(0); // 버튼도 숨김
+        SetButtonAlpha(1); // 버튼도 숨김
         Start_Button.gameObject.SetActive(false);
 
         StartCoroutine(LoadingProgress());
