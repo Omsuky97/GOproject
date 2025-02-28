@@ -56,6 +56,8 @@ public class Player_Scaner : MonoBehaviour
                     {
                         timer = 0f;
                         Bullet_Speaker();
+                        int Random_Bezier_Value = Random.Range(0, Bullet_Manager.Instance.Bullet_Bezier_Count); // 0~5 사이의 랜덤 값
+                        if (Bullet_Manager.Instance.Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                     }
                 }
                 else
@@ -65,6 +67,8 @@ public class Player_Scaner : MonoBehaviour
                         {
                             timer = 0f;
                             Bullet_ShotGun();
+                            int Random_Bezier_Value = Random.Range(0, Bullet_Manager.Instance.Bullet_Bezier_Count); // 0~5 사이의 랜덤 값
+                            if (Bullet_Manager.Instance.Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                         }
                         else if (!Bullet_Manager.Instance.Bullet_ShotGun_Type)
                             if (timer > player_Statas.Attack_Delay)
@@ -82,6 +86,8 @@ public class Player_Scaner : MonoBehaviour
                 {
                     timer = 0f;
                     Bullet_ShotGun();
+                    int Random_Bezier_Value = Random.Range(0, Bullet_Manager.Instance.Bullet_Bezier_Count); // 0~5 사이의 랜덤 값
+                    if (Bullet_Manager.Instance.Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
                 }
                 else
                 {
@@ -168,7 +174,6 @@ public class Player_Scaner : MonoBehaviour
         if (player_attack) return;
         if (!nearestTarget) return;
 
-        //cameraShake.ShowDamageEffect();
         cameraShake.Camera_Shake(shakeTime, shakePower);
 
         anim.SetBool("Fire", Fire_Anim);
@@ -188,8 +193,6 @@ public class Player_Scaner : MonoBehaviour
     private void Bullet_ShotGun()
     {
         // 플레이어가 공격 시작
-
-        //cameraShake.ShowDamageEffect();
         cameraShake.Camera_Shake(shakeTime, shakePower);
 
         player_attack = true;
