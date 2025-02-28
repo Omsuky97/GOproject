@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9034319794192281860}
   - component: {fileID: 422475345007621497}
-  - component: {fileID: 9140674525519018371}
   m_Layer: 0
   m_Name: Relic_Manager
   m_TagString: Untagged
@@ -46,49 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relicDatabase: {fileID: 11400000, guid: ad81a6c1f6f87974f89243a511a43eae, type: 2}
---- !u!114 &9140674525519018371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9194766004777183452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a20798a5bba9d34091a7d1ea9e24c43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot_button:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  relic_slot_Image:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  non_relic_id: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  non_slot_count: 0

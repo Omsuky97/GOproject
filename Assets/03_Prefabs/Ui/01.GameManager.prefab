@@ -58,7 +58,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4765217689230314835}
-  - component: {fileID: 550196409946782602}
   m_Layer: 0
   m_Name: 01.GameManager
   m_TagString: Untagged
@@ -90,58 +89,6 @@ Transform:
   - {fileID: 8449226890726275326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &550196409946782602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4962710996843865897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef6ae3db985e4846abe1f6d656edaa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool: {fileID: 0}
-  player: {fileID: 0}
-  allRelics:
-  - {fileID: 11400000, guid: 33d47901ce74ded43b42653d24a3ea97, type: 2}
-  - {fileID: 11400000, guid: 169be6e9671a7c643bd6f32d0f586388, type: 2}
-  - {fileID: 11400000, guid: 89c3888a08375f5498bb8d393d0586ab, type: 2}
-  - {fileID: 11400000, guid: a125c694c1bbe254ab67248dd6cc93c2, type: 2}
-  - {fileID: 11400000, guid: 082ea6b266db7a64ea91346d9a91526d, type: 2}
-  - {fileID: 11400000, guid: 43f68fe252ed81544989187e084bd89d, type: 2}
-  - {fileID: 11400000, guid: 384c8913a8e7ca4458a74321b2093ad6, type: 2}
-  - {fileID: 11400000, guid: 9669bca6b78495d4c9537ae0bee05697, type: 2}
-  - {fileID: 11400000, guid: 6b30702bc22335d4aa353156ef12afc6, type: 2}
-  - {fileID: 11400000, guid: 2b8c7530837cfac488975d8b1709dc0f, type: 2}
-  - {fileID: 11400000, guid: 50bad24b3c685b84bbab11f556d08a99, type: 2}
-  - {fileID: 11400000, guid: 36b55c8d622ebd641bc95bd3a5cfa70f, type: 2}
-  - {fileID: 11400000, guid: 8fe0e0c72fd711b44bbcc6ccb6355c2d, type: 2}
-  - {fileID: 11400000, guid: d2688f25dc18ff046ae646234dde316a, type: 2}
-  - {fileID: 11400000, guid: 558c99b57f459964f9f21518673cb534, type: 2}
-  count_day: 1
-  Waiting_Time_Type: 1
-  spawn_count: 0
-  spawn_timer: 0.2
-  kill_enemy_count: 0
-  player_hp: 500
-  player_max_hp: 500
-  bullet_damage: 50
-  Attack_Delay: 0.5
-  gold_count: 250
-  Hit_Image: {fileID: 0}
-  hit_Color: {r: 1, g: 0, b: 0, a: 0}
-  originalColor: {r: 1, g: 1, b: 1, a: 0}
-  colorFadeSpeed: 5
-  boss_hp: 70
-  boss_max_hp: 100
-  Game_Clrear: {fileID: 0}
-  Game_Over_Pre: {fileID: 0}
-  die_player: {fileID: 3862787726321022519, guid: 1e1fbcaa04b03c64680bc0765c7ca9d9, type: 3}
-  Day_Text: {fileID: 0}
-  fadeDuration: 1
-  Fade_TIme: 2
 --- !u!1001 &1262121007531796089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -590,17 +537,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9034319794192281860, guid: e5aaa862dbcd96b47a8177f129719ba6, type: 3}
   m_PrefabInstance: {fileID: 5862038340677113984}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3422761842261516547 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9140674525519018371, guid: e5aaa862dbcd96b47a8177f129719ba6, type: 3}
-  m_PrefabInstance: {fileID: 5862038340677113984}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a20798a5bba9d34091a7d1ea9e24c43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6090779680985427449 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 422475345007621497, guid: e5aaa862dbcd96b47a8177f129719ba6, type: 3}
@@ -1025,10 +961,6 @@ PrefabInstance:
       propertyPath: D_Day_Text
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
-      propertyPath: Rellic_Slot
-      value: 
-      objectReference: {fileID: 3422761842261516547}
     - target: {fileID: 6931603214694052659, guid: c04e0072368764c409fcd15e0341a4c3, type: 3}
       propertyPath: rellic_equip
       value: 
