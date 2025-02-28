@@ -204,11 +204,6 @@ public class Player_Scaner : MonoBehaviour
         cameraShake.Camera_Shake(shakeTime, shakePower);
 
         player_attack = true;
-        //if (!nearestTarget)
-        //{
-        //    player_attack = false;
-        //    return;
-        //}
 
         targetPos = nearestTarget.position;
         anim.SetBool("Fire", Fire_Anim);
