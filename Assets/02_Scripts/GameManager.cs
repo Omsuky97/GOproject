@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour
         Hit_Image.color = new Color(1, 0, 0, 0); // 처음엔 완전 투명
         ResetAllRelicLevels();
     }
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
     void ResetAllRelicLevels()
     {
         foreach (Relic_Data relic in allRelics)

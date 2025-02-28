@@ -38,6 +38,7 @@ public class Player_Scaner : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        RemoveInactiveMonsters();
         targets_monster = Physics.SphereCastAll(transform.position, Bullet_Manager.Instance.Bullet_Scan_Range, Vector3.forward, Bullet_Manager.Instance.Bullet_Scan_Range, targetLayer);
         if (!Bullet_Manager.Instance.Bullet_Target_type) nearestTarget = GetNearest();
         else if (Bullet_Manager.Instance.Bullet_Target_type) nearestTarget = GetFarthest();
@@ -77,6 +78,7 @@ public class Player_Scaner : MonoBehaviour
                                 Fire();
                                 int Random_Bezier_Value = Random.Range(0, Bullet_Manager.Instance.Bullet_Bezier_Count); // 0~5 사이의 랜덤 값
                                 if (Bullet_Manager.Instance.Bullet_Bezier_Type && Random_Bezier_Value == 0) Bullet_Fire_Bezier();
+                                player_attack = false;
                             }
                 }
             }
@@ -173,7 +175,11 @@ public class Player_Scaner : MonoBehaviour
     {
         if (player_attack) return;
         if (!nearestTarget) return;
-
+        if (!nearestTarget)
+        {
+            player_attack = false;
+            return;
+        }
         cameraShake.Camera_Shake(shakeTime, shakePower);
 
         anim.SetBool("Fire", Fire_Anim);
@@ -192,13 +198,21 @@ public class Player_Scaner : MonoBehaviour
     }
     private void Bullet_ShotGun()
     {
+        if (player_attack) return;
+        if (!nearestTarget) return;
         // 플레이어가 공격 시작
         cameraShake.Camera_Shake(shakeTime, shakePower);
 
         player_attack = true;
+        //if (!nearestTarget)
+        //{
+        //    player_attack = false;
+        //    return;
+        //}
+
+        targetPos = nearestTarget.position;
         anim.SetBool("Fire", Fire_Anim);
         Audio_Manager.instance.GetAttack_Sound();
-        targetPos = nearestTarget.position;
 
         Vector3 bullet_dir = (targetPos - Fire_Point.transform.position).normalized;
         bullet_dir.y = 0; // Y축 고정
@@ -228,6 +242,12 @@ public class Player_Scaner : MonoBehaviour
         // 리셋
         StartCoroutine(ResetFire());
     }
+    void RemoveInactiveMonsters()
+    {
+        Target_List.RemoveAll(monster => monster == null || !monster.gameObject.activeSelf);
+    }
+
+
     public void Player_Rotator()
     {
         // 타겟 방향 계산

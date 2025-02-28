@@ -70,6 +70,7 @@ public class Scene_Manager : MonoBehaviour
     }
     private void Start()
     {
+        Time.timeScale = 1.0f;
         // 로딩 바 초기 설정 (fillAmount를 0으로 유지하면서 alpha 값 유지)
         Loadign_Bar.fillAmount = 0f;
         SetImageAlpha(Loadign_Bar, 1); // 로딩 바가 보이게 설정
@@ -92,7 +93,7 @@ public class Scene_Manager : MonoBehaviour
     }
     public void StartGame()
     {
-        StartCoroutine(ShowImageAndLoadScene("KSH"));
+        StartCoroutine(ShowImageAndLoadScene("GameScenes"));
     }
     IEnumerator ShowImageAndLoadScene(string sceneName)
     {
