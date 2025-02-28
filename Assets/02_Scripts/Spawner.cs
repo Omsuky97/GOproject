@@ -21,10 +21,8 @@ public class Spawner : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        Day_Time = 0;
+        instance = this;
         spawnPoint = GetComponentsInChildren<Transform>();
     }
 

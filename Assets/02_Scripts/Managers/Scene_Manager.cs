@@ -70,16 +70,17 @@ public class Scene_Manager : MonoBehaviour
     }
     private void Start()
     {
-        //// 로딩 바 초기 설정 (fillAmount를 0으로 유지하면서 alpha 값 유지)
-        //Loadign_Bar.fillAmount = 0f;
-        //SetImageAlpha(Loadign_Bar, 1); // 로딩 바가 보이게 설정
+        Time.timeScale = 1.0f;
+        // 로딩 바 초기 설정 (fillAmount를 0으로 유지하면서 alpha 값 유지)
+        Loadign_Bar.fillAmount = 0f;
+        SetImageAlpha(Loadign_Bar, 1); // 로딩 바가 보이게 설정
 
-        //SetTextAlpha(Loading_Text1, 0); // 텍스트는 숨김
-        //SetTextAlpha(Loading_Text2, 0);
-        //SetButtonAlpha(0); // 버튼도 숨김
-        //Start_Button.gameObject.SetActive(false);
+        SetTextAlpha(Loading_Text1, 0); // 텍스트는 숨김
+        SetTextAlpha(Loading_Text2, 0);
+        SetButtonAlpha(0); // 버튼도 숨김
+        Start_Button.gameObject.SetActive(false);
 
-        //StartCoroutine(LoadingProgress());
+        StartCoroutine(LoadingProgress());
     }
     void SetImageAlpha(Image img, float alpha)
     {
