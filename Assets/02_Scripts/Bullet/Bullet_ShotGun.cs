@@ -81,6 +81,23 @@ public class Bullet_ShotGun : MonoBehaviour
         enemyList.Clear();
         bounceCount = 0;
         enemyIndex = 0;
+
+        if (Bullet_Manager.Instance.Bullet_Spirt_Type) Bullet_ShotGun.Relic_ON_Particle[6].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Spirt_Type) Bullet_ShotGun.Relic_ON_Particle[6].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Pec_Type) Bullet_ShotGun.Relic_ON_Particle[0].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Pec_Type) Bullet_ShotGun.Relic_ON_Particle[0].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_bounce_Type) Bullet_ShotGun.Relic_ON_Particle[1].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_bounce_Type) Bullet_ShotGun.Relic_ON_Particle[1].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Target_type) Bullet_ShotGun.Relic_ON_Particle[4].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Target_type) Bullet_ShotGun.Relic_ON_Particle[4].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Boom_Type) Bullet_ShotGun.Relic_ON_Particle[3].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Boom_Type) Bullet_ShotGun.Relic_ON_Particle[3].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_ShotGun.Relic_ON_Particle[2].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_ShotGun.Relic_ON_Particle[2].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_NucBack_Type) Bullet_ShotGun.Relic_ON_Particle[5].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_NucBack_Type) Bullet_ShotGun.Relic_ON_Particle[5].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Bezier_Type) Bullet_ShotGun.Relic_ON_Particle[7].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Bezier_Type) Bullet_ShotGun.Relic_ON_Particle[7].SetActive(false);
     }
     private void LateUpdate()
     {
@@ -99,14 +116,6 @@ public class Bullet_ShotGun : MonoBehaviour
             Bullet_Manager.Instance.Propulsion_Speed = Bullet_Manager.Instance.Propulsion_Speed + 1;
             rigid.velocity = Bullet_dir.normalized * Bullet_Manager.Instance.Propulsion_Speed;
         }
-        if (Bullet_Manager.Instance.Bullet_Spirt_Type) Bullet_ShotGun.Relic_ON_Particle[6].SetActive(true);
-        if (Bullet_Manager.Instance.Bullet_Pec_Type) Bullet_ShotGun.Relic_ON_Particle[0].SetActive(true);
-        if (Bullet_Manager.Instance.Bullet_bounce_Type) Bullet_ShotGun.Relic_ON_Particle[1].SetActive(true);
-        if (Bullet_Manager.Instance.Bullet_Target_type) Bullet_ShotGun.Relic_ON_Particle[4].SetActive(true);
-        if (Bullet_Manager.Instance.Bullet_Boom_Type) Bullet_ShotGun.Relic_ON_Particle[3].SetActive(true);
-        if (Bullet_Manager.Instance.Bullet_Guided_Type) Bullet_ShotGun.Relic_ON_Particle[2].SetActive(true);
-        if (Bullet_Manager.Instance.Bullet_NucBack_Type) Bullet_ShotGun.Relic_ON_Particle[5].SetActive(true);
-        if (Bullet_Manager.Instance.Bullet_Bezier_Type) Bullet_ShotGun.Relic_ON_Particle[7].SetActive(true);
     }
     private void OnTriggerEnter(Collider other)
     {
