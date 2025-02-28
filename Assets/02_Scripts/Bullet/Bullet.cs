@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
     [Header("## -- BulletBoom -- ##")]
     public GameObject Bullet_Boom;
 
-    public static int maxBounces = 5;          // 최대 튕길 횟수
+    public static int maxBounces = 2;          // 최대 튕길 횟수
     public int bounceCount = 0;         // 현재 튕긴 횟수
     public float Bullet_Bounce_Spawn_Offset = 1.0f;    //충돌 위치에서 이동할 거리
 
@@ -87,6 +87,24 @@ public class Bullet : MonoBehaviour
         enemyIndex = 0;
         ResetChildRotation(); // 총알이 활성화될 때 하위 오브젝트 회전 초기화
         IncreaseSizeBasedOnAttack(GameManager.Instance.bullet_damage);
+
+        if (Bullet_Manager.Instance.Bullet_Spirt_Type) Relic_ON_Particle[6].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Spirt_Type) Relic_ON_Particle[6].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Pec_Type) Relic_ON_Particle[0].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Pec_Type) Relic_ON_Particle[0].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_bounce_Type) Relic_ON_Particle[1].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_bounce_Type) Relic_ON_Particle[1].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Target_type) Relic_ON_Particle[4].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Target_type) Relic_ON_Particle[4].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Boom_Type) Relic_ON_Particle[3].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Boom_Type) Relic_ON_Particle[3].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Guided_Type) Relic_ON_Particle[2].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Guided_Type) Relic_ON_Particle[2].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_NucBack_Type) Relic_ON_Particle[5].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_NucBack_Type) Relic_ON_Particle[5].SetActive(false);
+        if (Bullet_Manager.Instance.Bullet_Bezier_Type) Relic_ON_Particle[7].SetActive(true);
+        else if (!Bullet_Manager.Instance.Bullet_Bezier_Type) Relic_ON_Particle[7].SetActive(false);
+
         if (gameObject.activeInHierarchy)
         {
             StartCoroutine(DestroyAfterDelay(Bullet_Manager.Instance.Bullet_Active_false));

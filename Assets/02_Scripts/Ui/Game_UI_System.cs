@@ -250,16 +250,6 @@ public class Game_UI_System : MonoBehaviour
     }
     public void ChangeScene( )
     {
-        string exePath = Application.dataPath;
-        exePath = Path.Combine(Application.dataPath, "../", Application.productName + ".exe");                                         
-        exePath = Path.Combine(Application.dataPath, "../", Application.productName);
-        if (File.Exists(exePath))
-        {
-            // 현재 실행 중인 게임의 새 프로세스를 시작
-            Process.Start(exePath);
-
-            // 현재 게임 종료
-            Application.Quit();
-        }
+        SceneManager.LoadScene("title");
     }
 }

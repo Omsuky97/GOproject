@@ -100,4 +100,8 @@ public class Relic_Data : ScriptableObject
     {
         Relics_Lv = 1;
     }
+    public void Resetdesc()
+    {
+        item_desc = "현재 레벨 : 0";
+    }
 }
